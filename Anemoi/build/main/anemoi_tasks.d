@@ -82,7 +82,8 @@ anemoi_tasks.o: \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/semphr.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_tasks.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_tasks.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -249,4 +250,6 @@ anemoi_tasks.o: \
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h:
 
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_tasks.h:
+
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h:
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/./anemoi_tasks.c:

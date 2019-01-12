@@ -110,7 +110,12 @@ void app_main()
     //xTaskCreate(&time_measurement_task, "time_measurement_task", 8192, NULL, 6, NULL);*/
     
     //init_gpio_vdd_enable();
-    
+    init_gpio_vdd_enable();
+    //enable_Y2_vdd();
+    init_clock();
+    init_gpio_tdc1000_enable();
+    //enable_tdc1000_y();
+    //init_anemoi_tasks();
     
     esp_err_t ret;
     spi_device_handle_t tdc1000_x_handle;
@@ -124,6 +129,11 @@ void app_main()
         printf("SPI initialized\n");
     }  
     ret=init_TDC1000(&tdc1000_x_handle);
+    if(ret==ESP_OK)
+    {
+        printf("TDC1000 X initialized\n");
+    }  
+    ret=init_TDC1000(&tdc1000_y_handle);
     if(ret==ESP_OK)
     {
         printf("TDC1000 X initialized\n");

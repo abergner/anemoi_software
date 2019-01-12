@@ -6,13 +6,23 @@
 #include "freertos/queue.h"
 
 #include "include/anemoi_tasks.h"
+#include "include/anemoi_pinout.h"
+//#include "include/anemoi_spi.h"
 
+
+void init_anemoi_tasks(void)
+{
+    
+    xTaskCreate(&trigger_task, "trigger_task", 512, NULL, 4, NULL);
+    
+    
+}
 
 
 void time_measurement_task(void *pvParameter)
 {
     
-    START_queue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
+    /*START_queue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
     if( START_queue == 0 )
     {
        printf("Failed to create the START queue.\n");
@@ -73,13 +83,13 @@ void time_measurement_task(void *pvParameter)
             else
             {
                 time=(double)(start-stops[i])/240000000;                      
-            }*/
-            /*if(i==0)
+            }
+            if(i==0)
             {
                 
                 printf("%.12fcentimetros\n",100*343*(time/1000));
                 printf("%.12fcentimetros\n",(100*343*(time/1000-((double)7/(double)40000))));
-            }*/
+            }
             stop_times[i]=time;
            
         }
@@ -121,13 +131,13 @@ void time_measurement_task(void *pvParameter)
         printf("Time of flight:\t%.12fmseg\n",TOF*1000);
         vTaskDelay(50 / portTICK_PERIOD_MS); 
         
-    }
+    }*/
        
 }
            
 void TDC1000_task(void *pvParameter)
 {
-    esp_err_t ret;
+    /*esp_err_t ret;
     spi_device_handle_t handle;
     
     
@@ -161,7 +171,7 @@ void TDC1000_task(void *pvParameter)
     }
     //Never reached.
     ret=spi_bus_remove_device(handle);
-    assert(ret==ESP_OK);
+    assert(ret==ESP_OK);*/
     
 }
 

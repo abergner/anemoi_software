@@ -159,7 +159,8 @@ app_main.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
  /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_gpio.h \
  /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_clock.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_spi.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_spi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_tasks.h
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/cache.h:
 
@@ -480,4 +481,6 @@ app_main.o: \
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_clock.h:
 
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_spi.h:
+
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_tasks.h:
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/./app_main.c:
