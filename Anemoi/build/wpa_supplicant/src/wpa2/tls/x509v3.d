@@ -10,7 +10,7 @@ src/wpa2/tls/x509v3.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_assert.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -82,7 +82,7 @@ src/wpa2/tls/x509v3.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

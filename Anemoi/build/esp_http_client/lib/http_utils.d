@@ -25,7 +25,7 @@ lib/http_utils.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp_http_client/lib/include/http_utils.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/time.h
@@ -80,7 +80,7 @@ lib/http_utils.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

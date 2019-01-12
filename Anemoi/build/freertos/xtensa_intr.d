@@ -24,7 +24,7 @@ xtensa_intr.o: /home/alex/esp32/esp-idf/components/freertos/xtensa_intr.c \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/system.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_context.h \
@@ -127,7 +127,7 @@ xtensa_intr.o: /home/alex/esp32/esp-idf/components/freertos/xtensa_intr.c \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

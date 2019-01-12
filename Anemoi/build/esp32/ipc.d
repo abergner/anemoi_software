@@ -18,7 +18,7 @@ ipc.o: /home/alex/esp32/esp-idf/components/esp32/ipc.c \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -122,7 +122,7 @@ ipc.o: /home/alex/esp32/esp-idf/components/esp32/ipc.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

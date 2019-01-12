@@ -1,5 +1,5 @@
 stack_check.o: /home/alex/esp32/esp-idf/components/esp32/stack_check.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -58,7 +58,7 @@ stack_check.o: /home/alex/esp32/esp-idf/components/esp32/stack_check.c \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core-matmap.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/touch_channel.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h:
 

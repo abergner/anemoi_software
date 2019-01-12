@@ -1,5 +1,5 @@
 anemoi_clock.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/anemoi_clock.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/anemoi_clock.c \
  /home/alex/esp32/esp-idf/components/driver/include/driver/ledc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -23,7 +23,7 @@ anemoi_clock.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -59,8 +59,8 @@ anemoi_clock.o: \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime-core-state.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_clock.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_pinout.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_clock.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h
 
 /home/alex/esp32/esp-idf/components/driver/include/driver/ledc.h:
 
@@ -108,7 +108,7 @@ anemoi_clock.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 
@@ -180,7 +180,7 @@ anemoi_clock.o: \
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_clock.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_clock.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_pinout.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/./anemoi_clock.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/./anemoi_clock.c:

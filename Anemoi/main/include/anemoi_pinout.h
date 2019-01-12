@@ -1,5 +1,5 @@
-#ifndef ANEMOI_PINOUT_H_
-#define ANEMOI_PINOUT_H_
+#ifndef _ANEMOI_PINOUT_H_
+#define _ANEMOI_PINOUT_H_
 
 
 

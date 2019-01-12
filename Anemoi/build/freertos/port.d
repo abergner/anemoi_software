@@ -26,7 +26,7 @@ port.o: /home/alex/esp32/esp-idf/components/freertos/port.c \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/corebits.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/system.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_context.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
@@ -143,7 +143,7 @@ port.o: /home/alex/esp32/esp-idf/components/freertos/port.c \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

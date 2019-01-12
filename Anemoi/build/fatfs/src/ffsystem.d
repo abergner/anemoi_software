@@ -10,7 +10,7 @@ src/ffsystem.o: /home/alex/esp32/esp-idf/components/fatfs/src/ffsystem.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/syslimits.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/endian.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/param.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -107,7 +107,7 @@ src/ffsystem.o: /home/alex/esp32/esp-idf/components/fatfs/src/ffsystem.c \
 
 /home/alex/esp32/esp-idf/components/newlib/include/machine/param.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 

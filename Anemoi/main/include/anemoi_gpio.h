@@ -1,5 +1,5 @@
-#ifndef ANEMOI_GPIO_H_
-#define ANEMOI_GPIO_H_
+#ifndef _ANEMOI_GPIO_H_
+#define _ANEMOI_GPIO_H_
 
 void init_gpio_vdd_enable(void);
 

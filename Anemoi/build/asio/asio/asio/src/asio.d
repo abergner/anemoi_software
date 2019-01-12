@@ -3,7 +3,7 @@ asio/asio/src/asio.o: \
  /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/impl/src.hpp \
  /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/detail/config.hpp \
  /home/alex/esp32/esp-idf/components/asio/port/include/esp_asio_config.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/impl/error.ipp \
  /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/error.hpp \
  /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/error_code.hpp \
@@ -325,7 +325,7 @@ asio/asio/src/asio.o: \
 
 /home/alex/esp32/esp-idf/components/asio/port/include/esp_asio_config.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/asio/asio/asio/include/asio/impl/error.ipp:
 

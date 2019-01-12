@@ -31,7 +31,7 @@ src/crypto/des-internal.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -109,7 +109,7 @@ src/crypto/des-internal.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

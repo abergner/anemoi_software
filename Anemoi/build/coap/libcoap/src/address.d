@@ -1,7 +1,7 @@
 libcoap/src/address.o: \
  /home/alex/esp32/esp-idf/components/coap/libcoap/src/address.c \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -126,7 +126,7 @@ libcoap/src/address.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

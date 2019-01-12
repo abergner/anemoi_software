@@ -18,7 +18,7 @@ heap_trace.o: /home/alex/esp32/esp-idf/components/heap/heap_trace.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/syslimits.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/endian.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/param.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/heap/include/esp_heap_trace.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -126,7 +126,7 @@ heap_trace.o: /home/alex/esp32/esp-idf/components/heap/heap_trace.c \
 
 /home/alex/esp32/esp-idf/components/newlib/include/machine/param.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/heap/include/esp_heap_trace.h:
 

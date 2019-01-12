@@ -1,5 +1,5 @@
 anemoi_gpio.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/anemoi_gpio.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/anemoi_gpio.c \
  /home/alex/esp32/esp-idf/components/driver/include/driver/gpio.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -23,7 +23,7 @@ anemoi_gpio.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -41,8 +41,8 @@ anemoi_gpio.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_intr_alloc.h \
  /home/alex/esp32/esp-idf/components/soc/include/soc/gpio_periph.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_gpio.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_pinout.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_gpio.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h
 
 /home/alex/esp32/esp-idf/components/driver/include/driver/gpio.h:
 
@@ -90,7 +90,7 @@ anemoi_gpio.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 
@@ -126,7 +126,7 @@ anemoi_gpio.o: \
 
 /home/alex/esp32/esp-idf/components/soc/include/soc/gpio_periph.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_gpio.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_gpio.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/include/anemoi_pinout.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/main/./anemoi_gpio.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/include/anemoi_pinout.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/main/./anemoi_gpio.c:

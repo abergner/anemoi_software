@@ -27,7 +27,7 @@ src/diskio_wl.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -153,7 +153,7 @@ src/diskio_wl.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

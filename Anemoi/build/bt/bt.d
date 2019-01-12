@@ -22,7 +22,7 @@ bt.o: /home/alex/esp32/esp-idf/components/bt/bt.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/heap/include/esp_heap_caps.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -150,7 +150,7 @@ bt.o: /home/alex/esp32/esp-idf/components/bt/bt.c \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/heap/include/esp_heap_caps.h:
 

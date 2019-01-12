@@ -32,7 +32,7 @@ nghttp2/lib/nghttp2_helper.o: \
  /home/alex/esp32/esp-idf/components/nghttp/port/include/nghttp2/nghttp2ver.h \
  /home/alex/esp32/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h
 
@@ -100,7 +100,7 @@ nghttp2/lib/nghttp2_helper.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

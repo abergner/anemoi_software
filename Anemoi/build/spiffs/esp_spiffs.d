@@ -22,7 +22,7 @@ esp_spiffs.o: /home/alex/esp32/esp-idf/components/spiffs/esp_spiffs.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -159,7 +159,7 @@ esp_spiffs.o: /home/alex/esp32/esp-idf/components/spiffs/esp_spiffs.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

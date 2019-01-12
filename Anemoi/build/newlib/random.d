@@ -18,7 +18,7 @@ random.o: /home/alex/esp32/esp-idf/components/newlib/random.c \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/endian.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/param.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h \
@@ -109,7 +109,7 @@ random.o: /home/alex/esp32/esp-idf/components/newlib/random.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

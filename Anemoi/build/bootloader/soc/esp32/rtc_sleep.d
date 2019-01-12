@@ -9,7 +9,7 @@ esp32/rtc_sleep.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_attr.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_dport_access.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/bootloader/../include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/bootloader/../include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -46,7 +46,7 @@ esp32/rtc_sleep.o: \
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_dport_access.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/bootloader/../include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
 

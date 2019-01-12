@@ -1,5 +1,5 @@
 termios.o: /home/alex/esp32/esp-idf/components/newlib/termios.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/sys/termios.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -19,7 +19,7 @@ termios.o: /home/alex/esp32/esp-idf/components/newlib/termios.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/errno.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/sys/termios.h:
 

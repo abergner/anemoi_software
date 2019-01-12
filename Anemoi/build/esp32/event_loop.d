@@ -26,7 +26,7 @@ event_loop.o: /home/alex/esp32/esp-idf/components/esp32/event_loop.c \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_wifi.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
@@ -186,7 +186,7 @@ event_loop.o: /home/alex/esp32/esp-idf/components/esp32/event_loop.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

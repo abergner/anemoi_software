@@ -8,7 +8,7 @@ library/ssl_stack.o: \
  /home/alex/esp32/esp-idf/components/openssl/include/internal/x509_vfy.h \
  /home/alex/esp32/esp-idf/components/openssl/include/internal/ssl_dbg.h \
  /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_opt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_port.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
@@ -58,7 +58,7 @@ library/ssl_stack.o: \
 
 /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_opt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_port.h:
 

@@ -24,7 +24,7 @@ wifi_os_adapter.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -200,7 +200,7 @@ wifi_os_adapter.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

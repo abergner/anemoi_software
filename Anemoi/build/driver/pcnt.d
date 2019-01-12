@@ -4,7 +4,7 @@ pcnt.o: /home/alex/esp32/esp-idf/components/driver/pcnt.c \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/features.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_assert.h \
@@ -99,7 +99,7 @@ pcnt.o: /home/alex/esp32/esp-idf/components/driver/pcnt.c \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h:
 

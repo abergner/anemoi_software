@@ -20,7 +20,7 @@ freertos_hooks.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -122,7 +122,7 @@ freertos_hooks.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

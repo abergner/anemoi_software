@@ -3,7 +3,7 @@ src/flash_encrypt.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/bootloader/../include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/bootloader/../include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include/bootloader_random.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include/esp_image_format.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
@@ -46,7 +46,7 @@ src/flash_encrypt.o: \
 
 /home/alex/esp32/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/bootloader/../include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bootloader_support/include/bootloader_random.h:
 

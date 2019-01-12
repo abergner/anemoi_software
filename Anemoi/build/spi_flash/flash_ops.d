@@ -16,7 +16,7 @@ flash_ops.o: /home/alex/esp32/esp-idf/components/spi_flash/flash_ops.c \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
@@ -140,7 +140,7 @@ flash_ops.o: /home/alex/esp32/esp-idf/components/spi_flash/flash_ops.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Anemoi/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 
