@@ -7,6 +7,10 @@ void enable_tdc1000_y(void);
 void disable_tdc1000_x(void);
 void disable_tdc1000_y(void);
 
+void init_gpio_tdc7200_enable(void);
+void enable_tdc7200(void);
+void disable_tdc7200(void);
+
 //void init_gpio_chsel(void);
 
 

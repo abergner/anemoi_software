@@ -129,25 +129,28 @@ esp_err_t init_TDC7200(spi_device_handle_t * handle_ptr)
 {
     esp_err_t ret;
     unsigned int i=0;
-    char init_sendbuf[20] = {0};
-    char recvbuf[20] = {0};
+    char init_sendbuf[2] = {0};
+    char recvbuf[2] = {0};
     spi_transaction_t t;
     memset(&t, 0, sizeof(t));
-        
-    
-    for(i=0;i<TDC7200_CONFIG_REGISTERS;i++)
-    {
-        init_sendbuf[2*i]=WRITE|((char)i);//dirección registro
-        init_sendbuf[2*i+1]=config_TDC7200[i];//configuración de registro
-    }
     t.length=sizeof(init_sendbuf)*8;
     t.tx_buffer=init_sendbuf;
     t.rx_buffer=recvbuf;
-    ret=spi_device_transmit(*handle_ptr, &t);
-    if(ret!=ESP_OK)
+    
+        
+    //init_sendbuf[1]=WRITE|((char)i);//dirección registro
+    //init_sendbuf[1]=config_TDC7200[1];//configuración de registro
+    for(i=0;i<TDC7200_CONFIG_REGISTERS;i++)
     {
-        printf("TDC7200 initialization was not successful \n");    
+        init_sendbuf[0]=WRITE|((char)i);//dirección registro
+        init_sendbuf[1]=config_TDC7200[i];//configuración de registro
+        ret=spi_device_transmit(*handle_ptr, &t);
+        if(ret!=ESP_OK)
+        {
+            printf("TDC7200 initialization was not successful \n");    
+        } 
     }
+   
     return ret;
 }
 
@@ -155,28 +158,26 @@ esp_err_t read_TDC7200_registers(spi_device_handle_t * handle_ptr)
 {
     esp_err_t ret=0;
     unsigned int i=0;
-    char init_sendbuf[20] = {0};
-    char recvbuf[20] = {0};
+    char init_sendbuf[2] = {0};
+    char recvbuf[2] = {0};
     spi_transaction_t t;
     memset(&t, 0, sizeof(t));
-        
+    t.length=sizeof(init_sendbuf)*8;
+    t.tx_buffer=init_sendbuf;
+    t.rx_buffer=recvbuf; 
     
     for(i=0;i<TDC7200_CONFIG_REGISTERS;i++)
     {
-        init_sendbuf[2*i]=(char)i;//dirección registro
-        init_sendbuf[2*i+1]=0;
+        init_sendbuf[0]=(char)i;//dirección registro
+        init_sendbuf[1]=0;
+        ret=spi_device_transmit(*handle_ptr, &t);
+        if(ret!=ESP_OK)
+        {
+            printf("TDC7200 read was not successful \n");    
+        }
+        printf("Register %d:%0x\n",i,recvbuf[1]);
     }
-    t.length=sizeof(init_sendbuf)*8;
-    t.tx_buffer=init_sendbuf;
-    t.rx_buffer=recvbuf;
-    ret=spi_device_transmit(*handle_ptr, &t);
-    if(ret!=ESP_OK)
-    {
-        printf("TDC7200 read was not successful \n");    
-    }
-    for(i=0;i<TDC7200_CONFIG_REGISTERS;i++)
-    {
-        printf("Register %d:%0x\n",i,recvbuf[2*i+1]);
-    }
+   
+    
     return ret;
 }

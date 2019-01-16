@@ -37,6 +37,24 @@ void disable_tdc1000_y(void)
     gpio_set_level(GPIO_TDC1000_Y_EN, 0);
 }
 
+void init_gpio_tdc7200_enable(void)
+{
+    gpio_pad_select_gpio(GPIO_TDC7200_EN);
+    gpio_set_direction(GPIO_TDC7200_EN, GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_TDC7200_EN, 0);
+    
+}
+void enable_tdc7200(void)
+{
+    gpio_set_level(GPIO_TDC7200_EN, 1);
+}
+void disable_tdc7200(void)
+{
+    gpio_set_level(GPIO_TDC7200_EN, 0);
+}
+
+
+
 
 void init_gpio_vdd_enable(void)
 {

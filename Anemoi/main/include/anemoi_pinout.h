@@ -12,6 +12,7 @@
 #define GPIO_VDD_EN_X2      17
 #define GPIO_VDD_EN_Y1      16
 #define GPIO_VDD_EN_Y2      4
+#define GPIO_TDC7200_EN     15
 #define GPIO_SPI_MOSI       13
 #define GPIO_SPI_MISO       12
 #define GPIO_SPI_CLK        14

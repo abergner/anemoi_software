@@ -37,9 +37,13 @@ void app_main()
     init_gpio_vdd_enable();
     //enable_Y2_vdd();
     init_clock();
+    init_gpio_tdc7200_enable();
     init_gpio_tdc1000_enable();
     //enable_tdc1000_y();
     //run_anemoi_tasks();
+    disable_tdc7200();
+    vTaskDelay(2000/ portTICK_PERIOD_MS); 
+    enable_tdc7200();
     
     esp_err_t ret;
     spi_device_handle_t tdc1000_x_handle;
@@ -77,14 +81,16 @@ void app_main()
         //read_TDC1000_registers(&tdc1000_y_handle);
         //vTaskDelay(5000 / portTICK_PERIOD_MS); 
         
-        read_TDC7200_registers(&tdc7200_handle);
+        
         vTaskDelay(2000 / portTICK_PERIOD_MS); 
-        ret=init_TDC7200(&tdc7200_handle);
+        read_TDC7200_registers(&tdc7200_handle);
         printf("\nTDC7200  \n");
+        /*vTaskDelay(1000/ portTICK_PERIOD_MS);  
+        ret=init_TDC7200(&tdc7200_handle);
         if(ret==ESP_OK)
         {
            printf("TDC7200 initialized\n");
-        }
+        }*/
         
               
     }
