@@ -29,17 +29,14 @@
 void app_main()
 {    
     init_clock();
-    //xTaskCreate(&trigger_task, "trigger_task", 512, NULL, 4, NULL);
-    //xTaskCreate(&TDC1000_task, "TDC1000_task", 4096, NULL, 5, NULL);
-    //xTaskCreate(&time_measurement_task, "time_measurement_task", 8192, NULL, 6, NULL);*/
     
-    //init_gpio_vdd_enable();
-    init_gpio_vdd_enable();
-    //enable_Y2_vdd();
+    init_anemoi_gpio();
     init_clock();
-    init_gpio_tdc7200_enable();
-    init_gpio_tdc1000_enable();
-    //enable_tdc1000_y();
+    
+    enable_tdc1000_x();
+    enable_tdc1000_y();
+    select_channel_1();
+    enable_X1_vdd();
     //run_anemoi_tasks();
     disable_tdc7200();
     vTaskDelay(2000/ portTICK_PERIOD_MS); 
@@ -56,17 +53,17 @@ void app_main()
     {
         printf("SPI initialized\n");
     }  
-    //ret=init_TDC1000(&tdc1000_x_handle);
+    ret=init_TDC1000_SPI(&tdc1000_x_handle);
     if(ret==ESP_OK)
     {
         printf("TDC1000 X initialized\n");
     }  
-    //ret=init_TDC1000(&tdc1000_y_handle);
+    ret=init_TDC1000_SPI(&tdc1000_y_handle);
     if(ret==ESP_OK)
     {
         printf("TDC1000 Y initialized\n");
     }  
-    ret=init_TDC7200(&tdc7200_handle);
+    ret=init_TDC7200_SPI(&tdc7200_handle);
     if(ret==ESP_OK)
     {
         printf("TDC7200 initialized\n");
@@ -83,8 +80,11 @@ void app_main()
         
         
         vTaskDelay(2000 / portTICK_PERIOD_MS); 
-        read_TDC7200_registers(&tdc7200_handle);
+        //read_TDC7200_config_registers(&tdc7200_handle);
+        new_TDC7200_measurement(&tdc7200_handle);
         printf("\nTDC7200  \n");
+        vTaskDelay(2000 / portTICK_PERIOD_MS); 
+        read_TDC7200_meas_registers(&tdc7200_handle);
         /*vTaskDelay(1000/ portTICK_PERIOD_MS);  
         ret=init_TDC7200(&tdc7200_handle);
         if(ret==ESP_OK)

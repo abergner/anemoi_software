@@ -8,6 +8,14 @@
 #include "include/anemoi_gpio.h"
 #include "include/anemoi_pinout.h"
 
+void init_anemoi_gpio(void)
+{
+    init_gpio_tdc1000_enable();
+    init_gpio_tdc7200_enable();
+    init_gpio_chsel();
+    init_gpio_vdd_enable();
+}
+
 void init_gpio_tdc1000_enable(void)
 {
     gpio_pad_select_gpio(GPIO_TDC1000_X_EN);
@@ -53,8 +61,22 @@ void disable_tdc7200(void)
     gpio_set_level(GPIO_TDC7200_EN, 0);
 }
 
+void init_gpio_chsel(void)
+{
+    gpio_pad_select_gpio(GPIO_CHSEL);
+    gpio_set_direction(GPIO_CHSEL, GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_CHSEL, 0); 
+}
 
+void select_channel_1(void)
+{
+    gpio_set_level(GPIO_CHSEL, 0);
+}
 
+void select_channel_2(void)
+{
+    gpio_set_level(GPIO_CHSEL, 1);
+}
 
 void init_gpio_vdd_enable(void)
 {
@@ -107,6 +129,14 @@ void enable_Y2_vdd(void)
     gpio_set_level(GPIO_VDD_EN_Y1, 0);
     
     gpio_set_level(GPIO_VDD_EN_Y2, 1); 
+}
+
+void disable_all_vdd(void)
+{
+    gpio_set_level(GPIO_VDD_EN_X1, 0);
+    gpio_set_level(GPIO_VDD_EN_X2, 0);
+    gpio_set_level(GPIO_VDD_EN_Y1, 0);   
+    gpio_set_level(GPIO_VDD_EN_Y2, 0);    
 }
 
 /*
