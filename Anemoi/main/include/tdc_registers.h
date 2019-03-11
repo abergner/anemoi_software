@@ -8,6 +8,11 @@
 #ifndef MAIN_TDC_REGISTERS_H_
 #define MAIN_TDC_REGISTERS_H_
 
+//config4 values
+#define CONFIG_4_RECEIVE_MODEv			0x0u //receive single echo
+#define CONFIG_4_TRIG_EDGE_POLARITYv	0x0u //rising edge polarity of trigger
+#define CONFIG_4_TX_PH_SHIFT_POSv 		0x1Fu //TX 180° pulse shift position
+
 /* TOF Values */
 #define TIMING_REGv 			0x300u
 #define TOF_1_LNA_FBv 			0x1u //resistive feedback

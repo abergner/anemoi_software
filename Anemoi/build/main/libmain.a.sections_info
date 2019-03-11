@@ -1,0 +1,304 @@
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/main/libmain.a:
+
+anemoi_clock.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.init_clock 00000010  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .text         00000000  00000000  00000000  00000044  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .data         00000000  00000000  00000000  00000044  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .bss          00000000  00000000  00000000  00000044  2**0
+                  ALLOC
+  4 .text.init_clock 00000017  00000000  00000000  00000044  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .data.ledc_channel 0000001c  00000000  00000000  0000005c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .data.ledc_timer 00000010  00000000  00000000  00000078  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .debug_frame  00000028  00000000  00000000  00000088  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  8 .debug_info   0000033c  00000000  00000000  000000b0  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_abbrev 000000ee  00000000  00000000  000003ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_aranges 00000020  00000000  00000000  000004da  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  000004fa  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 12 .debug_line   0000019c  00000000  00000000  0000050a  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 13 .debug_str    00000567  00000000  00000000  000006a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .comment      0000003c  00000000  00000000  00000c0d  2**0
+                  CONTENTS, READONLY
+ 15 .xtensa.info  00000038  00000000  00000000  00000c49  2**0
+                  CONTENTS, READONLY
+ 16 .xt.lit       00000008  00000000  00000000  00000c81  2**0
+                  CONTENTS, RELOC, READONLY
+ 17 .xt.prop      00000048  00000000  00000000  00000c89  2**0
+                  CONTENTS, RELOC, READONLY
+
+anemoi_tasks.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.trigger_task 00000018  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .literal.run_anemoi_tasks 00000010  00000000  00000000  0000004c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  2 .text         00000000  00000000  00000000  0000005c  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .data         00000000  00000000  00000000  0000005c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .bss          00000000  00000000  00000000  0000005c  2**0
+                  ALLOC
+  5 .text.trigger_task 00000040  00000000  00000000  0000005c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .rodata.str1.4 0000000d  00000000  00000000  0000009c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .text.run_anemoi_tasks 0000001f  00000000  00000000  000000ac  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  8 .text.time_measurement_task 00000005  00000000  00000000  000000cc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  9 .text.TDC1000_task 00000005  00000000  00000000  000000d4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 10 .debug_frame  00000070  00000000  00000000  000000dc  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 11 .debug_info   00000346  00000000  00000000  0000014c  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 12 .debug_abbrev 0000014c  00000000  00000000  00000492  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_aranges 00000038  00000000  00000000  000005de  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 14 .debug_ranges 00000028  00000000  00000000  00000616  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 15 .debug_line   000002d8  00000000  00000000  0000063e  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 16 .debug_str    00000352  00000000  00000000  00000916  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .comment      0000003c  00000000  00000000  00000c68  2**0
+                  CONTENTS, READONLY
+ 18 .xtensa.info  00000038  00000000  00000000  00000ca4  2**0
+                  CONTENTS, READONLY
+ 19 .xt.lit       00000010  00000000  00000000  00000cdc  2**0
+                  CONTENTS, RELOC, READONLY
+ 20 .xt.prop      000000a8  00000000  00000000  00000cec  2**0
+                  CONTENTS, RELOC, READONLY
+
+app_main.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.app_main 0000007c  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .text         00000000  00000000  00000000  000000b0  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .data         00000000  00000000  00000000  000000b0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .bss          00000000  00000000  00000000  000000b0  2**0
+                  ALLOC
+  4 .rodata.str1.4 0000006c  00000000  00000000  000000b0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .text.app_main 000000d4  00000000  00000000  0000011c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .debug_frame  00000028  00000000  00000000  000001f0  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_info   00000374  00000000  00000000  00000218  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  8 .debug_abbrev 000000e6  00000000  00000000  0000058c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000034  00000000  00000000  00000672  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 10 .debug_aranges 00000020  00000000  00000000  000006a6  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  000006c6  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 12 .debug_line   000003b1  00000000  00000000  000006d6  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 13 .debug_str    00000310  00000000  00000000  00000a87  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .comment      0000003c  00000000  00000000  00000d97  2**0
+                  CONTENTS, READONLY
+ 15 .xtensa.info  00000038  00000000  00000000  00000dd3  2**0
+                  CONTENTS, READONLY
+ 16 .xt.lit       00000008  00000000  00000000  00000e0b  2**0
+                  CONTENTS, RELOC, READONLY
+ 17 .xt.prop      00000060  00000000  00000000  00000e13  2**0
+                  CONTENTS, RELOC, READONLY
+
+anemoi_gpio.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.init_gpio_tdc1000_enable 00000018  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .literal.enable_tdc1000_x 00000004  00000000  00000000  0000004c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  2 .literal.enable_tdc1000_y 00000004  00000000  00000000  00000050  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  3 .literal.disable_tdc1000_x 00000004  00000000  00000000  00000054  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .literal.disable_tdc1000_y 00000004  00000000  00000000  00000058  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .literal.init_gpio_tdc7200_enable 0000000c  00000000  00000000  0000005c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .literal.enable_tdc7200 00000004  00000000  00000000  00000068  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .literal.disable_tdc7200 00000004  00000000  00000000  0000006c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  8 .literal.init_gpio_chsel 0000000c  00000000  00000000  00000070  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  9 .literal.select_channel_1 00000004  00000000  00000000  0000007c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 10 .literal.select_channel_2 00000004  00000000  00000000  00000080  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 11 .literal.init_gpio_vdd_enable 00000030  00000000  00000000  00000084  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 12 .literal.init_anemoi_gpio 00000010  00000000  00000000  000000b4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 13 .literal.enable_X1_vdd 00000010  00000000  00000000  000000c4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 14 .literal.enable_X2_vdd 00000010  00000000  00000000  000000d4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 15 .literal.enable_Y1_vdd 00000010  00000000  00000000  000000e4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 16 .literal.enable_Y2_vdd 00000010  00000000  00000000  000000f4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 17 .literal.disable_all_vdd 00000010  00000000  00000000  00000104  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 18 .text         00000000  00000000  00000000  00000114  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .data         00000000  00000000  00000000  00000114  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 20 .bss          00000000  00000000  00000000  00000114  2**0
+                  ALLOC
+ 21 .text.init_gpio_tdc1000_enable 0000003e  00000000  00000000  00000114  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 22 .text.enable_tdc1000_x 0000000f  00000000  00000000  00000154  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 23 .text.enable_tdc1000_y 0000000f  00000000  00000000  00000164  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 24 .text.disable_tdc1000_x 0000000f  00000000  00000000  00000174  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 25 .text.disable_tdc1000_y 0000000f  00000000  00000000  00000184  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 26 .text.init_gpio_tdc7200_enable 00000022  00000000  00000000  00000194  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 27 .text.enable_tdc7200 0000000f  00000000  00000000  000001b8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 28 .text.disable_tdc7200 0000000f  00000000  00000000  000001c8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 29 .text.init_gpio_chsel 00000022  00000000  00000000  000001d8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 30 .text.select_channel_1 0000000f  00000000  00000000  000001fc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 31 .text.select_channel_2 0000000f  00000000  00000000  0000020c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 32 .text.init_gpio_vdd_enable 00000076  00000000  00000000  0000021c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 33 .text.init_anemoi_gpio 0000001d  00000000  00000000  00000294  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 34 .text.enable_X1_vdd 0000002e  00000000  00000000  000002b4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 35 .text.enable_X2_vdd 0000002e  00000000  00000000  000002e4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 36 .text.enable_Y1_vdd 0000002e  00000000  00000000  00000314  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 37 .text.enable_Y2_vdd 0000002e  00000000  00000000  00000344  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 38 .text.disable_all_vdd 0000002e  00000000  00000000  00000374  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 39 .debug_frame  000001c0  00000000  00000000  000003a4  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 40 .debug_info   00000703  00000000  00000000  00000564  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 41 .debug_abbrev 000000ad  00000000  00000000  00000c67  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 42 .debug_aranges 000000a8  00000000  00000000  00000d14  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 43 .debug_ranges 00000098  00000000  00000000  00000dbc  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 44 .debug_line   00000393  00000000  00000000  00000e54  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 45 .debug_str    00000375  00000000  00000000  000011e7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 46 .comment      0000003c  00000000  00000000  0000155c  2**0
+                  CONTENTS, READONLY
+ 47 .xtensa.info  00000038  00000000  00000000  00001598  2**0
+                  CONTENTS, READONLY
+ 48 .xt.lit       00000090  00000000  00000000  000015d0  2**0
+                  CONTENTS, RELOC, READONLY
+ 49 .xt.prop      00000360  00000000  00000000  00001660  2**0
+                  CONTENTS, RELOC, READONLY
+
+anemoi_spi.o:     file format elf32-xtensa-le
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .literal.init_SPI 0000002c  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .literal.init_TDC1000_SPI 00000010  00000000  00000000  00000060  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  2 .literal.read_TDC1000_registers 00000014  00000000  00000000  00000070  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  3 .literal.init_TDC7200_SPI 00000010  00000000  00000000  00000084  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .literal.read_TDC7200_config_registers 00000014  00000000  00000000  00000094  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .literal.read_TDC7200_meas_registers 00000024  00000000  00000000  000000a8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .literal.new_TDC7200_measurement 00000010  00000000  00000000  000000cc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .text         00000000  00000000  00000000  000000dc  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  8 .data         00000000  00000000  00000000  000000dc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .bss          00000000  00000000  00000000  000000dc  2**0
+                  ALLOC
+ 10 .rodata.str1.4 00000136  00000000  00000000  000000dc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 11 .text.init_SPI 000000ae  00000000  00000000  00000214  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 12 .text.init_TDC1000_SPI 0000007f  00000000  00000000  000002c4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 13 .text.read_TDC1000_registers 00000091  00000000  00000000  00000344  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 14 .text.init_TDC7200_SPI 0000005d  00000000  00000000  000003d8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 15 .text.read_TDC7200_config_registers 00000067  00000000  00000000  00000438  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 16 .text.read_TDC7200_meas_registers 00000093  00000000  00000000  000004a0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 17 .text.new_TDC7200_measurement 0000004e  00000000  00000000  00000534  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 18 .data.config_TDC7200 00000028  00000000  00000000  00000584  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 19 .data.config_TDC1000 00000028  00000000  00000000  000005ac  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 20 .debug_frame  000000b8  00000000  00000000  000005d4  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 21 .debug_info   00000a04  00000000  00000000  0000068c  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 22 .debug_abbrev 000001bd  00000000  00000000  00001090  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 23 .debug_loc    0000026c  00000000  00000000  0000124d  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 24 .debug_aranges 00000050  00000000  00000000  000014b9  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 25 .debug_ranges 00000040  00000000  00000000  00001509  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 26 .debug_line   0000063d  00000000  00000000  00001549  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 27 .debug_str    000006c9  00000000  00000000  00001b86  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 28 .comment      0000003c  00000000  00000000  0000224f  2**0
+                  CONTENTS, READONLY
+ 29 .xtensa.info  00000038  00000000  00000000  0000228b  2**0
+                  CONTENTS, READONLY
+ 30 .xt.lit       00000038  00000000  00000000  000022c3  2**0
+                  CONTENTS, RELOC, READONLY
+ 31 .xt.prop      00000270  00000000  00000000  000022fb  2**0
+                  CONTENTS, RELOC, READONLY

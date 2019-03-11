@@ -1,6 +1,7 @@
 #ifndef _ANEMOI_SPI_H_
 #define _ANEMOI_SPI_H_
 
+#include "tdc_registers.h"
 
 typedef enum {CONFIG_0_ADDRESS=0, CONFIG_1_ADDRESS, CONFIG_2_ADDRESS ,CONFIG_3_ADDRESS ,
 CONFIG_4_ADDRESS ,TOF_1_ADDRESS ,TOF_0_ADDRESS ,ERRORS_ADDRESS ,TIMEOUT_ADDRESS  ,CLOCK_RATE_ADDRESS  }TDC1000_Registers_t;
@@ -18,10 +19,11 @@ CONFIG_4_ADDRESS ,TOF_1_ADDRESS ,TOF_0_ADDRESS ,ERRORS_ADDRESS ,TIMEOUT_ADDRESS 
 #define CONFIG_2    0x28 //External Channel select enabled;Damping enabled; TOF_MEAS_MODE = 0
 #define CONFIG_3    0x03 //Threshold -125mV
 #define CONFIG_4    0x1F //No phase shift
-#define TOF_1       0xE7 //21 Db PGA Gain; Resistive feedback;TIMING_REG[9:8]
-#define TOF_0       0x00 //TIMING_REG[7:0]
+//#define TOF_1       0xE7 //21 Db PGA Gain; Resistive feedback;TIMING_REG[9:8]
+//#define TOF_0       0x00 //TIMING_REG[7:0]
 #define ERRORS      0x00 //Default
-#define TIMEOUT     0x1F
+//#define TIMEOUT     0x1F
+
 #define CLOCK_RATE  0x00 //Default
 
 #define TDC7200_CONFIG_REGISTERS 10
