@@ -6,6 +6,10 @@ Anemómetro digital por ultrasonido para navegación
 
 Cátedra Diseño de Equipos Electrónicos - ITBA 2018
 
-Autores:  Bergner, Alexander Martin
+Autores:  
+
+          Bergner, Alexander Martin
+          
           Cufaro, Gabriel Agustín
+          
           Gluck, Ignacio
