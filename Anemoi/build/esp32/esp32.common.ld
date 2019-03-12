@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/ld/esp32.common.ld.in */
+/* Generated from: C:\Users\cufar\eclipse-workspace\esp-bm\esp-idf\components\esp32\ld\esp32.common.ld.in */
 
 /*  Default entry point:  */
 ENTRY(call_start_cpu0);
