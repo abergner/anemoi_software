@@ -1,5 +1,6 @@
-src//jsmn.o: /home/alex/esp32/esp-idf/components/jsmn/src/jsmn.c \
- /home/alex/esp32/esp-idf/components/jsmn/include/jsmn.h
+src//jsmn.o: \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/jsmn/src/jsmn.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/jsmn/include/jsmn.h
 
-/home/alex/esp32/esp-idf/components/jsmn/include/jsmn.h:
-/home/alex/esp32/esp-idf/components/jsmn/src//jsmn.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/jsmn/include/jsmn.h:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/jsmn/src//jsmn.c:

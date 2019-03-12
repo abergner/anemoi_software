@@ -1,87 +1,87 @@
 expat/expat/lib/xmltok.o: \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok.c \
- /home/alex/esp32/esp-idf/components/newlib/include/string.h \
- /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
- /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/config.h \
- /home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/features.h \
- /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h \
- /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/_types.h \
- /home/alex/esp32/esp-idf/components/newlib/include/machine/_types.h \
- /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/components/expat/port/include/expat_config.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/expat_external.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/internal.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/nametab.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_impl.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/ascii.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_impl.c \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/asciitab.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/utf8tab.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/iasciitab.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/latin1tab.h \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_ns.c
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/newlib.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/config.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/ieeefp.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/features.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/reent.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_types.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_types.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_default_types.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/lock.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/cdefs.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/port/include/expat_config.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/expat_external.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/internal.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/nametab.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_impl.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/ascii.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_impl.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/asciitab.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/utf8tab.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/iasciitab.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/latin1tab.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_ns.c
 
-/home/alex/esp32/esp-idf/components/newlib/include/string.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/_ansi.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/newlib.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/newlib.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/config.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/config.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/ieeefp.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/features.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/features.h:
 
-/home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/reent.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/_ansi.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/_types.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_types.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/machine/_types.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_types.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_default_types.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/lock.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/cdefs.h:
 
-/home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/components/expat/port/include/expat_config.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/port/include/expat_config.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/expat_external.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/expat_external.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/internal.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/internal.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/nametab.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/nametab.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_impl.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_impl.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/ascii.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/ascii.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_impl.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_impl.c:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/asciitab.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/asciitab.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/utf8tab.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/utf8tab.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/iasciitab.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/iasciitab.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/latin1tab.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/latin1tab.h:
 
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok_ns.c:
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/xmltok.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok_ns.c:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/xmltok.c:

@@ -1,3 +1,3 @@
 src/wpa2/eap_peer/chap.o: \
- /home/alex/esp32/esp-idf/components/wpa_supplicant/src/wpa2/eap_peer/chap.c
-/home/alex/esp32/esp-idf/components/wpa_supplicant/src/wpa2/eap_peer/chap.c:
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wpa2/eap_peer/chap.c
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wpa2/eap_peer/chap.c:

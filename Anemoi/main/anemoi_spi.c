@@ -203,7 +203,7 @@ esp_err_t read_TDC7200_meas_registers(spi_device_handle_t * handle_ptr)
         {
             printf("TDC7200 read was not successful \n");    
         }
-        printf("Register %d:%0x\n",i,recvbuf[1]);
+        printf("Registro %d:%0x\n",i,recvbuf[1]);
         printf("Register %d:%0x\n",i,recvbuf[2]);
         printf("Register %d:%0x\n",i,recvbuf[3]);
         printf("Register %d:%0x\n",i,recvbuf[4]);

@@ -1,3 +1,3 @@
 expat/expat/lib/loadlibrary.o: \
- /home/alex/esp32/esp-idf/components/expat/expat/expat/lib/loadlibrary.c
-/home/alex/esp32/esp-idf/components/expat/expat/expat/lib/loadlibrary.c:
+ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/loadlibrary.c
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/expat/expat/expat/lib/loadlibrary.c:
