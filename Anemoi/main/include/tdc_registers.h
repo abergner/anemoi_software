@@ -10,7 +10,7 @@
 
 //Define values of the fields of the registers individually
 //config0 values
-#define CONFIG_0_NUM_TXv			0x0Bu //Number of TX pulses in a burst: 11 pulses
+#define CONFIG_0_NUM_TXv			0x0Cu //Number of TX pulses in a burst: 11 pulses
 #define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
 
 //config1 values
@@ -47,9 +47,9 @@
 
 //timeout values
 #define TIMEOUT_TOF_TIMEOUT_CTRLv		0x3u //1024xT0 of echo listening
-#define TIMEOUT_ECHO_TIMEOUTv			0x1u //timeout disabled
-#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x3u //64xT0 blanking period of short TOD
-#define TIMEOUT_FORCE_SHORT_TOFv 		0x0u //short TOF disabled
+#define TIMEOUT_ECHO_TIMEOUTv			0x0u //timeout disabled
+#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x0u //64xT0 blanking period of short TOD
+#define TIMEOUT_FORCE_SHORT_TOFv 		0x1u //short TOF disabled
 
 //clock_rate values
 #define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)

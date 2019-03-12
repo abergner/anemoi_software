@@ -38,8 +38,8 @@ void app_main()
     //Enable and select channels of TDC1000. Enable boost circuit of X1.
     enable_tdc1000_x();
     enable_tdc1000_y();
-    select_channel_1();
-    enable_X1_vdd();
+    select_channel_2();
+    enable_Y2_vdd();
 
     //Run trigger generation task, among others
     run_anemoi_tasks();
