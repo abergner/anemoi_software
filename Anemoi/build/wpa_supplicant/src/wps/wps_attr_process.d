@@ -163,3 +163,4 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/includ
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_wifi_crypto_types.h:
 /c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_attr_process.c:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_attr_process.c:

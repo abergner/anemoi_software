@@ -187,3 +187,4 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_wif
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/include/wps/wps_dev_attr.h:
 /c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_registrar.c:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_registrar.c:

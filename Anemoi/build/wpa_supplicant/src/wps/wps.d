@@ -196,3 +196,4 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/includ
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/include/wpa2/eap_peer/eap_common.h:
 /c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps.c:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps.c:

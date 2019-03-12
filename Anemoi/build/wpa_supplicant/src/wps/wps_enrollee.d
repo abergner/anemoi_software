@@ -223,3 +223,4 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h:
 /c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_enrollee.c:
+/c/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wpa_supplicant/src/wps/wps_enrollee.c:
