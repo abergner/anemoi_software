@@ -8,6 +8,14 @@
 #ifndef MAIN_TDC_REGISTERS_H_
 #define MAIN_TDC_REGISTERS_H_
 
+//config0 values
+#define CONFIG_0_NUM_TXv			0xBu //receive single echo
+#define CONFIG_0_TX_FREQ_DIVv		0x4u //rising edge polarity of trigger
+
+//config1 values
+#define CONFIG_1_NUM_RXv			0x0u //rising edge polarity of trigger
+#define CONFIG_1_NUM_AVGv			0x0u //receive single echo
+
 //config2 values
 #define CONFIG_2_TOF_MEAS_MODEv		0x0u //receive single echo
 #define CONFIG_2_CH_SELv			0x0u //rising edge polarity of trigger
@@ -41,6 +49,32 @@
 #define TIMEOUT_ECHO_TIMEOUTv			0x1u //timeout disabled
 #define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x3u //64xT0 blanking period of short TOD
 #define TIMEOUT_FORCE_SHORT_TOFv 		0x0u //short TOF disabled
+
+//clock_rate values
+#define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //receive single echo
+#define CLOCK_RATE_CLOCKIN_DIVv			0x0u //rising edge polarity of trigger
+
+/* config0 Bit Fields */
+#define	CONFIG_0_NUM_TX_MASK			0x1Fu
+#define CONFIG_0_NUM_TX_SHIFT			0
+#define CONFIG_0_NUM_TX_WIDTH			5
+#define CONFIG_0_NUM_TX(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_0_NUM_TX_SHIFT))&CONFIG_0_NUM_TX_MASK)
+
+#define	CONFIG_0_TX_FREQ_DIV_MASK			0xE0u
+#define CONFIG_0_TX_FREQ_DIV_SHIFT			5
+#define CONFIG_0_TX_FREQ_DIV_WIDTH			3
+#define CONFIG_0_TX_FREQ_DIV(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_0_TX_FREQ_DIV_SHIFT))&CONFIG_0_TX_FREQ_DIV_MASK)
+
+/* config1 Bit Fields */
+#define	CONFIG_1_NUM_RX_MASK			0x7u
+#define CONFIG_1_NUM_RX_SHIFT			0
+#define CONFIG_1_NUM_RX_WIDTH			3
+#define CONFIG_1_NUM_RX(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_1_NUM_RX_SHIFT))&CONFIG_1_NUM_RX_MASK)
+
+#define	CONFIG_1_NUM_AVG_MASK			0x38u
+#define CONFIG_1_NUM_AVG_SHIFT			3
+#define CONFIG_1_NUM_AVG_WIDTH			3
+#define CONFIG_1_NUM_AVG(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_1_NUM_AVG_SHIFT))&CONFIG_1_NUM_AVG_MASK)
 
 /* config2 Bit Fields */
 #define	CONFIG_2_TOF_MEAS_MODE_MASK		0x3u
@@ -175,6 +209,8 @@
 #define TIMEOUT_FORCE_SHORT_TOF(x)			(((uint32_t)(((uint32_t)(x))<<TIMEOUT_FORCE_SHORT_TOF_SHIFT))&TIMEOUT_FORCE_SHORT_TOF_MASK)
 
 
+#define CONFIG_0	CONFIG_0_NUM_TX(CONFIG_0_NUM_TXv)|CONFIG_0_TX_FREQ_DIV(CONFIG_0_TX_FREQ_DIVv)
+#define CONFIG_1	0x40u|CONFIG_1_NUM_RX(CONFIG_1_NUM_RXv)|CONFIG_1_NUM_AVG(CONFIG_1_NUM_AVGv)
 #define CONFIG_2	CONFIG_2_TOF_MEAS_MODE(CONFIG_2_TOF_MEAS_MODEv)|CONFIG_2_CH_SEL(CONFIG_2_CH_SELv)|CONFIG_2_EXT_CHSEL(CONFIG_2_EXT_CHSELv)|CONFIG_2_CH_SWP(CONFIG_2_CH_SWPv)|CONFIG_2_DAMPING(CONFIG_2_DAMPINGv)|CONFIG_2_MEAS_MODE(CONFIG_2_MEAS_MODEv)|CONFIG_2_VCOM_SEL(CONFIG_2_VCOM_SELv)
 #define CONFIG_3	CONFIG_3_ECHO_QUAL_THLD(CONFIG_3_ECHO_QUAL_THLDv)|CONFIG_3_BLANKING(CONFIG_3_BLANKINGv)|CONFIG_3_TEMP_CLK_DIV(CONFIG_3_TEMP_CLK_DIVv)|CONFIG_3_TEMP_RTD_SEL(CONFIG_3_TEMP_RTD_SELv)|CONFIG_3_TEMP_MODE(CONFIG_3_TEMP_MODEv)
 #define CONFIG_4	CONFIG_4_RECEIVE_MODE(CONFIG_4_RECEIVE_MODEv)|CONFIG_4_TRIG_EDGE_POLARITY(CONFIG_4_TRIG_EDGE_POLARITYv)|CONFIG_4_TX_PH_SHIFT_POS(CONFIG_4_TX_PH_SHIFT_POSv)
