@@ -10,7 +10,7 @@
 
 //Define values of the fields of the registers individually
 //config0 values
-#define CONFIG_0_NUM_TXv			0x0Cu //Number of TX pulses in a burst: 11 pulses
+#define CONFIG_0_NUM_TXv			0x0Fu //Number of TX pulses in a burst: 11 pulses
 #define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
 
 //config1 values
@@ -27,7 +27,7 @@
 #define CONFIG_2_VCOM_SELv			0x0u //Common-mode voltage reference control (internal)
 
 //config3 values
-#define CONFIG_3_ECHO_QUAL_THLDv	0x3u //Echo qualification DAC threshold level with respect to VCOM (default)
+#define CONFIG_3_ECHO_QUAL_THLDv	0x0u //Echo qualification DAC threshold level with respect to VCOM (default)
 #define CONFIG_3_BLANKINGv			0x0u //Power blanking in standard TOF measurements (disabled)
 #define CONFIG_3_TEMP_CLK_DIVv 		0x0u //Clock divider for temperature mode (divide by 8)
 #define CONFIG_3_TEMP_RTD_SELv		0x0u //RTD type
@@ -40,7 +40,7 @@
 
 /* TOF Values */
 #define TIMING_REGv 				0x300u
-#define TOF_1_LNA_FBv 				0x1u //resistive feedback
+#define TOF_1_LNA_FBv 				0x0u //resistive feedback
 #define TOF_1_LNA_CTRLv 			0x0u //LNA control active
 #define TOF_1_PGA_CTRLv 			0x0u //PGA control active
 #define TOF_1_PGA_GAINv 			0x7u //PGA gain of 21dB (max)
@@ -48,8 +48,8 @@
 //timeout values
 #define TIMEOUT_TOF_TIMEOUT_CTRLv		0x3u //1024xT0 of echo listening
 #define TIMEOUT_ECHO_TIMEOUTv			0x0u //timeout disabled
-#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x0u //64xT0 blanking period of short TOD
-#define TIMEOUT_FORCE_SHORT_TOFv 		0x1u //short TOF disabled
+#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x4u //64xT0 blanking period of short TOD
+#define TIMEOUT_FORCE_SHORT_TOFv 		0x0u //short TOF disabled
 
 //clock_rate values
 #define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)
