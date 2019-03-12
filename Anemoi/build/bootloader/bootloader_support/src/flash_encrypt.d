@@ -3,7 +3,7 @@ src/flash_encrypt.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include/esp_image_format.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_flash_data_types.h \
@@ -45,7 +45,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include/esp_image_format.h:
 

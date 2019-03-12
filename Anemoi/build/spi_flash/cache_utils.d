@@ -17,7 +17,7 @@ cache_utils.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/alloca.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/assert.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
@@ -130,7 +130,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/alloca
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/assert.h:
 

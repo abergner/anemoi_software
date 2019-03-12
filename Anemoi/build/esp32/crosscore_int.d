@@ -18,7 +18,7 @@ crosscore_int.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/cdefs.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdio.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/types.h \
@@ -131,7 +131,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/st
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h:
 

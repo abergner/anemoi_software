@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/wifi_provisioning/libwifi_provisioning.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/wifi_provisioning/libwifi_provisioning.a:
 
 wifi_config.o:     file format elf32-xtensa-le
 
@@ -56,15 +56,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  25 .debug_line   000008c9  00000000  00000000  00002562  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 26 .debug_str    0000136b  00000000  00000000  00002e2b  2**0
+ 26 .debug_str    00001375  00000000  00000000  00002e2b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 27 .comment      0000003c  00000000  00000000  00004196  2**0
+ 27 .comment      0000003c  00000000  00000000  000041a0  2**0
                   CONTENTS, READONLY
- 28 .xtensa.info  00000038  00000000  00000000  000041d2  2**0
+ 28 .xtensa.info  00000038  00000000  00000000  000041dc  2**0
                   CONTENTS, READONLY
- 29 .xt.lit       00000038  00000000  00000000  0000420a  2**0
+ 29 .xt.lit       00000038  00000000  00000000  00004214  2**0
                   CONTENTS, RELOC, READONLY
- 30 .xt.prop      00000414  00000000  00000000  00004242  2**0
+ 30 .xt.prop      00000414  00000000  00000000  0000424c  2**0
                   CONTENTS, RELOC, READONLY
 
 wifi_config.pb-c.o:     file format elf32-xtensa-le

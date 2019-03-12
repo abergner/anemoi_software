@@ -1,7 +1,7 @@
 pm_trace.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/pm_trace.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/pm_trace.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/driver/include/driver/gpio.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
@@ -45,7 +45,7 @@ pm_trace.o: \
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/pm_trace.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/driver/include/driver/gpio.h:
 

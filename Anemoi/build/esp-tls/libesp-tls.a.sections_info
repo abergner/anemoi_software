@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/esp-tls/libesp-tls.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/esp-tls/libesp-tls.a:
 
 esp_tls.o:     file format elf32-xtensa-le
 
@@ -112,13 +112,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  53 .debug_line   00000f05  00000000  00000000  00005d26  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 54 .debug_str    00001960  00000000  00000000  00006c2b  2**0
+ 54 .debug_str    0000196a  00000000  00000000  00006c2b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 55 .comment      0000003c  00000000  00000000  0000858b  2**0
+ 55 .comment      0000003c  00000000  00000000  00008595  2**0
                   CONTENTS, READONLY
- 56 .xtensa.info  00000038  00000000  00000000  000085c7  2**0
+ 56 .xtensa.info  00000038  00000000  00000000  000085d1  2**0
                   CONTENTS, READONLY
- 57 .xt.lit       000000a8  00000000  00000000  000085ff  2**0
+ 57 .xt.lit       000000a8  00000000  00000000  00008609  2**0
                   CONTENTS, RELOC, READONLY
- 58 .xt.prop      0000093c  00000000  00000000  000086a7  2**0
+ 58 .xt.prop      0000093c  00000000  00000000  000086b1  2**0
                   CONTENTS, RELOC, READONLY

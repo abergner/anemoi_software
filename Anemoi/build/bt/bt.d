@@ -22,7 +22,7 @@ bt.o: C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bt/bt.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/stdio.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/heap/include/esp_heap_caps.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -151,7 +151,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/heap/include/esp_heap_caps.h:
 

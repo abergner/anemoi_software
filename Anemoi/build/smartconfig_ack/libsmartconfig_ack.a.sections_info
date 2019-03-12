@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/smartconfig_ack/libsmartconfig_ack.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/smartconfig_ack/libsmartconfig_ack.a:
 
 smartconfig_ack.o:     file format elf32-xtensa-le
 
@@ -44,13 +44,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  19 .debug_line   000006ba  00000000  00000000  0000171b  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 20 .debug_str    00000726  00000000  00000000  00001dd5  2**0
+ 20 .debug_str    00000730  00000000  00000000  00001dd5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 21 .comment      0000003c  00000000  00000000  000024fb  2**0
+ 21 .comment      0000003c  00000000  00000000  00002505  2**0
                   CONTENTS, READONLY
- 22 .xtensa.info  00000038  00000000  00000000  00002537  2**0
+ 22 .xtensa.info  00000038  00000000  00000000  00002541  2**0
                   CONTENTS, READONLY
- 23 .xt.lit       00000020  00000000  00000000  0000256f  2**0
+ 23 .xt.lit       00000020  00000000  00000000  00002579  2**0
                   CONTENTS, RELOC, READONLY
- 24 .xt.prop      000001ec  00000000  00000000  0000258f  2**0
+ 24 .xt.prop      000001ec  00000000  00000000  00002599  2**0
                   CONTENTS, RELOC, READONLY

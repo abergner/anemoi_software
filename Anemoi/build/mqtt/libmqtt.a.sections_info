@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/mqtt/libmqtt.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/mqtt/libmqtt.a:
 
 mqtt_client.o:     file format elf32-xtensa-le
 
@@ -126,15 +126,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  60 .debug_line   000015ab  00000000  00000000  00006f3e  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 61 .debug_str    0000152d  00000000  00000000  000084e9  2**0
+ 61 .debug_str    00001537  00000000  00000000  000084e9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 62 .comment      0000003c  00000000  00000000  00009a16  2**0
+ 62 .comment      0000003c  00000000  00000000  00009a20  2**0
                   CONTENTS, READONLY
- 63 .xtensa.info  00000038  00000000  00000000  00009a52  2**0
+ 63 .xtensa.info  00000038  00000000  00000000  00009a5c  2**0
                   CONTENTS, READONLY
- 64 .xt.lit       000000b0  00000000  00000000  00009a8a  2**0
+ 64 .xt.lit       000000b0  00000000  00000000  00009a94  2**0
                   CONTENTS, RELOC, READONLY
- 65 .xt.prop      00000ec4  00000000  00000000  00009b3a  2**0
+ 65 .xt.prop      00000ec4  00000000  00000000  00009b44  2**0
                   CONTENTS, RELOC, READONLY
 
 platform_esp32_idf.o:     file format elf32-xtensa-le
@@ -181,15 +181,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  19 .debug_line   000002f9  00000000  00000000  0000086f  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 20 .debug_str    00000344  00000000  00000000  00000b68  2**0
+ 20 .debug_str    0000034e  00000000  00000000  00000b68  2**0
                   CONTENTS, READONLY, DEBUGGING
- 21 .comment      0000003c  00000000  00000000  00000eac  2**0
+ 21 .comment      0000003c  00000000  00000000  00000eb6  2**0
                   CONTENTS, READONLY
- 22 .xtensa.info  00000038  00000000  00000000  00000ee8  2**0
+ 22 .xtensa.info  00000038  00000000  00000000  00000ef2  2**0
                   CONTENTS, READONLY
- 23 .xt.lit       00000020  00000000  00000000  00000f20  2**0
+ 23 .xt.lit       00000020  00000000  00000000  00000f2a  2**0
                   CONTENTS, RELOC, READONLY
- 24 .xt.prop      000000f0  00000000  00000000  00000f40  2**0
+ 24 .xt.prop      000000f0  00000000  00000000  00000f4a  2**0
                   CONTENTS, RELOC, READONLY
 
 mqtt_msg.o:     file format elf32-xtensa-le
@@ -290,15 +290,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  46 .debug_line   00000943  00000000  00000000  00002eff  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 47 .debug_str    000007a8  00000000  00000000  00003842  2**0
+ 47 .debug_str    000007b2  00000000  00000000  00003842  2**0
                   CONTENTS, READONLY, DEBUGGING
- 48 .comment      0000003c  00000000  00000000  00003fea  2**0
+ 48 .comment      0000003c  00000000  00000000  00003ff4  2**0
                   CONTENTS, READONLY
- 49 .xtensa.info  00000038  00000000  00000000  00004026  2**0
+ 49 .xtensa.info  00000038  00000000  00000000  00004030  2**0
                   CONTENTS, READONLY
- 50 .xt.lit       00000078  00000000  00000000  0000405e  2**0
+ 50 .xt.lit       00000078  00000000  00000000  00004068  2**0
                   CONTENTS, RELOC, READONLY
- 51 .xt.prop      00000954  00000000  00000000  000040d6  2**0
+ 51 .xt.prop      00000954  00000000  00000000  000040e0  2**0
                   CONTENTS, RELOC, READONLY
 
 mqtt_outbox.o:     file format elf32-xtensa-le
@@ -373,13 +373,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  33 .debug_line   000006f4  00000000  00000000  000015a7  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 34 .debug_str    00000443  00000000  00000000  00001c9b  2**0
+ 34 .debug_str    0000044d  00000000  00000000  00001c9b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 35 .comment      0000003c  00000000  00000000  000020de  2**0
+ 35 .comment      0000003c  00000000  00000000  000020e8  2**0
                   CONTENTS, READONLY
- 36 .xtensa.info  00000038  00000000  00000000  0000211a  2**0
+ 36 .xtensa.info  00000038  00000000  00000000  00002124  2**0
                   CONTENTS, READONLY
- 37 .xt.lit       00000048  00000000  00000000  00002152  2**0
+ 37 .xt.lit       00000048  00000000  00000000  0000215c  2**0
                   CONTENTS, RELOC, READONLY
- 38 .xt.prop      000004d4  00000000  00000000  0000219a  2**0
+ 38 .xt.prop      000004d4  00000000  00000000  000021a4  2**0
                   CONTENTS, RELOC, READONLY

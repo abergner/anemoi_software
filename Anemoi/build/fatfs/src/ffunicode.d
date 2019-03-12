@@ -11,7 +11,7 @@ src/ffunicode.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/syslimits.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/endian.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/param.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/reent.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
@@ -108,7 +108,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machin
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/param.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 

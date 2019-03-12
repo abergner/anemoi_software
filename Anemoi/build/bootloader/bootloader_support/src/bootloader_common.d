@@ -1,6 +1,6 @@
 src/bootloader_common.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/src/bootloader_common.c \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/log/include/esp_log.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -28,7 +28,7 @@ src/bootloader_common.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include_bootloader/bootloader_sha.h
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h:
 

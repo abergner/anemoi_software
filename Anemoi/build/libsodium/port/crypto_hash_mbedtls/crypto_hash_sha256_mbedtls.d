@@ -22,7 +22,7 @@ port/crypto_hash_mbedtls/crypto_hash_sha256_mbedtls.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/libsodium/libsodium/src/libsodium/include/sodium/export.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha256.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/esp_mem.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/limits.h \
@@ -73,7 +73,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/inclu
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/esp_mem.h:
 

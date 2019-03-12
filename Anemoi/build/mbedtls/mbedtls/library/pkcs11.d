@@ -2,7 +2,7 @@ mbedtls/library/pkcs11.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/library/pkcs11.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pkcs11.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/esp_mem.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/ieeefp.h \
@@ -27,7 +27,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/mbedtls/inclu
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mbedtls/port/include/esp_mem.h:
 

@@ -18,7 +18,7 @@ src/bootloader_random.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_dport_access.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/xtruntime.h \
@@ -67,7 +67,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_dport_access.h:
 

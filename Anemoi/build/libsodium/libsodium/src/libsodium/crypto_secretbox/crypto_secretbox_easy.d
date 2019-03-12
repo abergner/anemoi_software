@@ -1,7 +1,7 @@
 libsodium/src/libsodium/crypto_secretbox/crypto_secretbox_easy.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/libsodium/libsodium/src/libsodium/crypto_secretbox/crypto_secretbox_easy.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/ieeefp.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
@@ -40,7 +40,7 @@ libsodium/src/libsodium/crypto_secretbox/crypto_secretbox_easy.o: \
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h:
 

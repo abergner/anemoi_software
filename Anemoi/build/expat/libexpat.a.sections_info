@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/expat/libexpat.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/expat/libexpat.a:
 
 xmltok_impl.o:     file format elf32-xtensa-le
 
@@ -878,15 +878,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
 271 .debug_line   00006ac0  00000000  00000000  0001c318  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-272 .debug_str    00003402  00000000  00000000  00022dd8  2**0
+272 .debug_str    0000340c  00000000  00000000  00022dd8  2**0
                   CONTENTS, READONLY, DEBUGGING
-273 .comment      0000003c  00000000  00000000  000261da  2**0
+273 .comment      0000003c  00000000  00000000  000261e4  2**0
                   CONTENTS, READONLY
-274 .xtensa.info  00000038  00000000  00000000  00026216  2**0
+274 .xtensa.info  00000038  00000000  00000000  00026220  2**0
                   CONTENTS, READONLY
-275 .xt.lit       00000280  00000000  00000000  0002624e  2**0
+275 .xt.lit       00000280  00000000  00000000  00026258  2**0
                   CONTENTS, RELOC, READONLY
-276 .xt.prop      000078b4  00000000  00000000  000264ce  2**0
+276 .xt.prop      000078b4  00000000  00000000  000264d8  2**0
                   CONTENTS, RELOC, READONLY
 
 xmltok.o:     file format elf32-xtensa-le

@@ -1,6 +1,6 @@
 intr_alloc.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/intr_alloc.c \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_default_types.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/features.h \
@@ -85,7 +85,7 @@ intr_alloc.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/log/include/esp_log_internal.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_ipc.h
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h:
 

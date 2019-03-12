@@ -3,7 +3,7 @@ proto-c/wifi_constants.pb-c.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/wifi_provisioning/proto-c/wifi_constants.pb-c.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/ieeefp.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
@@ -31,7 +31,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/protobuf-c/protobuf-c
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h:
 

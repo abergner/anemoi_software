@@ -34,7 +34,7 @@ port/esp32/freertos/sys_arch.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/errno.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/errno.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/alloca.h \
@@ -189,7 +189,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/er
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h:
 

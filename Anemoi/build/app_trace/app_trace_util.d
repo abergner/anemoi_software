@@ -15,7 +15,7 @@ app_trace_util.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/hal.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -112,7 +112,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_i
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

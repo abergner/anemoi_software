@@ -1,6 +1,6 @@
 termios.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/termios.c \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/sys/termios.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -20,7 +20,7 @@ termios.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/errno.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/reent.h
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/sys/termios.h:
 

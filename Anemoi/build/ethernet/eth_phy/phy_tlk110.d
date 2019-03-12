@@ -1,7 +1,7 @@
 eth_phy/phy_tlk110.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/ethernet/eth_phy/phy_tlk110.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/log/include/esp_log.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -88,7 +88,7 @@ eth_phy/phy_tlk110.o: \
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/log/include/esp_log.h:
 

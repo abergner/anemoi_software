@@ -13,7 +13,7 @@ xtensa_context.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/corebits.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/config/system.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_context.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
@@ -47,7 +47,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

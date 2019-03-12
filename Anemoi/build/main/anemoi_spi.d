@@ -1,5 +1,5 @@
 anemoi_spi.o: \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/anemoi_spi.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/anemoi_spi.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/driver/include/driver/spi_master.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
@@ -23,7 +23,7 @@ anemoi_spi.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/sched.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/stdio.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/alloca.h \
@@ -89,9 +89,9 @@ anemoi_spi.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_spi.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/tdc_registers.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_pinout.h
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_spi.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/tdc_registers.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_pinout.h
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/driver/include/driver/spi_master.h:
 
@@ -139,7 +139,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/st
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdlib.h:
 
@@ -271,9 +271,9 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_spi.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_spi.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/tdc_registers.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/tdc_registers.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_pinout.h:
-/c/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/./anemoi_spi.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_pinout.h:
+/c/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/./anemoi_spi.c:

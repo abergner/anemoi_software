@@ -19,7 +19,7 @@ esp-mqtt/lib/mqtt_msg.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/lib/include/mqtt_msg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/lib/include/platform.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/lib/include/platform_esp32_idf.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
@@ -171,7 +171,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/lib/inc
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/include/mqtt_config.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/mqtt/esp-mqtt/lib/include/platform.h:
 

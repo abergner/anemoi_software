@@ -3,7 +3,7 @@ asio/asio/src/asio.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/impl/src.hpp \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/detail/config.hpp \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/port/include/esp_asio_config.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/impl/error.ipp \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/error.hpp \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/error_code.hpp \
@@ -327,7 +327,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/includ
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/port/include/esp_asio_config.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/asio/asio/asio/include/asio/impl/error.ipp:
 

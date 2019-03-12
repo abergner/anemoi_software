@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/esp_adc_cal/libesp_adc_cal.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/esp_adc_cal/libesp_adc_cal.a:
 
 esp_adc_cal.o:     file format elf32-xtensa-le
 
@@ -118,13 +118,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  56 .debug_line   00000722  00000000  00000000  0000261b  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 57 .debug_str    00000918  00000000  00000000  00002d3d  2**0
+ 57 .debug_str    00000922  00000000  00000000  00002d3d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 58 .comment      0000003c  00000000  00000000  00003655  2**0
+ 58 .comment      0000003c  00000000  00000000  0000365f  2**0
                   CONTENTS, READONLY
- 59 .xtensa.info  00000038  00000000  00000000  00003691  2**0
+ 59 .xtensa.info  00000038  00000000  00000000  0000369b  2**0
                   CONTENTS, READONLY
- 60 .xt.lit       00000078  00000000  00000000  000036c9  2**0
+ 60 .xt.lit       00000078  00000000  00000000  000036d3  2**0
                   CONTENTS, RELOC, READONLY
- 61 .xt.prop      000006b4  00000000  00000000  00003741  2**0
+ 61 .xt.prop      000006b4  00000000  00000000  0000374b  2**0
                   CONTENTS, RELOC, READONLY

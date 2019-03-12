@@ -3,7 +3,7 @@ src/bootloader_clock.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/uart.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_types.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/ets_sys.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_assert.h \
@@ -34,7 +34,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_typ
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/ets_sys.h:
 

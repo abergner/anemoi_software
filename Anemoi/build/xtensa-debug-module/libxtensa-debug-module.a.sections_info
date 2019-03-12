@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/xtensa-debug-module/libxtensa-debug-module.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/xtensa-debug-module/libxtensa-debug-module.a:
 
 trax.o:     file format elf32-xtensa-le
 
@@ -38,15 +38,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  16 .debug_line   0000023c  00000000  00000000  00000638  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 17 .debug_str    00000331  00000000  00000000  00000874  2**0
+ 17 .debug_str    0000033b  00000000  00000000  00000874  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .comment      0000003c  00000000  00000000  00000ba5  2**0
+ 18 .comment      0000003c  00000000  00000000  00000baf  2**0
                   CONTENTS, READONLY
- 19 .xtensa.info  00000038  00000000  00000000  00000be1  2**0
+ 19 .xtensa.info  00000038  00000000  00000000  00000beb  2**0
                   CONTENTS, READONLY
- 20 .xt.lit       00000018  00000000  00000000  00000c19  2**0
+ 20 .xt.lit       00000018  00000000  00000000  00000c23  2**0
                   CONTENTS, RELOC, READONLY
- 21 .xt.prop      00000090  00000000  00000000  00000c31  2**0
+ 21 .xt.prop      00000090  00000000  00000000  00000c3b  2**0
                   CONTENTS, RELOC, READONLY
 
 eri.o:     file format elf32-xtensa-le

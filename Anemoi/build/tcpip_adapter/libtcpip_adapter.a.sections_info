@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/tcpip_adapter/libtcpip_adapter.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/tcpip_adapter/libtcpip_adapter.a:
 
 tcpip_adapter_lwip.o:     file format elf32-xtensa-le
 
@@ -274,13 +274,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
 134 .debug_line   000019aa  00000000  00000000  000071c7  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-135 .debug_str    0000244a  00000000  00000000  00008b71  2**0
+135 .debug_str    00002454  00000000  00000000  00008b71  2**0
                   CONTENTS, READONLY, DEBUGGING
-136 .comment      0000003c  00000000  00000000  0000afbb  2**0
+136 .comment      0000003c  00000000  00000000  0000afc5  2**0
                   CONTENTS, READONLY
-137 .xtensa.info  00000038  00000000  00000000  0000aff7  2**0
+137 .xtensa.info  00000038  00000000  00000000  0000b001  2**0
                   CONTENTS, READONLY
-138 .xt.lit       000001b8  00000000  00000000  0000b02f  2**0
+138 .xt.lit       000001b8  00000000  00000000  0000b039  2**0
                   CONTENTS, RELOC, READONLY
-139 .xt.prop      0000195c  00000000  00000000  0000b1e7  2**0
+139 .xt.prop      0000195c  00000000  00000000  0000b1f1  2**0
                   CONTENTS, RELOC, READONLY

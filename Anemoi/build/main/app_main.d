@@ -1,5 +1,5 @@
 app_main.o: \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/app_main.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/app_main.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/cache.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
@@ -7,7 +7,7 @@ app_main.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/features.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_dport_access.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_assert.h \
@@ -162,11 +162,11 @@ app_main.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_pins.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_reg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_gpio.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_clock.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_spi.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/tdc_registers.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_tasks.h
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_gpio.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_clock.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_spi.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/tdc_registers.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_tasks.h
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/cache.h:
 
@@ -182,7 +182,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_i
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_dport_access.h:
 
@@ -492,13 +492,13 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_struct.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_gpio.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_gpio.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_clock.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_clock.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_spi.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_spi.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/tdc_registers.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/tdc_registers.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_tasks.h:
-/c/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/./app_main.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_tasks.h:
+/c/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/./app_main.c:

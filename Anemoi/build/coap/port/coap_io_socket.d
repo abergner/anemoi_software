@@ -38,7 +38,7 @@ port/coap_io_socket.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/vfs/include/sys/ioctl.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/sys/select.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_task.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/hal.h \
@@ -210,7 +210,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_inclu
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_task.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 

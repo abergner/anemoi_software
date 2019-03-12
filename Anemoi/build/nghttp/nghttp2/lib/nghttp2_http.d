@@ -44,7 +44,7 @@ nghttp2/lib/nghttp2_http.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/assert.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h
 
@@ -136,7 +136,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/nghttp/nghttp2/lib/ng
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/assert.h:
 

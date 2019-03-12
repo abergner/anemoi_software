@@ -1,6 +1,6 @@
 spiram_psram.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/spiram_psram.c \
- C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/newlib.h \
@@ -76,7 +76,7 @@ spiram_psram.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/driver/include/driver/periph_ctrl.h
 
-C:/Users/cufar/eclipse-workspace/esp-bm/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/string.h:
 

@@ -1,5 +1,5 @@
 anemoi_tasks.o: \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/anemoi_tasks.c \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/anemoi_tasks.c \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/reent.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/_ansi.h \
@@ -15,7 +15,7 @@ anemoi_tasks.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/stdint.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/hal.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -82,8 +82,8 @@ anemoi_tasks.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/semphr.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/queue.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/queue.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_tasks.h \
- C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_pinout.h
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_tasks.h \
+ C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_pinout.h
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -115,7 +115,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/newlib/include/sys/_i
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/include/sdkconfig.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/include/sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -249,7 +249,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/free
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/freertos/include/freertos/queue.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_tasks.h:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_tasks.h:
 
-C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/include/anemoi_pinout.h:
-/c/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/main/./anemoi_tasks.c:
+C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/include/anemoi_pinout.h:
+/c/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/main/./anemoi_tasks.c:

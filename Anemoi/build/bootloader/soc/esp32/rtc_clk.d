@@ -8,7 +8,7 @@ esp32/rtc_clk.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/uart.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_types.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/gpio.h \
@@ -59,7 +59,7 @@ C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_typ
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_attr.h:
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
 

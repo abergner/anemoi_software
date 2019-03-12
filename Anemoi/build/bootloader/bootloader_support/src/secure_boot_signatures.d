@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h \
+ c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/esp_err.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/spi_flash/include/esp_spi_flash.h \
@@ -19,7 +19,7 @@ src/secure_boot_signatures.o: \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/micro-ecc/micro-ecc/uECC.h \
  C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/esp32/include/rom/sha.h
 
-c:\users\cufar\eclipse-workspace\esp-bm\anemoi\build\include\sdkconfig.h:
+c:\users\cufar\eclipse-workspace\esp-bm\anemoi_software\anemoi\build\include\sdkconfig.h:
 
 C:/Users/cufar/eclipse-workspace/esp-bm/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h:
 

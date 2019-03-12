@@ -1,4 +1,4 @@
-In archive C:/Users/cufar/eclipse-workspace/esp-bm/blink/Anemoi/build/esp_https_ota/libesp_https_ota.a:
+In archive C:/Users/cufar/eclipse-workspace/esp-bm/anemoi_software/Anemoi/build/esp_https_ota/libesp_https_ota.a:
 
 esp_https_ota.o:     file format elf32-xtensa-le
 
@@ -34,13 +34,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, RELOC, READONLY, DEBUGGING
  14 .debug_line   00000552  00000000  00000000  0000185f  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 15 .debug_str    00000c1d  00000000  00000000  00001db1  2**0
+ 15 .debug_str    00000c27  00000000  00000000  00001db1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000003c  00000000  00000000  000029ce  2**0
+ 16 .comment      0000003c  00000000  00000000  000029d8  2**0
                   CONTENTS, READONLY
- 17 .xtensa.info  00000038  00000000  00000000  00002a0a  2**0
+ 17 .xtensa.info  00000038  00000000  00000000  00002a14  2**0
                   CONTENTS, READONLY
- 18 .xt.lit       00000010  00000000  00000000  00002a42  2**0
+ 18 .xt.lit       00000010  00000000  00000000  00002a4c  2**0
                   CONTENTS, RELOC, READONLY
- 19 .xt.prop      000001a4  00000000  00000000  00002a52  2**0
+ 19 .xt.prop      000001a4  00000000  00000000  00002a5c  2**0
                   CONTENTS, RELOC, READONLY

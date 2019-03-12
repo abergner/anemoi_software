@@ -22,6 +22,20 @@
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.430602892" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder arguments="${IDF_PATH}/tools/windows/eclipse_make.sh" command="bash" id="cdt.managedbuild.builder.gnu.cross.2096692320" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1536901836" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.654166149" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/newlib/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/esp32/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/freertos/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/nvs_flash/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/driver/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/log/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/soc/esp32/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/lwip/lwip/src/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/spi_flash/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/esp_event/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\cufar\eclipse-workspace\esp-bm\anemoi_software\Anemoi\build\include&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.523538503" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.791378697" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -46,6 +60,8 @@
 									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/soc/esp32/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/lwip/lwip/src/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/spi_flash/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${IDF_PATH}/components/esp_event/include&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.196860857" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
