@@ -23,8 +23,8 @@ CONFIG_4_ADDRESS ,TOF_1_ADDRESS ,TOF_0_ADDRESS ,ERRORS_ADDRESS ,TIMEOUT_ADDRESS 
 //#define TOF_0       0x00 //TIMING_REG[7:0]
 //#define TIMEOUT     0x1F
 
-#define ERRORS      0x00 //Default
-#define CLOCK_RATE  0x00 //Default
+//#define ERRORS      0x00 //Default
+//#define CLOCK_RATE  0x00 //Default
 
 #define TDC7200_CONFIG_REGISTERS 10
 

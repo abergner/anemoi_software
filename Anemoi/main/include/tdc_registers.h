@@ -9,29 +9,30 @@
 #define MAIN_TDC_REGISTERS_H_
 
 
+//Define values of the fields of the registers individually
 //config0 values
-#define CONFIG_0_NUM_TXv			0xBu //receive single echo
-#define CONFIG_0_TX_FREQ_DIVv		0x4u //rising edge polarity of trigger
+#define CONFIG_0_NUM_TXv			0x0Fu //Number of TX pulses in a burst: 11 pulses
+#define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
 
 //config1 values
-#define CONFIG_1_NUM_RXv			0x0u //rising edge polarity of trigger
-#define CONFIG_1_NUM_AVGv			0x0u //receive single echo
+#define CONFIG_1_NUM_RXv			0x0u //Number of measurement cycles to average in stopwatch/MCU (1)
+#define CONFIG_1_NUM_AVGv			0x0u //Number of expected receive events (0 - do not count events)
 
 //config2 values
-#define CONFIG_2_TOF_MEAS_MODEv		0x0u //receive single echo
-#define CONFIG_2_CH_SELv			0x0u //rising edge polarity of trigger
-#define CONFIG_2_EXT_CHSELv 		0x1u //TX 180° pulse shift position
-#define CONFIG_2_CH_SWPv			0x0u //rising edge polarity of trigger
-#define CONFIG_2_DAMPINGv			0x1u //rising edge polarity of trigger
-#define CONFIG_2_MEAS_MODEv			0x0u //rising edge polarity of trigger
-#define CONFIG_2_VCOM_SELv			0x0u //rising edge polarity of trigger
+#define CONFIG_2_TOF_MEAS_MODEv		0x0u //TOF measurement mode: Mode 0
+#define CONFIG_2_CH_SELv			0x0u //Active TX/RX channel pair (channel 1)
+#define CONFIG_2_EXT_CHSELv 		0x1u //External channel select (enabled)
+#define CONFIG_2_CH_SWPv			0x0u //Automatic channel swap in Mode 2 of operation (disabled)
+#define CONFIG_2_DAMPINGv			0x1u //TX burst damping (enabled)
+#define CONFIG_2_MEAS_MODEv			0x0u //AFE measurement type (TOF measuerement)
+#define CONFIG_2_VCOM_SELv			0x0u //Common-mode voltage reference control (internal)
 
 //config3 values
-#define CONFIG_3_ECHO_QUAL_THLDv	0x3u //receive single echo
-#define CONFIG_3_BLANKINGv			0x0u //rising edge polarity of trigger
-#define CONFIG_3_TEMP_CLK_DIVv 		0x0u //TX 180° pulse shift position
-#define CONFIG_3_TEMP_RTD_SELv		0x0u //rising edge polarity of trigger
-#define CONFIG_3_TEMP_MODEv			0x0u //rising edge polarity of trigger
+#define CONFIG_3_ECHO_QUAL_THLDv	0x0u //Echo qualification DAC threshold level with respect to VCOM (default)
+#define CONFIG_3_BLANKINGv			0x0u //Power blanking in standard TOF measurements (disabled)
+#define CONFIG_3_TEMP_CLK_DIVv 		0x0u //Clock divider for temperature mode (divide by 8)
+#define CONFIG_3_TEMP_RTD_SELv		0x0u //RTD type
+#define CONFIG_3_TEMP_MODEv			0x0u //Temperature measurement channels - default
 
 //config4 values
 #define CONFIG_4_RECEIVE_MODEv			0x0u //receive single echo
@@ -39,32 +40,33 @@
 #define CONFIG_4_TX_PH_SHIFT_POSv 		0x1Fu //TX 180° pulse shift position
 
 /* TOF Values */
-#define TIMING_REGv 			0x300u
-#define TOF_1_LNA_FBv 			0x1u //resistive feedback
-#define TOF_1_LNA_CTRLv 		0x0u //LNA control active
-#define TOF_1_PGA_CTRLv 		0x0u //PGA control active
-#define TOF_1_PGA_GAINv 		0x7u //PGA gain of 21dB (max)
+#define TIMING_REGv 				0x300u
+#define TOF_1_LNA_FBv 				0x0u //resistive feedback
+#define TOF_1_LNA_CTRLv 			0x0u //LNA control active
+#define TOF_1_PGA_CTRLv 			0x0u //PGA control active
+#define TOF_1_PGA_GAINv 			0x7u //PGA gain of 21dB (max)
 
 //timeout values
 #define TIMEOUT_TOF_TIMEOUT_CTRLv		0x3u //1024xT0 of echo listening
-#define TIMEOUT_ECHO_TIMEOUTv			0x1u //timeout disabled
-#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x3u //64xT0 blanking period of short TOD
-#define TIMEOUT_FORCE_SHORT_TOFv 		0x0u //short TOF disabled
+#define TIMEOUT_ECHO_TIMEOUTv			0x0u //timeout disabled
+#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x4u //64xT0 blanking period of short TOD
+#define TIMEOUT_FORCE_SHORT_TOFv 		0x1u //short TOF disabled
 
 //clock_rate values
-#define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //receive single echo
-#define CLOCK_RATE_CLOCKIN_DIVv			0x0u //rising edge polarity of trigger
+#define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)
+#define CLOCK_RATE_CLOCKIN_DIVv			0x0u //CLKIN divider to generate T0 (default)
 
+//Define bitfields to get register values
 /* config0 Bit Fields */
 #define	CONFIG_0_NUM_TX_MASK			0x1Fu
 #define CONFIG_0_NUM_TX_SHIFT			0
 #define CONFIG_0_NUM_TX_WIDTH			5
 #define CONFIG_0_NUM_TX(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_0_NUM_TX_SHIFT))&CONFIG_0_NUM_TX_MASK)
 
-#define	CONFIG_0_TX_FREQ_DIV_MASK			0xE0u
-#define CONFIG_0_TX_FREQ_DIV_SHIFT			5
-#define CONFIG_0_TX_FREQ_DIV_WIDTH			3
-#define CONFIG_0_TX_FREQ_DIV(x)				(((uint32_t)(((uint32_t)(x))<<CONFIG_0_TX_FREQ_DIV_SHIFT))&CONFIG_0_TX_FREQ_DIV_MASK)
+#define	CONFIG_0_TX_FREQ_DIV_MASK		0xE0u
+#define CONFIG_0_TX_FREQ_DIV_SHIFT		5
+#define CONFIG_0_TX_FREQ_DIV_WIDTH		3
+#define CONFIG_0_TX_FREQ_DIV(x)			(((uint32_t)(((uint32_t)(x))<<CONFIG_0_TX_FREQ_DIV_SHIFT))&CONFIG_0_TX_FREQ_DIV_MASK)
 
 /* config1 Bit Fields */
 #define	CONFIG_1_NUM_RX_MASK			0x7u
@@ -150,66 +152,78 @@
 #define CONFIG_4_TRIG_EDGE_POLARITY_WIDTH	1
 #define CONFIG_4_TRIG_EDGE_POLARITY(x)		(((uint32_t)(((uint32_t)(x))<<CONFIG_4_TRIG_EDGE_POLARITY_SHIFT))&CONFIG_4_TRIG_EDGE_POLARITY_MASK)
 
-#define	CONFIG_4_RECEIVE_MODE_MASK		0x40u
-#define CONFIG_4_RECEIVE_MODE_SHIFT		6
-#define CONFIG_4_RECEIVE_MODE_WIDTH		1
-#define CONFIG_4_RECEIVE_MODE(x)		(((uint32_t)(((uint32_t)(x))<<CONFIG_4_RECEIVE_MODE_SHIFT))&CONFIG_4_RECEIVE_MODE_MASK)
+#define	CONFIG_4_RECEIVE_MODE_MASK			0x40u
+#define CONFIG_4_RECEIVE_MODE_SHIFT			6
+#define CONFIG_4_RECEIVE_MODE_WIDTH			1
+#define CONFIG_4_RECEIVE_MODE(x)			(((uint32_t)(((uint32_t)(x))<<CONFIG_4_RECEIVE_MODE_SHIFT))&CONFIG_4_RECEIVE_MODE_MASK)
 
 /* TOF_0 Bit Fields */
-#define	TOF_0_TIMING_REG_MASK	0xFFu
-#define TOF_0_TIMING_REG_SHIFT	0
-#define TOF_0_TIMING_REG_WIDTH	8
-#define TOF_0_TIMING_REG(x)		(((uint32_t)(((uint32_t)(x))<<TOF_0_TIMING_REG_SHIFT))&TOF_0_TIMING_REG_MASK)
+#define	TOF_0_TIMING_REG_MASK				0xFFu
+#define TOF_0_TIMING_REG_SHIFT				0
+#define TOF_0_TIMING_REG_WIDTH				8
+#define TOF_0_TIMING_REG(x)					(((uint32_t)(((uint32_t)(x))<<TOF_0_TIMING_REG_SHIFT))&TOF_0_TIMING_REG_MASK)
 
 /* TOF_1 Bit Fields */
-#define	TOF_1_TIMING_REG_MASK	0x3u
-#define TOF_1_TIMING_REG_SHIFT	0
-#define TOF_1_TIMING_REG_WIDTH	2
-#define TOF_1_TIMING_REG(x)		(((uint32_t)(((uint32_t)(x))<<TOF_1_TIMING_REG_SHIFT>>8))&TOF_1_TIMING_REG_MASK)
 
-#define	TOF_1_LNA_FB_MASK		0x4u
-#define TOF_1_LNA_FB_SHIFT		2
-#define TOF_1_LNA_FB_WIDTH		1
-#define TOF_1_LNA_FB(x)			(((uint32_t)(((uint32_t)(x))<<TOF_1_LNA_FB_SHIFT))&TOF_1_LNA_FB_MASK)
+#define	TOF_1_TIMING_REG_MASK				0x3u
+#define TOF_1_TIMING_REG_SHIFT				0
+#define TOF_1_TIMING_REG_WIDTH				2
+#define TOF_1_TIMING_REG(x)					(((uint32_t)(((uint32_t)(x))<<TOF_1_TIMING_REG_SHIFT>>8))&TOF_1_TIMING_REG_MASK)
 
-#define	TOF_1_LNA_CTRL_MASK		0x8u
-#define TOF_1_LNA_CTRL_SHIFT	3
-#define TOF_1_LNA_CTRL_WIDTH	1
-#define TOF_1_LNA_CTRL(x)		(((uint32_t)(((uint32_t)(x))<<TOF_1_LNA_CTRL_SHIFT))&TOF_1_LNA_CTRL_MASK)
+#define	TOF_1_LNA_FB_MASK					0x4u
+#define TOF_1_LNA_FB_SHIFT					2
+#define TOF_1_LNA_FB_WIDTH					1
+#define TOF_1_LNA_FB(x)						(((uint32_t)(((uint32_t)(x))<<TOF_1_LNA_FB_SHIFT))&TOF_1_LNA_FB_MASK)
 
-#define	TOF_1_PGA_CTRL_MASK		0x10u
-#define TOF_1_PGA_CTRL_SHIFT	4
-#define TOF_1_PGA_CTRL_WIDTH	1
-#define TOF_1_PGA_CTRL(x)		(((uint32_t)(((uint32_t)(x))<<TOF_1_PGA_CTRL_SHIFT))&TOF_1_PGA_CTRL_MASK)
+#define	TOF_1_LNA_CTRL_MASK					0x8u
+#define TOF_1_LNA_CTRL_SHIFT				3
+#define TOF_1_LNA_CTRL_WIDTH				1
+#define TOF_1_LNA_CTRL(x)					(((uint32_t)(((uint32_t)(x))<<TOF_1_LNA_CTRL_SHIFT))&TOF_1_LNA_CTRL_MASK)
 
-#define	TOF_1_PGA_GAIN_MASK		0xE0u
-#define TOF_1_PGA_GAIN_SHIFT	5
-#define TOF_1_PGA_GAIN_WIDTH	3
-#define TOF_1_PGA_GAIN(x)		(((uint32_t)(((uint32_t)(x))<<TOF_1_PGA_GAIN_SHIFT))&TOF_1_PGA_GAIN_MASK)
+#define	TOF_1_PGA_CTRL_MASK					0x10u
+#define TOF_1_PGA_CTRL_SHIFT				4
+#define TOF_1_PGA_CTRL_WIDTH				1
+#define TOF_1_PGA_CTRL(x)					(((uint32_t)(((uint32_t)(x))<<TOF_1_PGA_CTRL_SHIFT))&TOF_1_PGA_CTRL_MASK)
+
+#define	TOF_1_PGA_GAIN_MASK					0xE0u
+#define TOF_1_PGA_GAIN_SHIFT				5
+#define TOF_1_PGA_GAIN_WIDTH				3
+#define TOF_1_PGA_GAIN(x)					(((uint32_t)(((uint32_t)(x))<<TOF_1_PGA_GAIN_SHIFT))&TOF_1_PGA_GAIN_MASK)
 
 /* TIMEOUT Bit Fields */
-#define	TIMEOUT_TOF_TIMEOUT_CTRL_MASK	0x3u
-#define TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT	0
-#define TIMEOUT_TOF_TIMEOUT_CTRL_WIDTH	2
-#define TIMEOUT_TOF_TIMEOUT_CTRL(x)		(((uint32_t)(((uint32_t)(x))<<TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT))&TIMEOUT_TOF_TIMEOUT_CTRL_MASK)
+#define	TIMEOUT_TOF_TIMEOUT_CTRL_MASK		0x3u
+#define TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT		0
+#define TIMEOUT_TOF_TIMEOUT_CTRL_WIDTH		2
+#define TIMEOUT_TOF_TIMEOUT_CTRL(x)			(((uint32_t)(((uint32_t)(x))<<TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT))&TIMEOUT_TOF_TIMEOUT_CTRL_MASK)
 
-#define	TIMEOUT_ECHO_TIMEOUT_MASK		0x4u
-#define TIMEOUT_ECHO_TIMEOUT_SHIFT		2
-#define TIMEOUT_ECHO_TIMEOUT_WIDTH		1
-#define TIMEOUT_ECHO_TIMEOUT(x)	(((uint32_t)(((uint32_t)(x))<<TIMEOUT_ECHO_TIMEOUT_SHIFT))&TIMEOUT_ECHO_TIMEOUT_MASK)
+#define	TIMEOUT_ECHO_TIMEOUT_MASK			0x4u
+#define TIMEOUT_ECHO_TIMEOUT_SHIFT			2
+#define TIMEOUT_ECHO_TIMEOUT_WIDTH			1
+#define TIMEOUT_ECHO_TIMEOUT(x)				(((uint32_t)(((uint32_t)(x))<<TIMEOUT_ECHO_TIMEOUT_SHIFT))&TIMEOUT_ECHO_TIMEOUT_MASK)
 
 #define	TIMEOUT_SHORT_TOF_BLANK_PERIOD_MASK		0x38u
-#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT		3
-#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_WIDTH		3
-#define TIMEOUT_SHORT_TOF_BLANK_PERIOD(x)	(((uint32_t)(((uint32_t)(x))<<TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT))&TIMEOUT_SHORT_TOF_BLANK_PERIOD_MASK)
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT	3
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_WIDTH	3
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD(x)		(((uint32_t)(((uint32_t)(x))<<TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT))&TIMEOUT_SHORT_TOF_BLANK_PERIOD_MASK)
 
 #define	TIMEOUT_FORCE_SHORT_TOF_MASK		0x40u
 #define TIMEOUT_FORCE_SHORT_TOF_SHIFT		6
 #define TIMEOUT_FORCE_SHORT_TOF_WIDTH		1
 #define TIMEOUT_FORCE_SHORT_TOF(x)			(((uint32_t)(((uint32_t)(x))<<TIMEOUT_FORCE_SHORT_TOF_SHIFT))&TIMEOUT_FORCE_SHORT_TOF_MASK)
 
+/* clock_rate Bit Fields */
+#define	CLOCK_RATE_AUTOZERO_PERIOD_MASK		0x3u
+#define CLOCK_RATE_AUTOZERO_PERIOD_SHIFT	0
+#define CLOCK_RATE_AUTOZERO_PERIOD_WIDTH	2
+#define CLOCK_RATE_AUTOZERO_PERIOD(x)		(((uint32_t)(((uint32_t)(x))<<CLOCK_RATE_AUTOZERO_PERIOD_SHIFT))&CLOCK_RATE_AUTOZERO_PERIOD_MASK)
+
+#define	CLOCK_RATE_CLOCKIN_DIV_MASK			0x4u
+#define CLOCK_RATE_CLOCKIN_DIV_SHIFT		2
+#define CLOCK_RATE_CLOCKIN_DIV_WIDTH		1
+#define CLOCK_RATE_CLOCKIN_DIV(x)			(((uint32_t)(((uint32_t)(x))<<CLOCK_RATE_CLOCKIN_DIV_SHIFT))&CLOCK_RATE_CLOCKIN_DIV_MASK)
 
 
+//Define register with bitfields and values
 
 #define CONFIG_0	CONFIG_0_NUM_TX(CONFIG_0_NUM_TXv)|CONFIG_0_TX_FREQ_DIV(CONFIG_0_TX_FREQ_DIVv)
 #define CONFIG_1	0x40u|CONFIG_1_NUM_RX(CONFIG_1_NUM_RXv)|CONFIG_1_NUM_AVG(CONFIG_1_NUM_AVGv)
@@ -218,6 +232,8 @@
 #define CONFIG_4	CONFIG_4_RECEIVE_MODE(CONFIG_4_RECEIVE_MODEv)|CONFIG_4_TRIG_EDGE_POLARITY(CONFIG_4_TRIG_EDGE_POLARITYv)|CONFIG_4_TX_PH_SHIFT_POS(CONFIG_4_TX_PH_SHIFT_POSv)
 #define TOF_1		TOF_1_TIMING_REG(TIMING_REGv)|TOF_1_LNA_FB(TOF_1_LNA_FBv)|TOF_1_LNA_CTRL(TOF_1_LNA_CTRLv)|TOF_1_PGA_CTRL(TOF_1_PGA_CTRLv)|TOF_1_PGA_GAIN(TOF_1_PGA_GAINv)
 #define TOF_0		TOF_0_TIMING_REG(TIMING_REGv)
+#define ERRORS      0x00 //Default
 #define TIMEOUT		TIMEOUT_TOF_TIMEOUT_CTRL(TIMEOUT_TOF_TIMEOUT_CTRLv)|TIMEOUT_ECHO_TIMEOUT(TIMEOUT_ECHO_TIMEOUTv)|TIMEOUT_SHORT_TOF_BLANK_PERIOD(TIMEOUT_SHORT_TOF_BLANK_PERIODv)|TIMEOUT_FORCE_SHORT_TOF(TIMEOUT_FORCE_SHORT_TOFv)
+#define CLOCK_RATE	CLOCK_RATE_AUTOZERO_PERIOD(CLOCK_RATE_AUTOZERO_PERIODv)|CLOCK_RATE_CLOCKIN_DIV(CLOCK_RATE_CLOCKIN_DIVv)
 
 #endif /* MAIN_TDC_REGISTERS_H_ */
