@@ -49,7 +49,7 @@
 #define TIMEOUT_TOF_TIMEOUT_CTRLv		0x3u //1024xT0 of echo listening
 #define TIMEOUT_ECHO_TIMEOUTv			0x0u //timeout disabled
 #define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x4u //64xT0 blanking period of short TOD
-#define TIMEOUT_FORCE_SHORT_TOFv 		0x0u //short TOF disabled
+#define TIMEOUT_FORCE_SHORT_TOFv 		0x1u //short TOF disabled
 
 //clock_rate values
 #define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)
