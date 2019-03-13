@@ -36,7 +36,7 @@
 //config4 values
 #define CONFIG_4_RECEIVE_MODEv			0x0u //receive single echo
 #define CONFIG_4_TRIG_EDGE_POLARITYv	0x0u //rising edge polarity of trigger
-#define CONFIG_4_TX_PH_SHIFT_POSv 		0x1Fu //TX 180° pulse shift position
+#define CONFIG_4_TX_PH_SHIFT_POSv 		0x1Fu //TX 180Â° pulse shift position
 
 /* TOF Values */
 #define TOF_1_PGA_GAINv 			0x7u //PGA gain of 21dB (max)
