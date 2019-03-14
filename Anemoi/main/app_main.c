@@ -39,7 +39,7 @@ void app_main()
     enable_tdc1000_x();
     enable_tdc1000_y();
     select_channel_2();
-    enable_X2_vdd();
+    //enable_X2_vdd();
 
     //Run trigger generation task, among others
     run_anemoi_tasks();
