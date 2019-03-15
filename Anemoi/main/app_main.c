@@ -35,11 +35,13 @@ void app_main()
     init_anemoi_gpio();
     init_clock();
     
+    init_gpio_start_stop();
+
     //Enable and select channels of TDC1000. Enable boost circuit of X1.
     enable_tdc1000_x();
-    enable_tdc1000_y();
+    //enable_tdc1000_y();
     select_channel_2();
-    enable_X2_vdd();
+    enable_Y2_vdd();
 
     //Run trigger generation task, among others
     run_anemoi_tasks();
@@ -79,6 +81,7 @@ void app_main()
         printf("TDC7200 initialized\n");
     }      
    
+
     while(1)
     {
         printf("\nTDC1000 X \n");
@@ -88,7 +91,8 @@ void app_main()
         read_TDC1000_registers(&tdc1000_y_handle);
         vTaskDelay(5000 / portTICK_PERIOD_MS);
         
-        
+        printf("\nInterrupt =%d\n",get_interrupt());
+
         //vTaskDelay(2000 / portTICK_PERIOD_MS);
         //read_TDC7200_config_registers(&tdc7200_handle);
         //new_TDC7200_measurement(&tdc7200_handle);

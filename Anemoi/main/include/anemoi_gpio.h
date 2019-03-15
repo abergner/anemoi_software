@@ -3,6 +3,8 @@
 
 void init_anemoi_gpio(void);
 
+void init_gpio_start_stop(void);
+
 void init_gpio_tdc1000_enable(void);
 void enable_tdc1000_x(void);
 void enable_tdc1000_y(void);
@@ -25,6 +27,6 @@ void enable_Y1_vdd(void);
 void enable_Y2_vdd(void);
 void disable_all_vdd(void);
 
-
+int get_interrupt(void);
 
 #endif
