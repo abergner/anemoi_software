@@ -38,10 +38,14 @@ void app_main()
     init_gpio_start_stop();
 
     //Enable and select channels of TDC1000. Enable boost circuit of X1.
-    enable_tdc1000_x();
+    //enable_tdc1000_x();
     //enable_tdc1000_y();
-    select_channel_2();
-    enable_Y2_vdd();
+    //select_channel_2();
+    //enable_Y2_vdd();
+
+    enable_tdc1000_y();
+    select_channel_1();
+    enable_X1_vdd();
 
     //Run trigger generation task, among others
     run_anemoi_tasks();
@@ -84,14 +88,47 @@ void app_main()
 
     while(1)
     {
-        printf("\nTDC1000 X \n");
-        read_TDC1000_registers(&tdc1000_x_handle);
+
+        disable_tdc1000_x();
+        enable_tdc1000_y();
+        select_channel_1();
+        enable_X1_vdd();
+
+        printf("\n TX: X1, RX: Y1 \n");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
-        printf("\nTDC1000 Y \n");
-        read_TDC1000_registers(&tdc1000_y_handle);
+
+
+        disable_tdc1000_x();
+        enable_tdc1000_y();
+        select_channel_2();
+        enable_X2_vdd();
+
+        printf("\n TX: X2, RX: Y2 \n");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
+
+        disable_tdc1000_y();
+        enable_tdc1000_x();
+        select_channel_1();
+        enable_Y1_vdd();
+
+        printf("\n TX: Y1, RX: X1 \n");
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+
+        disable_tdc1000_y();
+        enable_tdc1000_x();
+        select_channel_2();
+        enable_Y2_vdd();
+
+        printf("\n TX: Y2, RX: X2 \n");
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+        ////Read registers
+        //printf("\nTDC1000 X \n");
+        //read_TDC1000_registers(&tdc1000_x_handle);
+        //printf("\nTDC1000 Y \n");
+        //read_TDC1000_registers(&tdc1000_y_handle);
+
         
-        printf("\nInterrupt =%d\n",get_interrupt());
+        //printf("\nInterrupt =%d\n",get_interrupt());
 
         //vTaskDelay(2000 / portTICK_PERIOD_MS);
         //read_TDC7200_config_registers(&tdc7200_handle);
@@ -105,7 +142,6 @@ void app_main()
         {
            printf("TDC7200 initialized\n");
         }*/
-        
               
     }
     

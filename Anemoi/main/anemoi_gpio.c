@@ -204,11 +204,12 @@ void init_gpio_start_stop(void)
 {
     gpio_pad_select_gpio(GPI_START);
     gpio_set_direction(GPI_START, GPIO_MODE_INPUT);
-    gpio_set_intr_type(GPI_START, GPIO_PIN_INTR_POSEDGE);
+    //gpio_set_intr_type(GPI_START, GPIO_PIN_INTR_POSEDGE);
     gpio_pad_select_gpio(GPI_STOP);
     gpio_set_direction(GPI_STOP, GPIO_MODE_INPUT);
-    gpio_set_intr_type(GPI_STOP, GPIO_PIN_INTR_POSEDGE);
+    //gpio_set_intr_type(GPI_STOP, GPIO_PIN_INTR_POSEDGE);
     
+    print("Hello :)");
 
     //install gpio isr service
     //gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
