@@ -1,0 +1,274 @@
+#ifndef ANEMOI_TDC1000_H_
+#define ANEMOI_TDC1000_H_
+
+
+#include "anemoi_spi.h"
+#include "anemoi_pinout.h"
+
+//Define values of the fields of the registers individually
+//config0 values
+#define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
+#define CONFIG_0_NUM_TXv			0x0Fu //Number of TX pulses in a burst: 11 pulses
+
+//config1 values
+#define CONFIG_1_NUM_AVGv			0x0u //Number of expected receive events (0 - do not count events)
+#define CONFIG_1_NUM_RXv			0x0u //Number of measurement cycles to average in stopwatch/MCU (1)
+
+//config2 values
+#define CONFIG_2_VCOM_SELv			0x0u //Common-mode voltage reference control (internal)
+#define CONFIG_2_MEAS_MODEv			0x0u //AFE measurement type (TOF measuerement)
+#define CONFIG_2_DAMPINGv			0x1u //TX burst damping (enabled)
+#define CONFIG_2_CH_SWPv			0x0u //Automatic channel swap in Mode 2 of operation (disabled)
+#define CONFIG_2_EXT_CHSELv 		0x1u //External channel select (enabled)
+#define CONFIG_2_CH_SELv			0x0u //Active TX/RX channel pair (channel 1)
+#define CONFIG_2_TOF_MEAS_MODEv		0x1u //TOF measurement mode: Mode 0
+
+//config3 values
+#define CONFIG_3_TEMP_MODEv			0x0u //Temperature measurement channels - default
+#define CONFIG_3_TEMP_RTD_SELv		0x0u //RTD type
+#define CONFIG_3_TEMP_CLK_DIVv 		0x0u //Clock divider for temperature mode (divide by 8)
+#define CONFIG_3_BLANKINGv			0x0u //Power blanking in standard TOF measurements (disabled)
+#define CONFIG_3_ECHO_QUAL_THLDv	0x0u //Echo qualification DAC threshold level with respect to VCOM (default)
+
+//config4 values
+#define CONFIG_4_RECEIVE_MODEv			0x0u //receive single echo
+#define CONFIG_4_TRIG_EDGE_POLARITYv	0x0u //rising edge polarity of trigger
+#define CONFIG_4_TX_PH_SHIFT_POSv 		0x1Fu //TX 180° pulse shift position
+
+/* TOF Values */
+#define TOF_1_PGA_GAINv 			0x7u //PGA gain of 21dB (max)
+#define TOF_1_PGA_CTRLv 			0x0u //PGA control active
+#define TOF_1_LNA_CTRLv 			0x0u //LNA control active
+#define TOF_1_LNA_FBv 				0x0u //1:resistive, 0:capacitive (type of feedback)
+#define TIMING_REGv 				0x300u
+
+//timeout values
+#define TIMEOUT_FORCE_SHORT_TOFv 		0x1u //short TOF disabled
+#define TIMEOUT_SHORT_TOF_BLANK_PERIODv 0x4u //64xT0 blanking period of short TOD
+#define TIMEOUT_ECHO_TIMEOUTv			0x0u //timeout disabled
+#define TIMEOUT_TOF_TIMEOUT_CTRLv		0x3u //1024xT0 of echo listening
+
+//clock_rate values
+#define CLOCK_RATE_CLOCKIN_DIVv			0x0u //CLKIN divider to generate T0 (default)
+#define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)
+
+//Define bitfields to get register values
+/* config0 Bit Fields */
+#define	CONFIG_0_NUM_TX_MASK			0x1Fu
+#define CONFIG_0_NUM_TX_SHIFT			0
+#define CONFIG_0_NUM_TX_WIDTH			5
+#define CONFIG_0_NUM_TX(x)				(((unsigned char)(((unsigned char)(x))<<CONFIG_0_NUM_TX_SHIFT))&CONFIG_0_NUM_TX_MASK)
+
+#define	CONFIG_0_TX_FREQ_DIV_MASK		0xE0u
+#define CONFIG_0_TX_FREQ_DIV_SHIFT		5
+#define CONFIG_0_TX_FREQ_DIV_WIDTH		3
+#define CONFIG_0_TX_FREQ_DIV(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_0_TX_FREQ_DIV_SHIFT))&CONFIG_0_TX_FREQ_DIV_MASK)
+
+/* config1 Bit Fields */
+#define	CONFIG_1_NUM_RX_MASK			0x7u
+#define CONFIG_1_NUM_RX_SHIFT			0
+#define CONFIG_1_NUM_RX_WIDTH			3
+#define CONFIG_1_NUM_RX(x)				(   (   (unsigned char) (((unsigned char)(x)) << CONFIG_1_NUM_RX_SHIFT)   )   &  CONFIG_1_NUM_RX_MASK)
+
+#define	CONFIG_1_NUM_AVG_MASK			0x38u
+#define CONFIG_1_NUM_AVG_SHIFT			3
+#define CONFIG_1_NUM_AVG_WIDTH			3
+#define CONFIG_1_NUM_AVG(x)				(((unsigned char)(((unsigned char)(x))<<CONFIG_1_NUM_AVG_SHIFT))&CONFIG_1_NUM_AVG_MASK)
+
+/* config2 Bit Fields */
+#define	CONFIG_2_TOF_MEAS_MODE_MASK		0x3u
+#define CONFIG_2_TOF_MEAS_MODE_SHIFT	0
+#define CONFIG_2_TOF_MEAS_MODE_WIDTH	2
+#define CONFIG_2_TOF_MEAS_MODE(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_2_TOF_MEAS_MODE_SHIFT))&CONFIG_2_TOF_MEAS_MODE_MASK)
+
+#define	CONFIG_2_CH_SEL_MASK			0x4u
+#define CONFIG_2_CH_SEL_SHIFT			2
+#define CONFIG_2_CH_SEL_WIDTH			1
+#define CONFIG_2_CH_SEL(x)				(((unsigned char)(((unsigned char)(x))<<CONFIG_2_CH_SEL_SHIFT))&CONFIG_2_CH_SEL_MASK)
+
+#define	CONFIG_2_EXT_CHSEL_MASK			0x8u
+#define CONFIG_2_EXT_CHSEL_SHIFT		3
+#define CONFIG_2_EXT_CHSEL_WIDTH		1
+#define CONFIG_2_EXT_CHSEL(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_2_EXT_CHSEL_SHIFT))&CONFIG_2_EXT_CHSEL_MASK)
+
+#define	CONFIG_2_CH_SWP_MASK			0x10u
+#define CONFIG_2_CH_SWP_SHIFT			4
+#define CONFIG_2_CH_SWP_WIDTH			1
+#define CONFIG_2_CH_SWP(x)				(((unsigned char)(((unsigned char)(x))<<CONFIG_2_CH_SWP_SHIFT))&CONFIG_2_CH_SWP_MASK)
+
+#define	CONFIG_2_DAMPING_MASK			0x20u
+#define CONFIG_2_DAMPING_SHIFT			5
+#define CONFIG_2_DAMPING_WIDTH			1
+#define CONFIG_2_DAMPING(x)				(((unsigned char)(((unsigned char)(x))<<CONFIG_2_DAMPING_SHIFT))&CONFIG_2_DAMPING_MASK)
+
+#define	CONFIG_2_MEAS_MODE_MASK			0x40u
+#define CONFIG_2_MEAS_MODE_SHIFT		6
+#define CONFIG_2_MEAS_MODE_WIDTH		1
+#define CONFIG_2_MEAS_MODE(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_2_MEAS_MODE_SHIFT))&CONFIG_2_MEAS_MODE_MASK)
+
+#define	CONFIG_2_VCOM_SEL_MASK			0x80u
+#define CONFIG_2_VCOM_SEL_SHIFT			7
+#define CONFIG_2_VCOM_SEL_WIDTH			1
+#define CONFIG_2_VCOM_SEL(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_2_VCOM_SEL_SHIFT))&CONFIG_2_VCOM_SEL_MASK)
+
+/* config3 Bit Fields */
+#define	CONFIG_3_ECHO_QUAL_THLD_MASK	0x7u
+#define CONFIG_3_ECHO_QUAL_THLD_SHIFT	0
+#define CONFIG_3_ECHO_QUAL_THLD_WIDTH	3
+#define CONFIG_3_ECHO_QUAL_THLD(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_3_ECHO_QUAL_THLD_SHIFT))&CONFIG_3_ECHO_QUAL_THLD_MASK)
+
+#define	CONFIG_3_BLANKING_MASK			0x8u
+#define CONFIG_3_BLANKING_SHIFT			3
+#define CONFIG_3_BLANKING_WIDTH			1
+#define CONFIG_3_BLANKING(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_3_BLANKING_SHIFT))&CONFIG_3_BLANKING_MASK)
+
+#define	CONFIG_3_TEMP_CLK_DIV_MASK		0x10u
+#define CONFIG_3_TEMP_CLK_DIV_SHIFT		4
+#define CONFIG_3_TEMP_CLK_DIV_WIDTH		1
+#define CONFIG_3_TEMP_CLK_DIV(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_3_TEMP_CLK_DIV_SHIFT))&CONFIG_3_TEMP_CLK_DIV_MASK)
+
+#define	CONFIG_3_TEMP_RTD_SEL_MASK		0x20u
+#define CONFIG_3_TEMP_RTD_SEL_SHIFT		5
+#define CONFIG_3_TEMP_RTD_SEL_WIDTH		1
+#define CONFIG_3_TEMP_RTD_SEL(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_3_TEMP_RTD_SEL_SHIFT))&CONFIG_3_TEMP_RTD_SEL_MASK)
+
+#define	CONFIG_3_TEMP_MODE_MASK			0x40u
+#define CONFIG_3_TEMP_MODE_SHIFT		6
+#define CONFIG_3_TEMP_MODE_WIDTH		1
+#define CONFIG_3_TEMP_MODE(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_3_TEMP_MODE_SHIFT))&CONFIG_3_TEMP_MODE_MASK)
+
+/* config4 Bit Fields */
+#define	CONFIG_4_TX_PH_SHIFT_POS_MASK	0x1Fu
+#define CONFIG_4_TX_PH_SHIFT_POS_SHIFT	0
+#define CONFIG_4_TX_PH_SHIFT_POS_WIDTH	5
+#define CONFIG_4_TX_PH_SHIFT_POS(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_4_TX_PH_SHIFT_POS_SHIFT))&CONFIG_4_TX_PH_SHIFT_POS_MASK)
+
+#define	CONFIG_4_TRIG_EDGE_POLARITY_MASK	0x20u
+#define CONFIG_4_TRIG_EDGE_POLARITY_SHIFT	5
+#define CONFIG_4_TRIG_EDGE_POLARITY_WIDTH	1
+#define CONFIG_4_TRIG_EDGE_POLARITY(x)		(((unsigned char)(((unsigned char)(x))<<CONFIG_4_TRIG_EDGE_POLARITY_SHIFT))&CONFIG_4_TRIG_EDGE_POLARITY_MASK)
+
+#define	CONFIG_4_RECEIVE_MODE_MASK			0x40u
+#define CONFIG_4_RECEIVE_MODE_SHIFT			6
+#define CONFIG_4_RECEIVE_MODE_WIDTH			1
+#define CONFIG_4_RECEIVE_MODE(x)			(((unsigned char)(((unsigned char)(x))<<CONFIG_4_RECEIVE_MODE_SHIFT))&CONFIG_4_RECEIVE_MODE_MASK)
+
+/* TOF_0 Bit Fields */
+#define	TOF_0_TIMING_REG_MASK				0xFFu
+#define TOF_0_TIMING_REG_SHIFT				0
+#define TOF_0_TIMING_REG_WIDTH				8
+#define TOF_0_TIMING_REG(x)					(((unsigned char)(((unsigned char)(x))<<TOF_0_TIMING_REG_SHIFT))&TOF_0_TIMING_REG_MASK)
+
+/* TOF_1 Bit Fields */
+#define	TOF_1_TIMING_REG_MASK				0x3u
+#define TOF_1_TIMING_REG_SHIFT				0
+#define TOF_1_TIMING_REG_WIDTH				2
+#define TOF_1_TIMING_REG(x)					(((unsigned char)(((unsigned char)(x))<<TOF_1_TIMING_REG_SHIFT>>8))&TOF_1_TIMING_REG_MASK)
+
+#define	TOF_1_LNA_FB_MASK					0x4u
+#define TOF_1_LNA_FB_SHIFT					2
+#define TOF_1_LNA_FB_WIDTH					1
+#define TOF_1_LNA_FB(x)						(((unsigned char)(((unsigned char)(x))<<TOF_1_LNA_FB_SHIFT))&TOF_1_LNA_FB_MASK)
+
+#define	TOF_1_LNA_CTRL_MASK					0x8u
+#define TOF_1_LNA_CTRL_SHIFT				3
+#define TOF_1_LNA_CTRL_WIDTH				1
+#define TOF_1_LNA_CTRL(x)					(((unsigned char)(((unsigned char)(x))<<TOF_1_LNA_CTRL_SHIFT))&TOF_1_LNA_CTRL_MASK)
+
+#define	TOF_1_PGA_CTRL_MASK					0x10u
+#define TOF_1_PGA_CTRL_SHIFT				4
+#define TOF_1_PGA_CTRL_WIDTH				1
+#define TOF_1_PGA_CTRL(x)					(((unsigned char)(((unsigned char)(x))<<TOF_1_PGA_CTRL_SHIFT))&TOF_1_PGA_CTRL_MASK)
+
+#define	TOF_1_PGA_GAIN_MASK					0xE0u
+#define TOF_1_PGA_GAIN_SHIFT				5
+#define TOF_1_PGA_GAIN_WIDTH				3
+#define TOF_1_PGA_GAIN(x)					(((unsigned char)(((unsigned char)(x))<<TOF_1_PGA_GAIN_SHIFT))&TOF_1_PGA_GAIN_MASK)
+
+/* TIMEOUT Bit Fields */
+#define	TIMEOUT_TOF_TIMEOUT_CTRL_MASK		0x3u
+#define TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT		0
+#define TIMEOUT_TOF_TIMEOUT_CTRL_WIDTH		2
+#define TIMEOUT_TOF_TIMEOUT_CTRL(x)			(((unsigned char)(((unsigned char)(x))<<TIMEOUT_TOF_TIMEOUT_CTRL_SHIFT))&TIMEOUT_TOF_TIMEOUT_CTRL_MASK)
+
+#define	TIMEOUT_ECHO_TIMEOUT_MASK			0x4u
+#define TIMEOUT_ECHO_TIMEOUT_SHIFT			2
+#define TIMEOUT_ECHO_TIMEOUT_WIDTH			1
+#define TIMEOUT_ECHO_TIMEOUT(x)				(((unsigned char)(((unsigned char)(x))<<TIMEOUT_ECHO_TIMEOUT_SHIFT))&TIMEOUT_ECHO_TIMEOUT_MASK)
+
+#define	TIMEOUT_SHORT_TOF_BLANK_PERIOD_MASK		0x38u
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT	3
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD_WIDTH	3
+#define TIMEOUT_SHORT_TOF_BLANK_PERIOD(x)		(((unsigned char)(((unsigned char)(x))<<TIMEOUT_SHORT_TOF_BLANK_PERIOD_SHIFT))&TIMEOUT_SHORT_TOF_BLANK_PERIOD_MASK)
+
+#define	TIMEOUT_FORCE_SHORT_TOF_MASK		0x40u
+#define TIMEOUT_FORCE_SHORT_TOF_SHIFT		6
+#define TIMEOUT_FORCE_SHORT_TOF_WIDTH		1
+#define TIMEOUT_FORCE_SHORT_TOF(x)			(((unsigned char)(((unsigned char)(x))<<TIMEOUT_FORCE_SHORT_TOF_SHIFT))&TIMEOUT_FORCE_SHORT_TOF_MASK)
+
+/* clock_rate Bit Fields */
+#define	CLOCK_RATE_AUTOZERO_PERIOD_MASK		0x3u
+#define CLOCK_RATE_AUTOZERO_PERIOD_SHIFT	0
+#define CLOCK_RATE_AUTOZERO_PERIOD_WIDTH	2
+#define CLOCK_RATE_AUTOZERO_PERIOD(x)		(((unsigned char)(((unsigned char)(x))<<CLOCK_RATE_AUTOZERO_PERIOD_SHIFT))&CLOCK_RATE_AUTOZERO_PERIOD_MASK)
+
+#define	CLOCK_RATE_CLOCKIN_DIV_MASK			0x4u
+#define CLOCK_RATE_CLOCKIN_DIV_SHIFT		2
+#define CLOCK_RATE_CLOCKIN_DIV_WIDTH		1
+#define CLOCK_RATE_CLOCKIN_DIV(x)			(((unsigned char)(((unsigned char)(x))<<CLOCK_RATE_CLOCKIN_DIV_SHIFT))&CLOCK_RATE_CLOCKIN_DIV_MASK)
+
+//Define register with bitfields and values
+#define CONFIG_0	CONFIG_0_NUM_TX(CONFIG_0_NUM_TXv)|CONFIG_0_TX_FREQ_DIV(CONFIG_0_TX_FREQ_DIVv)
+#define CONFIG_1	0x40u|CONFIG_1_NUM_RX(CONFIG_1_NUM_RXv)|CONFIG_1_NUM_AVG(CONFIG_1_NUM_AVGv)
+#define CONFIG_2	CONFIG_2_TOF_MEAS_MODE(CONFIG_2_TOF_MEAS_MODEv)|CONFIG_2_CH_SEL(CONFIG_2_CH_SELv)|CONFIG_2_EXT_CHSEL(CONFIG_2_EXT_CHSELv)|CONFIG_2_CH_SWP(CONFIG_2_CH_SWPv)|CONFIG_2_DAMPING(CONFIG_2_DAMPINGv)|CONFIG_2_MEAS_MODE(CONFIG_2_MEAS_MODEv)|CONFIG_2_VCOM_SEL(CONFIG_2_VCOM_SELv)
+#define CONFIG_3	CONFIG_3_ECHO_QUAL_THLD(CONFIG_3_ECHO_QUAL_THLDv)|CONFIG_3_BLANKING(CONFIG_3_BLANKINGv)|CONFIG_3_TEMP_CLK_DIV(CONFIG_3_TEMP_CLK_DIVv)|CONFIG_3_TEMP_RTD_SEL(CONFIG_3_TEMP_RTD_SELv)|CONFIG_3_TEMP_MODE(CONFIG_3_TEMP_MODEv)
+#define CONFIG_4	CONFIG_4_RECEIVE_MODE(CONFIG_4_RECEIVE_MODEv)|CONFIG_4_TRIG_EDGE_POLARITY(CONFIG_4_TRIG_EDGE_POLARITYv)|CONFIG_4_TX_PH_SHIFT_POS(CONFIG_4_TX_PH_SHIFT_POSv)
+#define TOF_1		TOF_1_TIMING_REG(TIMING_REGv)|TOF_1_LNA_FB(TOF_1_LNA_FBv)|TOF_1_LNA_CTRL(TOF_1_LNA_CTRLv)|TOF_1_PGA_CTRL(TOF_1_PGA_CTRLv)|TOF_1_PGA_GAIN(TOF_1_PGA_GAINv)
+#define TOF_0		TOF_0_TIMING_REG(TIMING_REGv)
+#define ERRORS      0x00 //Default
+#define TIMEOUT		TIMEOUT_TOF_TIMEOUT_CTRL(TIMEOUT_TOF_TIMEOUT_CTRLv)|TIMEOUT_ECHO_TIMEOUT(TIMEOUT_ECHO_TIMEOUTv)|TIMEOUT_SHORT_TOF_BLANK_PERIOD(TIMEOUT_SHORT_TOF_BLANK_PERIODv)|TIMEOUT_FORCE_SHORT_TOF(TIMEOUT_FORCE_SHORT_TOFv)
+#define CLOCK_RATE	CLOCK_RATE_AUTOZERO_PERIOD(CLOCK_RATE_AUTOZERO_PERIODv)|CLOCK_RATE_CLOCKIN_DIV(CLOCK_RATE_CLOCKIN_DIVv)
+
+
+//Type definitions
+typedef enum {CONFIG_0_ADDRESS=0, CONFIG_1_ADDRESS, CONFIG_2_ADDRESS ,CONFIG_3_ADDRESS ,
+	CONFIG_4_ADDRESS ,TOF_1_ADDRESS ,TOF_0_ADDRESS ,ERRORS_ADDRESS ,TIMEOUT_ADDRESS  ,CLOCK_RATE_ADDRESS, TDC1000_REG_COUNT } tdc1000_reg_addr_t;
+
+
+//Functions
+
+void tdc1000_init(void);
+void tdc1000_enable(void);
+
+
+unsigned char tdc1000_register_get(unsigned int address);
+void tdc1000_register_set(unsigned int address, unsigned char value);
+
+
+#endif /* ANEMOI_TDC1000_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
