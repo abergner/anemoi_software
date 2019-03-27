@@ -13,7 +13,7 @@
 void run_anemoi_tasks(void)
 {
     
-    xTaskCreate(&trigger_task, "trigger_task", 512, NULL, 4, NULL);
+    //xTaskCreate(&trigger_task, "trigger_task", 512, NULL, 4, NULL);
     
     
 }
