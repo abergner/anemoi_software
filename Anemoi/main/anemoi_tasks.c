@@ -7,6 +7,7 @@
 
 #include "include/anemoi_tasks.h"
 #include "include/anemoi_pinout.h"
+#include "include/anemoi_gpio.h"
 //#include "include/anemoi_spi.h"
 
 
@@ -22,7 +23,8 @@ void run_anemoi_tasks(void)
 void time_measurement_task(void *pvParameter)
 {
     
-    /*START_queue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
+    /*
+    START_queue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
     if( START_queue == 0 )
     {
        printf("Failed to create the START queue.\n");
@@ -182,10 +184,12 @@ void trigger_task(void *pvParameter)
     gpio_set_direction(GPIO_ESP_TRIGG, GPIO_MODE_OUTPUT);
     while (1)
     {
+    	//disable_tdc1000_y();
         gpio_set_level(GPIO_ESP_TRIGG, 1);
         vTaskDelay(50 / portTICK_PERIOD_MS);
-        gpio_set_level(GPIO_ESP_TRIGG, 0);      
-        vTaskDelay(1000 / portTICK_PERIOD_MS);   
+        gpio_set_level(GPIO_ESP_TRIGG, 0);
+        //enable_tdc1000_y();
+        vTaskDelay(500 / portTICK_PERIOD_MS);
         
     }
 }

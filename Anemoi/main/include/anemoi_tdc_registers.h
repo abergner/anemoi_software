@@ -23,7 +23,7 @@
 #define CONFIG_2_DAMPINGv			0x1u //TX burst damping (enabled)
 #define CONFIG_2_CH_SWPv			0x0u //Automatic channel swap in Mode 2 of operation (disabled)
 #define CONFIG_2_EXT_CHSELv 		0x1u //External channel select (enabled)
-#define CONFIG_2_CH_SELv			0x0u //Active TX/RX channel pair (channel 1)
+#define CONFIG_2_CH_SELv			0x1u //Active TX/RX channel pair (channel 1)
 #define CONFIG_2_TOF_MEAS_MODEv		0x1u //TOF measurement mode: Mode 0
 
 //config3 values

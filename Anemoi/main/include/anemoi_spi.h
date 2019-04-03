@@ -1,7 +1,7 @@
 #ifndef _ANEMOI_SPI_H_
 #define _ANEMOI_SPI_H_
 
-#include "tdc_registers.h"
+#include "anemoi_tdc_registers.h"
 
 typedef enum {CONFIG_0_ADDRESS=0, CONFIG_1_ADDRESS, CONFIG_2_ADDRESS ,CONFIG_3_ADDRESS ,
 CONFIG_4_ADDRESS ,TOF_1_ADDRESS ,TOF_0_ADDRESS ,ERRORS_ADDRESS ,TIMEOUT_ADDRESS  ,CLOCK_RATE_ADDRESS  }TDC1000_Registers_t;
@@ -44,10 +44,12 @@ typedef enum {TIME1_ADDRESS=0x10,CLOCK_COUNT1_ADDRESS ,TIME2_ADDRESS ,CLOCK_COUN
 #define CLOCK_CNTR_STOP_MASK_H     0x00
 #define CLOCK_CNTR_STOP_MASK_L     0x01
 
+typedef enum {NORMAL_CONFIG,RESET_CONFIG}config_t;
+
 
 
 esp_err_t init_SPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t * tdc1000_y_handle_ptr,spi_device_handle_t * tdc7200_handle_ptr);
-esp_err_t init_TDC1000_SPI(spi_device_handle_t * handle_ptr);
+esp_err_t init_TDC1000_SPI(spi_device_handle_t * handle_ptr,config_t config);
 esp_err_t read_TDC1000_registers(spi_device_handle_t * handle_ptr);
 
 esp_err_t init_TDC7200_SPI(spi_device_handle_t * handle_ptr);

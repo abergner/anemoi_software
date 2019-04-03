@@ -3,9 +3,18 @@
 
 void init_anemoi_gpio(void);
 
+void init_gpio_start_stop(void);
+void enable_start_stop_interrupt(void);
+void disable_start_stop_interrupt(void);
+bool calculate_TOF(double * TimeofFlight);
+
+void send_trigger(void);
+void init_gpio_trigger(void);
+
 void init_gpio_tdc1000_enable(void);
 void enable_tdc1000_x(void);
 void enable_tdc1000_y(void);
+void disable_tdc1000(void);
 void disable_tdc1000_x(void);
 void disable_tdc1000_y(void);
 
