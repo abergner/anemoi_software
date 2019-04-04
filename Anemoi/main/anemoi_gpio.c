@@ -24,23 +24,23 @@ QueueHandle_t STOP_queue;
 uint32_t START_time=0;
 uint32_t STOP_time=0;
 
-void init_anemoi_gpio(void)
+void initAnemoiGPIO(void)
 {
-    init_gpio_tdc1000_enable();
-    init_gpio_tdc7200_enable();
-    init_gpio_chsel();
-    init_gpio_vdd_enable();
-    init_gpio_start_stop();
-    init_gpio_trigger();
+    initEnableTDC1000();
+    initEnableTDC7200();
+    initChannelSelect();
+    initEnableVdd();
+    initStartStop();
+    initTrigger();
 }
 
-void send_trigger(void)
+void sendTrigger(void)
 {
 	gpio_set_level(GPIO_ESP_TRIGG, 1);
 	vTaskDelay(1 / portTICK_PERIOD_MS);
 	gpio_set_level(GPIO_ESP_TRIGG, 0);
 }
-void init_gpio_trigger(void)
+void initTrigger(void)
 {
 	gpio_pad_select_gpio(GPIO_ESP_TRIGG);
 	gpio_set_direction(GPIO_ESP_TRIGG, GPIO_MODE_OUTPUT);
@@ -48,7 +48,7 @@ void init_gpio_trigger(void)
 }
 
 
-void init_gpio_tdc1000_enable(void)
+void initEnableTDC1000(void)
 {
     gpio_pad_select_gpio(GPIO_TDC1000_X_EN);
     gpio_set_direction(GPIO_TDC1000_X_EN, GPIO_MODE_OUTPUT);
@@ -59,69 +59,69 @@ void init_gpio_tdc1000_enable(void)
     gpio_set_level(GPIO_TDC1000_Y_EN, 0);
 }
 
-void enable_tdc1000_x(void)
+void enableX(void)
 {
 	//disable_tdc1000_y();
     gpio_set_level(GPIO_TDC1000_X_EN, 1);
-    disable_tdc1000_y();
+    disableY();
 
 }
-void enable_tdc1000_y(void)
+void enableY(void)
 {
 	//disable_tdc1000_x();
     gpio_set_level(GPIO_TDC1000_Y_EN, 1);
-    disable_tdc1000_x();
+    disableX();
 }
 
-void disable_tdc1000(void)
+void disableTDC1000(void)
 {
 	gpio_set_level(GPIO_TDC1000_X_EN, 0);
 	gpio_set_level(GPIO_TDC1000_Y_EN, 0);
 }
 
-void disable_tdc1000_x(void)
+void disableX(void)
 {
     gpio_set_level(GPIO_TDC1000_X_EN, 0);
 }
-void disable_tdc1000_y(void)
+void disableY(void)
 {
     gpio_set_level(GPIO_TDC1000_Y_EN, 0);
 }
 
-void init_gpio_tdc7200_enable(void)
+void initEnableTDC7200(void)
 {
     gpio_pad_select_gpio(GPIO_TDC7200_EN);
     gpio_set_direction(GPIO_TDC7200_EN, GPIO_MODE_OUTPUT);
     gpio_set_level(GPIO_TDC7200_EN, 0);
     
 }
-void enable_tdc7200(void)
+void enableTDC7200(void)
 {
     gpio_set_level(GPIO_TDC7200_EN, 1);
 }
-void disable_tdc7200(void)
+void disableTDC7200(void)
 {
     gpio_set_level(GPIO_TDC7200_EN, 0);
 }
 
-void init_gpio_chsel(void)
+void initChannelSelect(void)
 {
     gpio_pad_select_gpio(GPIO_CHSEL);
     gpio_set_direction(GPIO_CHSEL, GPIO_MODE_OUTPUT);
     gpio_set_level(GPIO_CHSEL, 0); 
 }
 
-void select_channel_1(void)
+void selectChannel1(void)
 {
     gpio_set_level(GPIO_CHSEL, 0);
 }
 
-void select_channel_2(void)
+void selectChannel2(void)
 {
     gpio_set_level(GPIO_CHSEL, 1);
 }
 
-void init_gpio_vdd_enable(void)
+void initEnableVdd(void)
 {
     gpio_pad_select_gpio(GPIO_VDD_EN_X1);
     gpio_set_direction(GPIO_VDD_EN_X1, GPIO_MODE_OUTPUT);
@@ -140,7 +140,7 @@ void init_gpio_vdd_enable(void)
     gpio_set_level(GPIO_VDD_EN_Y2, 0); 
 }
 
-void enable_X1_vdd(void)
+void enableX1Vdd(void)
 {
     gpio_set_level(GPIO_VDD_EN_X2, 0);
     gpio_set_level(GPIO_VDD_EN_Y1, 0);
@@ -149,7 +149,7 @@ void enable_X1_vdd(void)
     gpio_set_level(GPIO_VDD_EN_X1, 1);
     
 }
-void enable_X2_vdd(void)
+void enableX2Vdd(void)
 {
     gpio_set_level(GPIO_VDD_EN_X1, 0);
     gpio_set_level(GPIO_VDD_EN_Y1, 0);
@@ -157,7 +157,7 @@ void enable_X2_vdd(void)
     
     gpio_set_level(GPIO_VDD_EN_X2, 1);
 }
-void enable_Y1_vdd(void)
+void enableY1Vdd(void)
 {
     gpio_set_level(GPIO_VDD_EN_X1, 0);
     gpio_set_level(GPIO_VDD_EN_X2, 0);
@@ -165,7 +165,7 @@ void enable_Y1_vdd(void)
     
     gpio_set_level(GPIO_VDD_EN_Y1, 1);
 }
-void enable_Y2_vdd(void)
+void enableY2Vdd(void)
 {
     gpio_set_level(GPIO_VDD_EN_X1, 0);
     gpio_set_level(GPIO_VDD_EN_X2, 0);
@@ -174,7 +174,7 @@ void enable_Y2_vdd(void)
     gpio_set_level(GPIO_VDD_EN_Y2, 1); 
 }
 
-void disable_all_vdd(void)
+void disableAllVdd(void)
 {
     gpio_set_level(GPIO_VDD_EN_X1, 0);
     gpio_set_level(GPIO_VDD_EN_X2, 0);
@@ -215,7 +215,7 @@ static void IRAM_ATTR gpio_isr_handler_STOP(void* arg)
     }
 } 
 
-void init_gpio_start_stop(void)
+void initStartStop(void)
 {
 	START_queue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
 	if( START_queue == 0 )
@@ -243,21 +243,22 @@ void init_gpio_start_stop(void)
     gpio_isr_handler_add(GPI_STOP, gpio_isr_handler_STOP, (void*) GPI_STOP);
     
 
+
 }
 
-void enable_start_stop_interrupt(void)
+void enableStartStopInterrupt(void)
 {
 	gpio_intr_enable(GPI_START);
 	gpio_intr_enable(GPI_STOP);
 }
 
-void disable_start_stop_interrupt(void)
+void disableStartStopInterrupt(void)
 {
 	gpio_intr_disable(GPI_START);
 	gpio_intr_disable(GPI_STOP);
 }
 
-bool calculate_TOF(double * TimeofFlight)
+bool calculateTOF(double * TimeofFlight)
 {
 	uint32_t start=0;
 	uint32_t stops[STOP_QUEUE_LENGTH]={0};
@@ -287,7 +288,7 @@ bool calculate_TOF(double * TimeofFlight)
 	}
 	else
 	{
-		printf("No Start received\n");
+
 		return false;
 	}
 	if( STOP_queue != 0 )
@@ -301,9 +302,8 @@ bool calculate_TOF(double * TimeofFlight)
 			}
 		}
 	}
-	else
+	if(arrived_pulses==0)
 	{
-		printf("No Stop received\n");
 		return false;
 	}
 
@@ -319,11 +319,16 @@ bool calculate_TOF(double * TimeofFlight)
 			times[i]=(double)(start-stops[i])/240000000;
 		}
 	}
-
-	TOF=times[arrived_pulses-1]-((double) 26)/((double)Transducer_Freq_Hz);
+	for(i=0;i<arrived_pulses;i++)
+	{
+		TOF=TOF+times[arrived_pulses-1-i]-((double) (26-i))/((double)TRANSDUCER_FREQUENCY_IN_HZ );
+	}
+	TOF=TOF/arrived_pulses;
+	//TOF=times[arrived_pulses-1-i]-((double) 26)/((double)Transducer_Freq_Hz);
 	*TimeofFlight=TOF;
 
-	printf("TOF:\t %f ms\n",TOF*1000);
+
+
 
 	return true;
 }

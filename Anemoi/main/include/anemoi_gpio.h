@@ -1,38 +1,38 @@
 #ifndef _ANEMOI_GPIO_H_
 #define _ANEMOI_GPIO_H_
 
-void init_anemoi_gpio(void);
+void initAnemoiGPIO(void);
 
-void init_gpio_start_stop(void);
-void enable_start_stop_interrupt(void);
-void disable_start_stop_interrupt(void);
-bool calculate_TOF(double * TimeofFlight);
+void initStartStop(void);
+void enableStartStopInterrupt(void);
+void disableStartStopInterrupt(void);
+bool calculateTOF(double * TimeofFlight);
 
-void send_trigger(void);
-void init_gpio_trigger(void);
+void sendTrigger(void);
+void initTrigger(void);
 
-void init_gpio_tdc1000_enable(void);
-void enable_tdc1000_x(void);
-void enable_tdc1000_y(void);
-void disable_tdc1000(void);
-void disable_tdc1000_x(void);
-void disable_tdc1000_y(void);
+void initEnableTDC1000(void);
+void enableX(void);
+void enableY(void);
+void disableTDC1000(void);
+void disableX(void);
+void disableY(void);
 
-void init_gpio_tdc7200_enable(void);
-void enable_tdc7200(void);
-void disable_tdc7200(void);
+void initEnableTDC7200(void);
+void enableTDC7200(void);
+void disableTDC7200(void);
 
-void init_gpio_chsel(void);
-void select_channel_1(void);
-void select_channel_2(void);
+void initChannelSelect(void);
+void selectChannel1(void);
+void selectChannel2(void);
 
 
-void init_gpio_vdd_enable(void);
-void enable_X1_vdd(void);
-void enable_X2_vdd(void);
-void enable_Y1_vdd(void);
-void enable_Y2_vdd(void);
-void disable_all_vdd(void);
+void initEnableVdd(void);
+void enableX1Vdd(void);
+void enableX2Vdd(void);
+void enableY1Vdd(void);
+void enableY2Vdd(void);
+void disableAllVdd(void);
 
 
 

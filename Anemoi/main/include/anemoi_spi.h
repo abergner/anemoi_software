@@ -48,8 +48,8 @@ typedef enum {NORMAL_CONFIG,RESET_CONFIG}config_t;
 
 
 
-esp_err_t init_SPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t * tdc1000_y_handle_ptr,spi_device_handle_t * tdc7200_handle_ptr);
-esp_err_t init_TDC1000_SPI(spi_device_handle_t * handle_ptr,config_t config);
+esp_err_t initSPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t * tdc1000_y_handle_ptr,spi_device_handle_t * tdc7200_handle_ptr);
+esp_err_t initTDC1000SPI(spi_device_handle_t * handle_ptr,config_t config);
 esp_err_t read_TDC1000_registers(spi_device_handle_t * handle_ptr);
 
 esp_err_t init_TDC7200_SPI(spi_device_handle_t * handle_ptr);

@@ -2,10 +2,10 @@
 #ifndef _ANEMOI_CLOCK_H_
 #define _ANEMOI_CLOCK_H_
 
-#define Transducer_Freq_Hz 40000
-#define TDC_Clock_Hz Transducer_Freq_Hz*32
+#define TRANSDUCER_FREQUENCY_IN_HZ 40000
+#define CLOCK_FRECUENCY_IN_HZ TRANSDUCER_FREQUENCY_IN_HZ*32
 
-void init_clock(void);
+void initClock(void);
 
 
 #endif

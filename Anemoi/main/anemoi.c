@@ -12,6 +12,7 @@
 #include "esp_spi_flash.h"
 #include "esp_log.h"
 #include "esp_event.h"
+#include "esp_err.h"
 #include "esp_event_loop.h"
 #include "freertos/task.h"
 
@@ -32,63 +33,96 @@
 #define POSITIVE_DIRECTION 'p'
 #define NEGATIVE_DIRECTION 'n'
 
+#define RADIANS2DEGREES	180.0 / M_PI
+
 typedef struct
 {
-	double Speed;
-	double Direction;
-}Wind_t;
+	double speed;
+	double direction;
+}Wind;
 
-void init_anemoi(void);
-Wind_t calculateWind(double TimeXPositive,double TimeXNegative, double TimeYPositive,double TimeYNegative);
-bool measure_time(char axis,char direction, double * TimeofFlight);
+void initAnemoi(void);
+Wind calculateWind(double xPositiveTime,double xNegativeTime, double yPositiveTime,double yNegativeTime);
+bool measureTime(char axis,char direction, double * timeofFlight);
 
+#define RESET   "\033[0m"
+#define BLACK   "\033[30m"      /* Black */
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"      /* Green */
+#define YELLOW  "\033[33m"      /* Yellow */
+#define BLUE    "\033[34m"      /* Blue */
+#define MAGENTA "\033[35m"      /* Magenta */
+#define CYAN    "\033[36m"      /* Cyan */
+#define WHITE   "\033[37m"      /* White */
+#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
+#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
+#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
+#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 void anemoi(void)
 {
-	init_anemoi();
+	initAnemoi();
 
-	Wind_t Wind={0};
+	Wind wind;
 
-	double TimeofFlightXPositive=0;
-	double TimeofFlightXNegative=0;
-	double TimeofFlightYPositive=0;
-	double TimeofFlightYNegative=0;
+	double xPositiveTimeofFlight=0;
+	double xNegativeTimeofFlight=0;
+	double yPositiveTimeofFlight=0;
+	double yNegativeTimeofFlight=0;
 
-	bool XPositiveMeasurementOK=false;
-	bool XNegativeMeasurementOK=false;
-	bool YPositiveMeasurementOK=false;
-	bool YNegativeMeasurementOK=false;
+	bool xPositiveMeasurementOK=false;
+	bool xNegativeMeasurementOK=false;
+	bool yPositiveMeasurementOK=false;
+	bool yNegativeMeasurementOK=false;
 
 	while(true)
 	{
-		XPositiveMeasurementOK=measure_time(X_AXIS,POSITIVE_DIRECTION,&TimeofFlightXPositive);
-		if(XPositiveMeasurementOK==false)
-		{
-			printf("X positive direction measurement error\n");
-		}
-		YPositiveMeasurementOK=measure_time(Y_AXIS,POSITIVE_DIRECTION,&TimeofFlightYPositive);
-		if(YPositiveMeasurementOK==false)
-		{
-			printf("Y positive direction measurement error\n");
-		}/*
-		XNegativeMeasurementOK=measure_time(X_AXIS,NEGATIVE_DIRECTION,&TimeofFlightXNegative);
-		if(XNegativeMeasurementOK==false)
-		{
-			printf("X negative direction measurement error\n");
-		}
-		YNegativeMeasurementOK=measure_time(Y_AXIS,NEGATIVE_DIRECTION,&TimeofFlightYNegative);
-		if(YNegativeMeasurementOK==false)
-		{
-			printf("Y negative direction measurement error\n");
-		}*/
+		printf("\nStart Loop\n");
 
-
-		if(XPositiveMeasurementOK&&XNegativeMeasurementOK&&YPositiveMeasurementOK&&YNegativeMeasurementOK)
+		printf("\tX Positive \n");
+		xPositiveMeasurementOK=measureTime(X_AXIS,POSITIVE_DIRECTION,&xPositiveTimeofFlight);
+		if(xPositiveMeasurementOK==false)
 		{
-			Wind=calculateWind(TimeofFlightXPositive,TimeofFlightXNegative,TimeofFlightYPositive,TimeofFlightYNegative);
+			printf(RED"X positive direction measurement error\n"RESET);
 		}
 
-		vTaskDelay(500 / portTICK_PERIOD_MS);
+		printf("\tY Positive \n");
+		yPositiveMeasurementOK=measureTime(Y_AXIS,POSITIVE_DIRECTION,&yPositiveTimeofFlight);
+		if(yPositiveMeasurementOK==false)
+		{
+			printf(RED"Y positive direction measurement error\n"RESET);
+		}
+
+		printf("\tX Negative \n");
+		xNegativeMeasurementOK=measureTime(X_AXIS,NEGATIVE_DIRECTION,&xNegativeTimeofFlight);
+		if(xNegativeMeasurementOK==false)
+		{
+			printf(RED"X negative direction measurement error\n"RESET);
+		}
+
+		printf("\tY Negative \n");
+		yNegativeMeasurementOK=measureTime(Y_AXIS,NEGATIVE_DIRECTION,&yNegativeTimeofFlight);
+		if(yNegativeMeasurementOK==false)
+		{
+			printf(RED"Y negative direction measurement error\n"RESET);
+		}
+
+
+		if(xPositiveMeasurementOK&&xNegativeMeasurementOK&&yPositiveMeasurementOK&&yNegativeMeasurementOK)
+		{
+			wind=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
+			printf("Wind speed:\t %f m/s \n",wind.speed);
+			if(wind.speed>1)
+			{
+				printf("Wind Direction:\t %f º\n",wind.direction);
+			}
+		}
+
+		vTaskDelay(1000 / portTICK_PERIOD_MS);
 
 	}
 
@@ -97,127 +131,132 @@ void anemoi(void)
 
 }
 
-Wind_t calculateWind(double TimeXPositive,double TimeXNegative,double TimeYPositive,double TimeYNegative)
+Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTime,double yNegativeTime)
 {
 
-	Wind_t Wind={0};
+	Wind wind={0};
 
-	double XDistance=0.2;	//mts
-	double YDistance=0.2;	//mts
+	double xDistance=0.2;	//mts
+	double yDistance=0.2;	//mts
 
-	double XSpeed=0;
-	double YSpeed=0;
+	double xSpeed=0;
+	double ySpeed=0;
 
-	double Radians2Degrees = 180.0 / M_PI;
 
-	XSpeed=XDistance*(1/TimeXPositive-1/TimeXNegative)/2;
-	printf("X Speed:\t %f m/s\n",XSpeed );
-	YSpeed=YDistance*(1/TimeYPositive-1/TimeYNegative)/2;
-	printf("Y Speed:\t %f m/s\n",YSpeed );
 
-	Wind.Speed=sqrt(XSpeed*XSpeed+YSpeed*YSpeed);
+	xSpeed=xDistance*(1/xPositiveTime-1/xNegativeTime)/2;
+	printf("X speed:\t %f m/s\n",xSpeed );
+	ySpeed=yDistance*(1/yPositiveTime-1/yNegativeTime)/2;
+	printf("Y speed:\t %f m/s\n",ySpeed );
 
-	Wind.Direction=atan(XSpeed/YSpeed)*Radians2Degrees;
+	wind.speed=sqrt(xSpeed*xSpeed+ySpeed*ySpeed);
 
-	printf("Wind Speed:\t %f m/s \n",Wind.Speed);
-	printf("Wind Direction:\t %f º\n",Wind.Direction);
+	wind.direction=atan(xSpeed/ySpeed)*RADIANS2DEGREES;
 
-	return Wind;
+
+
+	return wind;
 
 
 }
 
 
 
-bool measure_time(char axis,char direction, double * TimeofFlight)
+bool measureTime(char axis,char direction, double * timeofFlight)
 {
-	bool MeasurementOK=false;
+	bool measurementOK=false;
 	if(axis==X_AXIS)
 	{
 
 		if(direction==POSITIVE_DIRECTION)
 		{
-
-			enable_tdc1000_x();
-			select_channel_1();
-			enable_Y1_vdd();//hardware correction, pulse going from Y1 to X1
+			printf("\tTDC1000 X\t Pulse Y1 to X1\n");
+			enableX();
+			selectChannel1();
+			enableY1Vdd();//hardware correction, pulse going from Y1 to X1
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
-			enable_tdc1000_y();
-			select_channel_1();
-			enable_X1_vdd();//hardware correction, pulse going from X1 to Y1
+			printf("\tTDC1000 Y\t Pulse X1 to Y1\n");
+			enableY();
+			selectChannel1();
+			enableX1Vdd();//hardware correction, pulse going from X1 to Y1
 		}
 	}
 	else if(axis==Y_AXIS)
 	{
 		if(direction==POSITIVE_DIRECTION)
 		{
-
-			enable_tdc1000_x();
-			select_channel_2();
-			enable_Y2_vdd();//hardware correction, pulse going from Y2 to X2
+			printf("\tTDC1000 X\t Pulse Y2 to X2\n");
+			enableX();
+			selectChannel2();
+			enableY2Vdd();//hardware correction, pulse going from Y2 to X2
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
-			enable_tdc1000_y();
-			select_channel_2();
-			enable_X2_vdd();//hardware correction, pulse going from X2 to Y2
+			printf("\tTDC1000 Y\t Pulse X2 to Y2\n");
+			enableY();
+			selectChannel2();
+			enableX2Vdd();//hardware correction, pulse going from X2 to Y2
 		}
 	}
-
-	send_trigger();
-	enable_start_stop_interrupt();
+	vTaskDelay(20 / portTICK_PERIOD_MS);
+	sendTrigger();
+	enableStartStopInterrupt();
 	vTaskDelay(500 / portTICK_PERIOD_MS);
-	MeasurementOK=calculate_TOF(TimeofFlight);
-	disable_start_stop_interrupt();
-	//disable_tdc1000();
-	return MeasurementOK;
+	measurementOK=calculateTOF(timeofFlight);
+	double TOF=*timeofFlight;
+	printf("\t \t TOF:%f ms\n",TOF*1000);
+
+	disableStartStopInterrupt();
+
+
+	return measurementOK;
 
 
 }
 
-void init_anemoi(void)
+void initAnemoi(void)
 {
 	//Init clock of ESP32. Frequency set to 1.28MHz
-	init_clock();
+	initClock();
     //Init pins connected from ESP32 to TDC1000, TDC7200
-    init_anemoi_gpio();
+    initAnemoiGPIO();
 
     //Create handles for SPI communication and add devices to SPI bus
     esp_err_t ret;
-    spi_device_handle_t tdc1000_x_handle;
-    spi_device_handle_t tdc1000_y_handle;
-    spi_device_handle_t tdc7200_handle;
+    spi_device_handle_t xHandleTDC1000;
+    spi_device_handle_t yHandleTDC1000;
+    spi_device_handle_t handleTDC7200;
 
-    ret=init_SPI(&tdc1000_x_handle,&tdc1000_y_handle,&tdc7200_handle);
+    ret=initSPI(&xHandleTDC1000,&yHandleTDC1000,&handleTDC7200);
 
 	if(ret==ESP_OK)
 	{
 		printf("SPI initialized\n");
 	}
 
-	ret=init_TDC1000_SPI(&tdc1000_x_handle,NORMAL_CONFIG);
+	ret=initTDC1000SPI(&xHandleTDC1000,NORMAL_CONFIG);
 	if(ret==ESP_OK)
 	{
 		printf("TDC1000 X initialized\n");
 	}
 
-	ret=init_TDC1000_SPI(&tdc1000_y_handle,NORMAL_CONFIG);
+	ret=initTDC1000SPI(&yHandleTDC1000,NORMAL_CONFIG);
 	if(ret==ESP_OK)
 	{
 		printf("TDC1000 Y initialized\n");
 	}
 
-	/*ret=init_TDC7200_SPI(&tdc7200_handle);
+	/*ret=init_TDC7200_SPI(&handleTDC7200);
 	if(ret==ESP_OK)
 	{
 		printf("TDC7200 initialized\n");
 	}*/
 	printf("\nTDC1000 X \n");
-	read_TDC1000_registers(&tdc1000_x_handle);
+	read_TDC1000_registers(&xHandleTDC1000);
 	printf("\nTDC1000 Y \n");
-	read_TDC1000_registers(&tdc1000_y_handle);
+	read_TDC1000_registers(&yHandleTDC1000);
 
 
 }

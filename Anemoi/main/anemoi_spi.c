@@ -5,6 +5,7 @@
 
 #include "include/anemoi_spi.h"
 #include "include/anemoi_pinout.h"
+#include "esp_err.h"
 
 unsigned int config_normal_TDC1000[10]={CONFIG_0,CONFIG_1,CONFIG_2,CONFIG_3,CONFIG_4,TOF_1,TOF_0,ERRORS ,TIMEOUT,CLOCK_RATE};
 unsigned int config_reset_TDC1000[10]={0x45,0x40,0x0,0x3,0x1F,0x0,0x0,0x0,0x19,0x0};
@@ -12,7 +13,7 @@ unsigned int config_TDC7200[10]={CONFIG_1_TDC7200,CONFIG_2_TDC7200,INT_STATUS,IN
 CLOCK_CNTR_OVF_H,CLOCK_CNTR_OVF_L,CLOCK_CNTR_STOP_MASK_H,CLOCK_CNTR_STOP_MASK_L};
 
 
-esp_err_t init_SPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t * tdc1000_y_handle_ptr,spi_device_handle_t * tdc7200_handle_ptr)
+esp_err_t initSPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t * tdc1000_y_handle_ptr,spi_device_handle_t * tdc7200_handle_ptr)
 {
     esp_err_t ret;
     //Configuration for the SPI bus
@@ -67,7 +68,7 @@ esp_err_t init_SPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_
 }
 
 
-esp_err_t init_TDC1000_SPI(spi_device_handle_t * handle_ptr, config_t config)
+esp_err_t initTDC1000SPI(spi_device_handle_t * handle_ptr, config_t config)
 {
     esp_err_t ret;
     unsigned int i=0;

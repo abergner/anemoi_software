@@ -11,7 +11,7 @@
 //Define values of the fields of the registers individually
 //config0 values
 #define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
-#define CONFIG_0_NUM_TXv			0x0Fu //Number of TX pulses in a burst: 11 pulses
+#define CONFIG_0_NUM_TXv			0x0Fu //Number of TX pulses in a burst: 15 pulses
 
 //config1 values
 #define CONFIG_1_NUM_AVGv			0x0u //Number of expected receive events (0 - do not count events)
