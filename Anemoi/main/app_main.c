@@ -94,9 +94,9 @@ void app_main()
         select_channel_1();
         enable_X1_vdd();
 
+
         printf("\n TX: X1, RX: Y1 \n");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
-
 
         disable_tdc1000_x();
         enable_tdc1000_y();
@@ -119,8 +119,12 @@ void app_main()
         select_channel_2();
         enable_Y2_vdd();
 
+
         printf("\n TX: Y2, RX: X2 \n");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
+
+
+
         ////Read registers
         //printf("\nTDC1000 X \n");
         //read_TDC1000_registers(&tdc1000_x_handle);

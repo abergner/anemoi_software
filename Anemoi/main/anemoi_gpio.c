@@ -154,8 +154,8 @@ uint32_t STOP_time=0;
 
 
 
-static void IRAM_ATTR gpio_isr_handler_START(void* arg)
-{
+//static void IRAM_ATTR gpio_isr_handler_START(void* arg)
+//{
 	/*if(interrupt==0){
 		interrupt=1;
 	}else{
@@ -178,10 +178,10 @@ static void IRAM_ATTR gpio_isr_handler_START(void* arg)
         portYIELD_FROM_ISR ();
     }
     */
-}
+//}
 
-static void IRAM_ATTR gpio_isr_handler_STOP(void* arg)
-{       
+//static void IRAM_ATTR gpio_isr_handler_STOP(void* arg)
+//{
     //printf("Handler Start\n");
 
 	/*
@@ -198,7 +198,7 @@ static void IRAM_ATTR gpio_isr_handler_STOP(void* arg)
         portYIELD_FROM_ISR ();
     }
     */
-} 
+//}
 
 void init_gpio_start_stop(void)
 {
@@ -209,7 +209,7 @@ void init_gpio_start_stop(void)
     gpio_set_direction(GPI_STOP, GPIO_MODE_INPUT);
     //gpio_set_intr_type(GPI_STOP, GPIO_PIN_INTR_POSEDGE);
     
-    print("Hello :)");
+    //print("Hello :)");
 
     //install gpio isr service
     //gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
