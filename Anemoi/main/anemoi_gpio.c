@@ -324,13 +324,20 @@ bool calculateTOF(double * TimeofFlight)
 		TOF=TOF+times[arrived_pulses-1-i]-((double) (26-i))/((double)TRANSDUCER_FREQUENCY_IN_HZ );
 	}
 	TOF=TOF/arrived_pulses;
+
 	//TOF=times[arrived_pulses-1-i]-((double) 26)/((double)Transducer_Freq_Hz);
 	*TimeofFlight=TOF;
 
 
+	if((TOF>0.0004)&&(TOF<0.001))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
-
-	return true;
 }
   
 

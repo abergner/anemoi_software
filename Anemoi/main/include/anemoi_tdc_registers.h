@@ -42,7 +42,7 @@
 #define TOF_1_PGA_GAINv 			0x7u //PGA gain of 21dB (max)
 #define TOF_1_PGA_CTRLv 			0x0u //PGA control active
 #define TOF_1_LNA_CTRLv 			0x0u //LNA control active
-#define TOF_1_LNA_FBv 				0x0u //1:resistive, 0:capacitive (type of feedback)
+#define TOF_1_LNA_FBv 				0x1u //1:resistive, 0:capacitive (type of feedback)
 #define TIMING_REGv 				0x300u
 
 //timeout values

@@ -54,14 +54,7 @@ bool measureTime(char axis,char direction, double * timeofFlight);
 #define MAGENTA "\033[35m"      /* Magenta */
 #define CYAN    "\033[36m"      /* Cyan */
 #define WHITE   "\033[37m"      /* White */
-#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
-#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
-#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
-#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
-#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
 
 void anemoi(void)
 {
@@ -83,28 +76,24 @@ void anemoi(void)
 	{
 		printf("\nStart Loop\n");
 
-		printf("\tX Positive \n");
 		xPositiveMeasurementOK=measureTime(X_AXIS,POSITIVE_DIRECTION,&xPositiveTimeofFlight);
 		if(xPositiveMeasurementOK==false)
 		{
 			printf(RED"X positive direction measurement error\n"RESET);
 		}
 
-		printf("\tY Positive \n");
 		yPositiveMeasurementOK=measureTime(Y_AXIS,POSITIVE_DIRECTION,&yPositiveTimeofFlight);
 		if(yPositiveMeasurementOK==false)
 		{
 			printf(RED"Y positive direction measurement error\n"RESET);
 		}
 
-		printf("\tX Negative \n");
 		xNegativeMeasurementOK=measureTime(X_AXIS,NEGATIVE_DIRECTION,&xNegativeTimeofFlight);
 		if(xNegativeMeasurementOK==false)
 		{
 			printf(RED"X negative direction measurement error\n"RESET);
 		}
 
-		printf("\tY Negative \n");
 		yNegativeMeasurementOK=measureTime(Y_AXIS,NEGATIVE_DIRECTION,&yNegativeTimeofFlight);
 		if(yNegativeMeasurementOK==false)
 		{
@@ -115,11 +104,12 @@ void anemoi(void)
 		if(xPositiveMeasurementOK&&xNegativeMeasurementOK&&yPositiveMeasurementOK&&yNegativeMeasurementOK)
 		{
 			wind=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
-			printf("Wind speed:\t %f m/s \n",wind.speed);
+			printf(GREEN"Wind speed:\t %f m/s "RESET,wind.speed);
 			if(wind.speed>1)
 			{
-				printf("Wind Direction:\t %f º\n",wind.direction);
+				printf(GREEN"\t \t Wind Direction:\t %f º"RESET,wind.direction);
 			}
+			printf("\n ");
 		}
 
 		vTaskDelay(1000 / portTICK_PERIOD_MS);
@@ -170,14 +160,14 @@ bool measureTime(char axis,char direction, double * timeofFlight)
 
 		if(direction==POSITIVE_DIRECTION)
 		{
-			printf("\tTDC1000 X\t Pulse Y1 to X1\n");
+			printf("\tTDC1000 X Positive\t Pulse Y1 to X1\t");
 			enableX();
 			selectChannel1();
 			enableY1Vdd();//hardware correction, pulse going from Y1 to X1
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
-			printf("\tTDC1000 Y\t Pulse X1 to Y1\n");
+			printf("\tTDC1000 Y Negative \t Pulse X1 to Y1\t");
 			enableY();
 			selectChannel1();
 			enableX1Vdd();//hardware correction, pulse going from X1 to Y1
@@ -187,14 +177,14 @@ bool measureTime(char axis,char direction, double * timeofFlight)
 	{
 		if(direction==POSITIVE_DIRECTION)
 		{
-			printf("\tTDC1000 X\t Pulse Y2 to X2\n");
+			printf("\tTDC1000 X Positive \t Pulse Y2 to X2\t");
 			enableX();
 			selectChannel2();
 			enableY2Vdd();//hardware correction, pulse going from Y2 to X2
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
-			printf("\tTDC1000 Y\t Pulse X2 to Y2\n");
+			printf("\tTDC1000 Y Negative\t Pulse X2 to Y2\t");
 			enableY();
 			selectChannel2();
 			enableX2Vdd();//hardware correction, pulse going from X2 to Y2
@@ -203,7 +193,7 @@ bool measureTime(char axis,char direction, double * timeofFlight)
 	vTaskDelay(20 / portTICK_PERIOD_MS);
 	sendTrigger();
 	enableStartStopInterrupt();
-	vTaskDelay(500 / portTICK_PERIOD_MS);
+	vTaskDelay(100 / portTICK_PERIOD_MS);
 	measurementOK=calculateTOF(timeofFlight);
 	double TOF=*timeofFlight;
 	printf("\t \t TOF:%f ms\n",TOF*1000);
@@ -254,9 +244,9 @@ void initAnemoi(void)
 		printf("TDC7200 initialized\n");
 	}*/
 	printf("\nTDC1000 X \n");
-	read_TDC1000_registers(&xHandleTDC1000);
+	readTDC1000Registers(&xHandleTDC1000);
 	printf("\nTDC1000 Y \n");
-	read_TDC1000_registers(&yHandleTDC1000);
+	readTDC1000Registers(&yHandleTDC1000);
 
 
 }
