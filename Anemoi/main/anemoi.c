@@ -24,7 +24,7 @@
 #include "include/anemoi_gpio.h"
 #include "include/anemoi_clock.h"
 #include "include/anemoi_spi.h"
-#include "include/anemoi_tasks.h"
+#include "include/anemoi_TOF_measurement.h"
 
 #include <math.h>
 
@@ -55,6 +55,7 @@ bool measureTime(char axis,char direction, double * timeofFlight);
 #define CYAN    "\033[36m"      /* Cyan */
 #define WHITE   "\033[37m"      /* White */
 
+//void test(void);
 
 void anemoi(void)
 {
@@ -74,7 +75,7 @@ void anemoi(void)
 
 	while(true)
 	{
-		printf("\nStart Loop\n");
+		printf("\nLoop:\n");
 
 		xPositiveMeasurementOK=measureTime(X_AXIS,POSITIVE_DIRECTION,&xPositiveTimeofFlight);
 		if(xPositiveMeasurementOK==false)
@@ -100,6 +101,7 @@ void anemoi(void)
 			printf(RED"Y negative direction measurement error\n"RESET);
 		}
 
+		//test();
 
 		if(xPositiveMeasurementOK&&xNegativeMeasurementOK&&yPositiveMeasurementOK&&yNegativeMeasurementOK)
 		{
@@ -152,58 +154,65 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 
 
 
-bool measureTime(char axis,char direction, double * timeofFlight)
+bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 {
 	bool measurementOK=false;
 	if(axis==X_AXIS)
 	{
-
+		selectChannel1();
 		if(direction==POSITIVE_DIRECTION)
 		{
 			printf("\tTDC1000 X Positive\t Pulse Y1 to X1\t");
 			enableX();
-			selectChannel1();
-			enableY1Vdd();//hardware correction, pulse going from Y1 to X1
+			enableVddY1();//hardware correction, pulse going from Y1 to X1
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
 			printf("\tTDC1000 Y Negative \t Pulse X1 to Y1\t");
 			enableY();
-			selectChannel1();
-			enableX1Vdd();//hardware correction, pulse going from X1 to Y1
+			enableVddX1();//hardware correction, pulse going from X1 to Y1
 		}
 	}
 	else if(axis==Y_AXIS)
 	{
+		selectChannel2();
 		if(direction==POSITIVE_DIRECTION)
 		{
 			printf("\tTDC1000 X Positive \t Pulse Y2 to X2\t");
 			enableX();
-			selectChannel2();
-			enableY2Vdd();//hardware correction, pulse going from Y2 to X2
+			enableVddY2();//hardware correction, pulse going from Y2 to X2
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
 			printf("\tTDC1000 Y Negative\t Pulse X2 to Y2\t");
 			enableY();
-			selectChannel2();
-			enableX2Vdd();//hardware correction, pulse going from X2 to Y2
+			enableVddX2();//hardware correction, pulse going from X2 to Y2
 		}
 	}
+	//wait for everything to stabilize (just in case)
 	vTaskDelay(20 / portTICK_PERIOD_MS);
-	sendTrigger();
-	enableStartStopInterrupt();
-	vTaskDelay(100 / portTICK_PERIOD_MS);
-	measurementOK=calculateTOF(timeofFlight);
-	double TOF=*timeofFlight;
-	printf("\t \t TOF:%f ms\n",TOF*1000);
+	if(direction==POSITIVE_DIRECTION)
+	{
+		enableStartStopInterruptX();
+		sendTrigger();
+		//wait for transmission and reception
+		vTaskDelay(100 / portTICK_PERIOD_MS);
+		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_X);
+		disableStartStopInterruptX();
 
-	disableStartStopInterrupt();
-
-
+	}
+	else if(direction==NEGATIVE_DIRECTION)
+	{
+		enableStartStopInterruptY();
+		sendTrigger();
+		//wait for transmission and reception
+		vTaskDelay(100 / portTICK_PERIOD_MS);
+		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_Y);
+		disableStartStopInterruptY();
+	}
+	double TOF=*ptrTimeofFlight;
+	printf("\t  TOF:%f ms\n",TOF*1000);
 	return measurementOK;
-
-
 }
 
 void initAnemoi(void)
@@ -212,6 +221,8 @@ void initAnemoi(void)
 	initClock();
     //Init pins connected from ESP32 to TDC1000, TDC7200
     initAnemoiGPIO();
+
+    initTimeOfFlightMeasurementHardware();
 
     //Create handles for SPI communication and add devices to SPI bus
     esp_err_t ret;
@@ -250,5 +261,32 @@ void initAnemoi(void)
 
 
 }
+
+/*
+void test(void)
+{
+	bool measurementOK=false;
+	double TOF;
+
+	printf("\tTDC1000 X \t Pulse X2 to X1\t");
+	enableX();
+	//selectChannel2();
+	enableX2Vdd();//hardware correction, pulse going from X2 to Y2
+
+
+	vTaskDelay(20 / portTICK_PERIOD_MS);
+	sendTrigger();
+	enableStartStopInterrupt();
+	vTaskDelay(100 / portTICK_PERIOD_MS);
+	measurementOK=calculateTOF(&TOF);
+	if(measurementOK==true)
+	{
+		printf("\t  TOF:%f ms\n",TOF*1000);
+	}
+
+	disableStartStopInterrupt();
+
+}*/
+
 
 

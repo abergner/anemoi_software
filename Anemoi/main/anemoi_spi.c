@@ -58,12 +58,12 @@ esp_err_t initSPI(spi_device_handle_t * tdc1000_x_handle_ptr,spi_device_handle_t
         printf("SPI device could not be added to bus\n");    
     }
     
-    devcfg.spics_io_num=GPIO_TDC7200_CSB;
+    /*devcfg.spics_io_num=GPIO_TDC7200_CSB;
     ret=spi_bus_add_device(HSPI_HOST, &devcfg, tdc7200_handle_ptr);
     if(ret!=ESP_OK)
     {
         printf("SPI device could not be added to bus\n");    
-    }
+    }*/
     return ret;
 }
 

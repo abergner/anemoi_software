@@ -18,12 +18,12 @@
 #define GPIO_SPI_CLK        14
 #define GPIO_TDC1000_X_CSB  27
 #define GPIO_TDC1000_Y_CSB  26
-#define GPIO_TDC7200_CSB    25
+#define GPIO_START_X	    25 //antes era GPIO_TDC7200_CSB
 #define GPIO_TDC1000_Y_EN   33
 #define GPIO_TDC1000_X_EN   32
-#define GPI_START           35
-#define GPI_STOP            34
-#define GPI_TDC7200_INTB    39
+#define GPI_START_Y		    35
+#define GPI_STOP_Y          34
+#define GPI_STOP_X  		39 //antes era GPI_TDC7200_INTB
 #define GPI_TDC1000_ERRB    36
 
 
