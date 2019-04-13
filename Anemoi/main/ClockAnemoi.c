@@ -1,9 +1,15 @@
 
+
+
+
+//DRIVERS//
 #include "driver/ledc.h"
+//DRIVERS//
 
-#include "include/anemoi_clock.h"
-#include "include/anemoi_pinout.h"
+#include "include/Anemoi.h"
+#include "include/ClockAnemoi.h"
 
+#define CLOCK_FRECUENCY_IN_HZ TRANSDUCER_FREQUENCY_IN_HZ*32
 
 
 ledc_timer_config_t ledc_timer = {

@@ -1,10 +1,10 @@
 
-#include "anemoi.h"
+#include "include/AnemoiApp.h"
 
 
 
 //Main application
 void app_main()
 {    
-    anemoi();
+    AnemoiApp();
 }

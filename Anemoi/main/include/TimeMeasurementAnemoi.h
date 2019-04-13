@@ -5,8 +5,8 @@
  *      Author: alex
  */
 
-#ifndef MAIN_INCLUDE_ANEMOI_TOF_MEASUREMENT_H_
-#define MAIN_INCLUDE_ANEMOI_TOF_MEASUREMENT_H_
+#ifndef MAIN_INCLUDE_TIMEMEASUREMENTANEMOI_H_
+#define MAIN_INCLUDE_TIMEMEASUREMENTANEMOI_H_
 
 typedef enum {START_STOP_X, START_STOP_Y} StartStop;
 
@@ -22,4 +22,4 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop);
 
 
 
-#endif /* MAIN_INCLUDE_ANEMOI_TOF_MEASUREMENT_H_ */
+#endif /* MAIN_INCLUDE_TIMEMEASUREMENTANEMOI_H_ */

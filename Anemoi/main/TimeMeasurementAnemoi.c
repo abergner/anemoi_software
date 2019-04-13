@@ -4,16 +4,19 @@
  *  Created on: Apr 11, 2019
  *      Author: alex
  */
+
+//DRIVERS//
 #include "driver/gpio.h"
 #include "soc/gpio_reg.h"
 #include "esp_intr_alloc.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
+//DRIVERS//
 
-#include "include/anemoi_pinout.h"
-#include "include/anemoi_TOF_measurement.h"
-#include "include/anemoi_clock.h"
+#include "include/Anemoi.h"
+#include "include/TimeMeasurementAnemoi.h"
+
 
 #define ESP_INTR_FLAG_DEFAULT 0
 #define START_QUEUE_LENGTH 1
@@ -68,13 +71,12 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 			}
 			else
 			{
-
+				printf("Start not received\n");
 				return false;
 			}
 		}
 		if( stopQueueX != 0 )
 		{
-			vTaskDelay(20 / portTICK_PERIOD_MS);
 			for(i=0;i<STOP_QUEUE_LENGTH;i++)
 			{
 				if(xQueueReceive(stopQueueX, &(stops[i]), (1 / portTICK_PERIOD_MS)))
@@ -85,6 +87,7 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 		}
 		if(arrived_pulses==0)
 		{
+			printf("Stop not received\n");
 			return false;
 		}
 	}
@@ -98,12 +101,12 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 			}
 			else
 			{
+				printf("Start not received\n");
 				return false;
 			}
 		}
 		if( stopQueueY != 0 )
 		{
-			vTaskDelay(20 / portTICK_PERIOD_MS);
 			for(i=0;i<STOP_QUEUE_LENGTH;i++)
 			{
 				if(xQueueReceive(stopQueueY, &(stops[i]), (1 / portTICK_PERIOD_MS)))
@@ -114,6 +117,7 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 		}
 		if(arrived_pulses==0)
 		{
+			printf("Stop not received\n");
 			return false;
 		}
 	}
@@ -130,13 +134,13 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 			times[i]=(double)(start-stops[i])/240000000;
 		}
 	}
-	for(i=0;i<arrived_pulses;i++)
+	/*for(i=0;i<arrived_pulses;i++)
 	{
-		TOF=TOF+times[arrived_pulses-1-i]-((double) (26-i))/((double)TRANSDUCER_FREQUENCY_IN_HZ );
+		TOF=TOF+times[0]-((double) (26-i))/((double)TRANSDUCER_FREQUENCY_IN_HZ );
 	}
-	TOF=TOF/arrived_pulses;
+	TOF=TOF/arrived_pulses;*/
 
-	//TOF=times[arrived_pulses-1-i]-((double) 26)/((double)Transducer_Freq_Hz);
+	TOF=times[0];
 	*ptrTimeofFlight=TOF;
 
 
@@ -146,6 +150,7 @@ bool calculateTOF(double * ptrTimeofFlight, StartStop startStop)
 	}
 	else
 	{
+		printf("Time out of range \n");
 		return false;
 	}
 
@@ -203,6 +208,9 @@ void initTimeOfFlightMeasurementHardware(void)
     gpio_isr_handler_add(GPI_STOP_X, gpioIsrHandlerStopX, (void*) GPI_STOP_X);
     gpio_isr_handler_add(GPI_START_Y, gpioIsrHandlerStartY, (void*) GPI_START_Y);
     gpio_isr_handler_add(GPI_STOP_Y, gpioIsrHandlerStopY, (void*) GPI_STOP_Y);
+
+    disableStartStopInterruptX();
+    disableStartStopInterruptY();
 
 }
 

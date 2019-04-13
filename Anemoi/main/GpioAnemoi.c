@@ -1,21 +1,29 @@
 
+
+
+//DRIVERS//
 #include "driver/gpio.h"
 #include "soc/gpio_reg.h"
 #include "esp_intr_alloc.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
+//DRIVERS//
+
+#include "include/Anemoi.h"
+#include "include/GpioAnemoi.h"
 
 
-#include "include/anemoi_gpio.h"
-#include "include/anemoi_pinout.h"
-#include "anemoi_clock.h"
 
 
+void initEnableTdc1000(void);
+void initTrigger(void);
+void initChannelSelect(void);
+void initEnableVdd(void);
 
-void initAnemoiGPIO(void)
+void initGpio(void)
 {
-    initEnableTDC1000();
+    initEnableTdc1000();
     initChannelSelect();
     initEnableVdd();
     initTrigger();
@@ -35,7 +43,7 @@ void initTrigger(void)
 }
 
 
-void initEnableTDC1000(void)
+void initEnableTdc1000(void)
 {
     gpio_pad_select_gpio(GPIO_TDC1000_X_EN);
     gpio_set_direction(GPIO_TDC1000_X_EN, GPIO_MODE_OUTPUT);
@@ -49,18 +57,20 @@ void initEnableTDC1000(void)
 void enableX(void)
 {
 	//disable_tdc1000_y();
+	disableY();
     gpio_set_level(GPIO_TDC1000_X_EN, 1);
-    disableY();
+
 
 }
 void enableY(void)
 {
 	//disable_tdc1000_x();
+	disableX();
     gpio_set_level(GPIO_TDC1000_Y_EN, 1);
-    disableX();
+
 }
 
-void disableTDC1000(void)
+void disableTdc1000(void)
 {
 	gpio_set_level(GPIO_TDC1000_X_EN, 0);
 	gpio_set_level(GPIO_TDC1000_Y_EN, 0);

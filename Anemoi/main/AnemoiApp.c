@@ -6,6 +6,9 @@
  */
 
 
+#include <math.h>
+
+//DRIVERS//
 #include "rom/cache.h"
 #include "nvs_flash.h"
 #include "esp_system.h"
@@ -15,18 +18,15 @@
 #include "esp_err.h"
 #include "esp_event_loop.h"
 #include "freertos/task.h"
-
 #include "esp_intr_alloc.h"
-
 #include "driver/spi_master.h"
+//DRIVERS//
 
-
-#include "include/anemoi_gpio.h"
-#include "include/anemoi_clock.h"
-#include "include/anemoi_spi.h"
-#include "include/anemoi_TOF_measurement.h"
-
-#include <math.h>
+#include "include/Anemoi.h"
+#include "include/TimeMeasurementAnemoi.h"
+#include "include/ClockAnemoi.h"
+#include "include/GpioAnemoi.h"
+#include "include/SpiAnemoi.h"
 
 #define X_AXIS 'x'
 #define Y_AXIS 'y'
@@ -35,29 +35,17 @@
 
 #define RADIANS2DEGREES	180.0 / M_PI
 
-typedef struct
-{
-	double speed;
-	double direction;
-}Wind;
+
 
 void initAnemoi(void);
 Wind calculateWind(double xPositiveTime,double xNegativeTime, double yPositiveTime,double yNegativeTime);
 bool measureTime(char axis,char direction, double * timeofFlight);
 
-#define RESET   "\033[0m"
-#define BLACK   "\033[30m"      /* Black */
-#define RED     "\033[31m"      /* Red */
-#define GREEN   "\033[32m"      /* Green */
-#define YELLOW  "\033[33m"      /* Yellow */
-#define BLUE    "\033[34m"      /* Blue */
-#define MAGENTA "\033[35m"      /* Magenta */
-#define CYAN    "\033[36m"      /* Cyan */
-#define WHITE   "\033[37m"      /* White */
+
 
 //void test(void);
 
-void anemoi(void)
+void AnemoiApp(void)
 {
 	initAnemoi();
 
@@ -83,12 +71,13 @@ void anemoi(void)
 			printf(RED"X positive direction measurement error\n"RESET);
 		}
 
+
 		yPositiveMeasurementOK=measureTime(Y_AXIS,POSITIVE_DIRECTION,&yPositiveTimeofFlight);
 		if(yPositiveMeasurementOK==false)
 		{
 			printf(RED"Y positive direction measurement error\n"RESET);
 		}
-
+/*
 		xNegativeMeasurementOK=measureTime(X_AXIS,NEGATIVE_DIRECTION,&xNegativeTimeofFlight);
 		if(xNegativeMeasurementOK==false)
 		{
@@ -100,7 +89,7 @@ void anemoi(void)
 		{
 			printf(RED"Y negative direction measurement error\n"RESET);
 		}
-
+*/
 		//test();
 
 		if(xPositiveMeasurementOK&&xNegativeMeasurementOK&&yPositiveMeasurementOK&&yNegativeMeasurementOK)
@@ -163,13 +152,11 @@ bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 		if(direction==POSITIVE_DIRECTION)
 		{
 			printf("\tTDC1000 X Positive\t Pulse Y1 to X1\t");
-			enableX();
 			enableVddY1();//hardware correction, pulse going from Y1 to X1
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
 			printf("\tTDC1000 Y Negative \t Pulse X1 to Y1\t");
-			enableY();
 			enableVddX1();//hardware correction, pulse going from X1 to Y1
 		}
 	}
@@ -179,36 +166,41 @@ bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 		if(direction==POSITIVE_DIRECTION)
 		{
 			printf("\tTDC1000 X Positive \t Pulse Y2 to X2\t");
-			enableX();
 			enableVddY2();//hardware correction, pulse going from Y2 to X2
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{
 			printf("\tTDC1000 Y Negative\t Pulse X2 to Y2\t");
-			enableY();
+
 			enableVddX2();//hardware correction, pulse going from X2 to Y2
 		}
 	}
 	//wait for everything to stabilize (just in case)
-	vTaskDelay(20 / portTICK_PERIOD_MS);
+
 	if(direction==POSITIVE_DIRECTION)
 	{
+		enableX();
+		vTaskDelay(20 / portTICK_PERIOD_MS);
 		enableStartStopInterruptX();
 		sendTrigger();
 		//wait for transmission and reception
 		vTaskDelay(100 / portTICK_PERIOD_MS);
 		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_X);
 		disableStartStopInterruptX();
+		disableX();
 
 	}
 	else if(direction==NEGATIVE_DIRECTION)
 	{
+		enableY();
+		vTaskDelay(20 / portTICK_PERIOD_MS);
 		enableStartStopInterruptY();
 		sendTrigger();
 		//wait for transmission and reception
 		vTaskDelay(100 / portTICK_PERIOD_MS);
 		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_Y);
 		disableStartStopInterruptY();
+		disableY();
 	}
 	double TOF=*ptrTimeofFlight;
 	printf("\t  TOF:%f ms\n",TOF*1000);
@@ -220,7 +212,7 @@ void initAnemoi(void)
 	//Init clock of ESP32. Frequency set to 1.28MHz
 	initClock();
     //Init pins connected from ESP32 to TDC1000, TDC7200
-    initAnemoiGPIO();
+    initGpio();
 
     initTimeOfFlightMeasurementHardware();
 
@@ -230,20 +222,20 @@ void initAnemoi(void)
     spi_device_handle_t yHandleTDC1000;
     spi_device_handle_t handleTDC7200;
 
-    ret=initSPI(&xHandleTDC1000,&yHandleTDC1000,&handleTDC7200);
+    ret=initSpi(&xHandleTDC1000,&yHandleTDC1000,&handleTDC7200);
 
 	if(ret==ESP_OK)
 	{
 		printf("SPI initialized\n");
 	}
 
-	ret=initTDC1000SPI(&xHandleTDC1000,NORMAL_CONFIG);
+	ret=initRegistersTdc1000(&xHandleTDC1000,NORMAL_CONFIG);
 	if(ret==ESP_OK)
 	{
 		printf("TDC1000 X initialized\n");
 	}
 
-	ret=initTDC1000SPI(&yHandleTDC1000,NORMAL_CONFIG);
+	ret=initRegistersTdc1000(&yHandleTDC1000,NORMAL_CONFIG);
 	if(ret==ESP_OK)
 	{
 		printf("TDC1000 Y initialized\n");
@@ -255,9 +247,9 @@ void initAnemoi(void)
 		printf("TDC7200 initialized\n");
 	}*/
 	printf("\nTDC1000 X \n");
-	readTDC1000Registers(&xHandleTDC1000);
+	readRegistersTdc1000(&xHandleTDC1000);
 	printf("\nTDC1000 Y \n");
-	readTDC1000Registers(&yHandleTDC1000);
+	readRegistersTdc1000(&yHandleTDC1000);
 
 
 }
