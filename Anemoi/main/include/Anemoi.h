@@ -57,13 +57,19 @@
 
 #define TRANSDUCER_FREQUENCY_IN_HZ 40000
 
-
+//Distance between sensors in meters
+#define X_DISTANCE 0.2
+#define Y_DISTANCE 0.2
+//Distance between sensors in meters
 
 ////CUSTOM VARIABLES//////CUSTOM VARIABLES//////CUSTOM VARIABLES///////
 
 
 typedef enum {NO_ERRORS_NO_WARNINGS, ERROR_NO_STOP_RECEIVED, ERROR_NO_START_RECEIVED, WARNING_MISSING_STOP_PULSE,
 	ERROR_TIME_OUT_OF_RANGE} ErrorsAndWarnings;
+
+typedef	enum {X_AXIS,Y_AXIS} Axis;
+typedef enum {POSITIVE_DIRECTION, NEGATIVE_DIRECTION} Direction;
 
 typedef struct
 {

@@ -15,7 +15,8 @@
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
-
+#define GPIO_ON 1
+#define GPIO_OFF 0
 
 static	QueueHandle_t startQueue;
 static	QueueHandle_t stopQueue;
@@ -24,22 +25,21 @@ static uint32_t startCycles=0;
 static uint32_t stopCycles=0;
 
 
-static void IRAM_ATTR gpioIsrHandlerStartX(void* arg);
-static void IRAM_ATTR gpioIsrHandlerStopX(void* arg);
+static void IRAM_ATTR gpioIsrHandlerStart(void* arg);
+static void IRAM_ATTR gpioIsrHandlerStop(void* arg);
 
-static void IRAM_ATTR gpioIsrHandlerStartY(void* arg);
-static void IRAM_ATTR gpioIsrHandlerStopY(void* arg);
 
-void initEnableTdc1000(void);
-void initTrigger(void);
-void initChannelSelect(void);
-void initEnableVdd(void);
+static void initTdc1000Enable(void);
+static void initTrigger(void);
+static void initChannelSelection(void);
+static void initVddEnable(void);
+void initStartStop(void);
 
 void initGpio(void)
 {
-    initEnableTdc1000();
-    initChannelSelect();
-    initEnableVdd();
+    initTdc1000Enable();
+    initChannelSelection();
+    initVddEnable();
     initTrigger();
     initStartStop();
 }
@@ -47,7 +47,6 @@ void initGpio(void)
 
 bool getQueueCycles(TypeQueue typeQueue, uint32_t * ptrCycles)
 {
-
 	if(typeQueue==START_QUEUE)
 	{
 		if( startQueue != 0 )
@@ -116,43 +115,42 @@ void initStartStop(void)
     //install gpio isr service
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     //hook isr handler for specific gpio pin
-    gpio_isr_handler_add(GPIO_START_X, gpioIsrHandlerStartX, (void*) GPIO_START_X);
-    gpio_isr_handler_add(GPI_STOP_X, gpioIsrHandlerStopX, (void*) GPI_STOP_X);
+    gpio_isr_handler_add(GPIO_START_X, gpioIsrHandlerStart, (void*) GPIO_START_X);
+    gpio_isr_handler_add(GPI_STOP_X, gpioIsrHandlerStop, (void*) GPI_STOP_X);
 
-    gpio_isr_handler_add(GPI_START_Y, gpioIsrHandlerStartY, (void*) GPI_START_Y);
-    gpio_isr_handler_add(GPI_STOP_Y, gpioIsrHandlerStopY, (void*) GPI_STOP_Y);
+    gpio_isr_handler_add(GPI_START_Y, gpioIsrHandlerStart, (void*) GPI_START_Y);
+    gpio_isr_handler_add(GPI_STOP_Y, gpioIsrHandlerStop, (void*) GPI_STOP_Y);
 
-    disableStartStopInterruptX();
-    disableStartStopInterruptY();
+    disableStartStopInterrupt();
 
 }
 
-void enableStartStopInterruptX(void)
+void enableStartStopInterrupt(Direction direction)
 {
-	gpio_intr_enable(GPIO_START_X);
-	gpio_intr_enable(GPI_STOP_X);
-}
-void enableStartStopInterruptY(void)
-{
-	gpio_intr_enable(GPI_START_Y);
-	gpio_intr_enable(GPI_STOP_Y);
-}
+	disableStartStopInterrupt();
+	if(direction==POSITIVE_DIRECTION)
+	{
+		gpio_intr_enable(GPIO_START_X);
+		gpio_intr_enable(GPI_STOP_X);
+	}
+	else if(direction==NEGATIVE_DIRECTION)
+	{
+		gpio_intr_enable(GPI_START_Y);
+		gpio_intr_enable(GPI_STOP_Y);
+	}
 
-void disableStartStopInterruptX(void)
+}
+void disableStartStopInterrupt(void)
 {
+	gpio_intr_disable(GPI_START_Y);
+	gpio_intr_disable(GPI_STOP_Y);
 	gpio_intr_disable(GPIO_START_X);
 	gpio_intr_disable(GPI_STOP_X);
 }
 
-void disableStartStopInterruptY(void)
-{
-	gpio_intr_disable(GPI_START_Y);
-	gpio_intr_disable(GPI_STOP_Y);
-}
 
 
-
-static void IRAM_ATTR gpioIsrHandlerStartX(void* arg)
+static void IRAM_ATTR gpioIsrHandlerStart(void* arg)
 {
     startCycles=xthal_get_ccount();
     BaseType_t xHigherPriorityTaskWoken= pdFALSE;
@@ -166,22 +164,7 @@ static void IRAM_ATTR gpioIsrHandlerStartX(void* arg)
         portYIELD_FROM_ISR ();
     }
 }
-static void IRAM_ATTR gpioIsrHandlerStartY(void* arg)
-{
-    startCycles=xthal_get_ccount();
-    BaseType_t xHigherPriorityTaskWoken= pdFALSE;
-    if( startQueue != 0 )
-    {
-        xQueueSendFromISR(startQueue, &startCycles, &xHigherPriorityTaskWoken);
-    }
-    if( xHigherPriorityTaskWoken )
-    {
-		// Actual macro used here is port specific.
-        portYIELD_FROM_ISR ();
-    }
-}
-
-static void IRAM_ATTR gpioIsrHandlerStopX(void* arg)
+static void IRAM_ATTR gpioIsrHandlerStop(void* arg)
 {
     stopCycles=xthal_get_ccount();
 
@@ -197,157 +180,129 @@ static void IRAM_ATTR gpioIsrHandlerStopX(void* arg)
     }
 }
 
-static void IRAM_ATTR gpioIsrHandlerStopY(void* arg)
-{
-    stopCycles=xthal_get_ccount();
-
-    BaseType_t xHigherPriorityTaskWoken= pdFALSE;
-    if( stopQueue != 0 )
-    {
-        xQueueSendFromISR( stopQueue, &stopCycles, &xHigherPriorityTaskWoken );
-    }
-    if( xHigherPriorityTaskWoken )
-    {
-		// Actual macro used here is port specific.
-        portYIELD_FROM_ISR ();
-    }
-}
-
-
-
-void sendTrigger(void)
-{
-	gpio_set_level(GPIO_ESP_TRIGG, 1);
-	vTaskDelay(1 / portTICK_PERIOD_MS);
-	gpio_set_level(GPIO_ESP_TRIGG, 0);
-}
 void initTrigger(void)
 {
 	gpio_pad_select_gpio(GPIO_ESP_TRIGG);
 	gpio_set_direction(GPIO_ESP_TRIGG, GPIO_MODE_OUTPUT);
-	gpio_set_level(GPIO_ESP_TRIGG, 0);
+	gpio_set_level(GPIO_ESP_TRIGG, GPIO_OFF);
+}
+void sendTrigger(void)
+{
+	gpio_set_level(GPIO_ESP_TRIGG, GPIO_ON);
+	vTaskDelay(1 / portTICK_PERIOD_MS);
+	gpio_set_level(GPIO_ESP_TRIGG, GPIO_OFF);
 }
 
-
-void initEnableTdc1000(void)
+void initTdc1000Enable(void)
 {
     gpio_pad_select_gpio(GPIO_TDC1000_X_EN);
     gpio_set_direction(GPIO_TDC1000_X_EN, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_TDC1000_X_EN, 0);
+    gpio_set_level(GPIO_TDC1000_X_EN, GPIO_OFF);
 
     gpio_pad_select_gpio(GPIO_TDC1000_Y_EN);
     gpio_set_direction(GPIO_TDC1000_Y_EN, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_TDC1000_Y_EN, 0);
+    gpio_set_level(GPIO_TDC1000_Y_EN, GPIO_OFF);
 }
 
-void enableX(void)
+
+void enableTdc1000(Direction direction)
 {
-	//disable_tdc1000_y();
-	disableY();
-    gpio_set_level(GPIO_TDC1000_X_EN, 1);
-
-
+	disableTdc1000();
+	if(direction==POSITIVE_DIRECTION)
+	{
+		gpio_set_level(GPIO_TDC1000_X_EN, GPIO_ON);
+	}
+	else if(direction==NEGATIVE_DIRECTION)
+	{
+		gpio_set_level(GPIO_TDC1000_Y_EN, GPIO_ON);
+	}
 }
-void enableY(void)
-{
-	//disable_tdc1000_x();
-	disableX();
-    gpio_set_level(GPIO_TDC1000_Y_EN, 1);
 
-}
 
 void disableTdc1000(void)
 {
-	gpio_set_level(GPIO_TDC1000_X_EN, 0);
-	gpio_set_level(GPIO_TDC1000_Y_EN, 0);
-}
-
-void disableX(void)
-{
-    gpio_set_level(GPIO_TDC1000_X_EN, 0);
-}
-void disableY(void)
-{
-    gpio_set_level(GPIO_TDC1000_Y_EN, 0);
+	gpio_set_level(GPIO_TDC1000_X_EN, GPIO_OFF);
+	gpio_set_level(GPIO_TDC1000_Y_EN, GPIO_OFF);
 }
 
 
-void initChannelSelect(void)
+
+void initChannelSelection(void)
 {
     gpio_pad_select_gpio(GPIO_CHSEL);
     gpio_set_direction(GPIO_CHSEL, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_CHSEL, 0);
+    gpio_set_level(GPIO_CHSEL, GPIO_OFF);
 }
 
-void selectChannel1(void)
+void selectChannel(Axis axis)
 {
-    gpio_set_level(GPIO_CHSEL, 0);
+	if(axis==X_AXIS)
+	{
+		gpio_set_level(GPIO_CHSEL, GPIO_OFF);
+	}
+	else if(axis==Y_AXIS)
+	{
+		gpio_set_level(GPIO_CHSEL, GPIO_ON);
+	}
 }
 
-void selectChannel2(void)
-{
-    gpio_set_level(GPIO_CHSEL, 1);
-}
-
-void initEnableVdd(void)
+void initVddEnable(void)
 {
     gpio_pad_select_gpio(GPIO_VDD_EN_X1);
     gpio_set_direction(GPIO_VDD_EN_X1, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_VDD_EN_X1, 0);
+    gpio_set_level(GPIO_VDD_EN_X1, GPIO_OFF);
 
     gpio_pad_select_gpio(GPIO_VDD_EN_X2);
     gpio_set_direction(GPIO_VDD_EN_X2, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_VDD_EN_X2, 0);
+    gpio_set_level(GPIO_VDD_EN_X2, GPIO_OFF);
 
     gpio_pad_select_gpio(GPIO_VDD_EN_Y1);
     gpio_set_direction(GPIO_VDD_EN_Y1, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_VDD_EN_Y1, 0);
+    gpio_set_level(GPIO_VDD_EN_Y1, GPIO_OFF);
 
     gpio_pad_select_gpio(GPIO_VDD_EN_Y2);
     gpio_set_direction(GPIO_VDD_EN_Y2, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_VDD_EN_Y2, 0);
+    gpio_set_level(GPIO_VDD_EN_Y2, GPIO_OFF);
 }
 
-void enableVddX1(void)
+void enableVdd(Axis axis, Direction direction)
 {
-    gpio_set_level(GPIO_VDD_EN_X2, 0);
-    gpio_set_level(GPIO_VDD_EN_Y1, 0);
-    gpio_set_level(GPIO_VDD_EN_Y2, 0);
-
-    gpio_set_level(GPIO_VDD_EN_X1, 1);
-
-}
-void enableVddX2(void)
-{
-    gpio_set_level(GPIO_VDD_EN_X1, 0);
-    gpio_set_level(GPIO_VDD_EN_Y1, 0);
-    gpio_set_level(GPIO_VDD_EN_Y2, 0);
-
-    gpio_set_level(GPIO_VDD_EN_X2, 1);
-}
-void enableVddY1(void)
-{
-    gpio_set_level(GPIO_VDD_EN_X1, 0);
-    gpio_set_level(GPIO_VDD_EN_X2, 0);
-    gpio_set_level(GPIO_VDD_EN_Y2, 0);
-
-    gpio_set_level(GPIO_VDD_EN_Y1, 1);
-}
-void enableVddY2(void)
-{
-    gpio_set_level(GPIO_VDD_EN_X1, 0);
-    gpio_set_level(GPIO_VDD_EN_X2, 0);
-    gpio_set_level(GPIO_VDD_EN_Y1, 0);
-
-    gpio_set_level(GPIO_VDD_EN_Y2, 1);
+    disableVdd();
+	if(axis==X_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			gpio_set_level(GPIO_VDD_EN_Y1, GPIO_ON);
+			//hardware correction, pulse going from Y1 to X1
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			gpio_set_level(GPIO_VDD_EN_X1, GPIO_ON);
+			//hardware correction, pulse going from X1 to Y1
+		}
+	}
+	else if(axis==Y_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			gpio_set_level(GPIO_VDD_EN_Y2, GPIO_ON);
+			;//hardware correction, pulse going from Y2 to X2
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			gpio_set_level(GPIO_VDD_EN_X2, GPIO_ON);
+			//hardware correction, pulse going from X2 to Y2
+		}
+	}
 }
 
-void disableAllVdd(void)
+
+void disableVdd(void)
 {
-    gpio_set_level(GPIO_VDD_EN_X1, 0);
-    gpio_set_level(GPIO_VDD_EN_X2, 0);
-    gpio_set_level(GPIO_VDD_EN_Y1, 0);
-    gpio_set_level(GPIO_VDD_EN_Y2, 0);
+    gpio_set_level(GPIO_VDD_EN_X1, GPIO_OFF);
+    gpio_set_level(GPIO_VDD_EN_X2, GPIO_OFF);
+    gpio_set_level(GPIO_VDD_EN_Y1, GPIO_OFF);
+    gpio_set_level(GPIO_VDD_EN_Y2, GPIO_OFF);
 }
 
 

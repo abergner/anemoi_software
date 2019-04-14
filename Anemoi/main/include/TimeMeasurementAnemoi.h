@@ -8,8 +8,8 @@
 #ifndef MAIN_INCLUDE_TIMEMEASUREMENTANEMOI_H_
 #define MAIN_INCLUDE_TIMEMEASUREMENTANEMOI_H_
 
-
-ErrorsAndWarnings calculateTOF(double * ptrTimeofFlight);
+ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight);
+void initTimeMeasurementHardware(void);
 
 
 

@@ -7,6 +7,7 @@
 
 //DRIVERS//
 #include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 //DRIVERS//
 
 #include <math.h>
@@ -19,17 +20,47 @@
 
 ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount);
 ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrNewTimesCount, unsigned int timesCount);
+ErrorsAndWarnings calculateTOF(double * ptrTimeofFlight);
+
+void initTimeMeasurementHardware(void)
+{
+	initGpio();
+}
+
+ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight)
+{
+	ErrorsAndWarnings errorsAndWarnings=NO_ERRORS_NO_WARNINGS;
+	selectChannel(axis);
+	enableVdd(axis,direction);
+	enableTdc1000(direction);
+	//wait for everything to stabilize (just in case)
+	vTaskDelay(20 / portTICK_PERIOD_MS);
+	enableStartStopInterrupt(direction);
+
+	sendTrigger();
+	//wait for transmission and reception
+	vTaskDelay(100 / portTICK_PERIOD_MS);
+	errorsAndWarnings=calculateTOF(ptrTimeOfFlight);
+
+	disableStartStopInterrupt();
+	disableTdc1000();
+	disableVdd();
+
+	return errorsAndWarnings;
+}
 
 ErrorsAndWarnings calculateTOF(double * ptrTimeofFlight)
 {
 	double TOF=0;
 	double times[STOP_QUEUE_LENGTH];
 	unsigned int timesCount=0;
+	unsigned int newTimesCount=0;
 	ErrorsAndWarnings errorAndWarnings=calculateTimes(times,&timesCount);
 	if(errorAndWarnings != NO_ERRORS_NO_WARNINGS)
 	{
 		return errorAndWarnings;
 	}
+	errorAndWarnings=checkMissingStopPulses(times,&newTimesCount,timesCount);
 
 	TOF=times[0];
 	*ptrTimeofFlight=TOF;
