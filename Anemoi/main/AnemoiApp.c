@@ -185,7 +185,7 @@ bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 		sendTrigger();
 		//wait for transmission and reception
 		vTaskDelay(100 / portTICK_PERIOD_MS);
-		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_X);
+		measurementOK=calculateTOF(ptrTimeofFlight);
 		disableStartStopInterruptX();
 		disableX();
 
@@ -198,7 +198,7 @@ bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 		sendTrigger();
 		//wait for transmission and reception
 		vTaskDelay(100 / portTICK_PERIOD_MS);
-		measurementOK=calculateTOF(ptrTimeofFlight, START_STOP_Y);
+		measurementOK=calculateTOF(ptrTimeofFlight);
 		disableStartStopInterruptY();
 		disableY();
 	}
@@ -207,20 +207,20 @@ bool measureTime(char axis,char direction, double * ptrTimeofFlight)
 	return measurementOK;
 }
 
+
 void initAnemoi(void)
 {
+
+	 //Create handles for SPI communication and add devices to SPI bus
+	esp_err_t ret;
+	spi_device_handle_t xHandleTDC1000;
+	spi_device_handle_t yHandleTDC1000;
+	spi_device_handle_t handleTDC7200;
+
 	//Init clock of ESP32. Frequency set to 1.28MHz
 	initClock();
     //Init pins connected from ESP32 to TDC1000, TDC7200
     initGpio();
-
-    initTimeOfFlightMeasurementHardware();
-
-    //Create handles for SPI communication and add devices to SPI bus
-    esp_err_t ret;
-    spi_device_handle_t xHandleTDC1000;
-    spi_device_handle_t yHandleTDC1000;
-    spi_device_handle_t handleTDC7200;
 
     ret=initSpi(&xHandleTDC1000,&yHandleTDC1000,&handleTDC7200);
 

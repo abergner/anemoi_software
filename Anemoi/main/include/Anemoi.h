@@ -9,7 +9,7 @@
 #define MAIN_INCLUDE_ANEMOI_H_
 
 
-/////////////////////////DEFINES/////////////////////////////////////////
+///////DEFINES/////////DEFINES/////////DEFINES////////DEFINES/////////////
 
 //PINOUT//
 #define GPIO_CHSEL          23
@@ -48,9 +48,22 @@
 #define WHITE   "\033[37m"      /* White */
 //Printf colors
 
+//Printf colors meaning
+#define INFO GREEN
+#define WARNING YELLOW
+#define ERROR RED
+#define DEBUG BLUE
+//Printf colors meaning
+
 #define TRANSDUCER_FREQUENCY_IN_HZ 40000
 
-////////////////////////CUSTOM VARIABLES/////////////////////////
+
+
+////CUSTOM VARIABLES//////CUSTOM VARIABLES//////CUSTOM VARIABLES///////
+
+
+typedef enum {NO_ERRORS_NO_WARNINGS, ERROR_NO_STOP_RECEIVED, ERROR_NO_START_RECEIVED, WARNING_MISSING_STOP_PULSE,
+	ERROR_TIME_OUT_OF_RANGE} ErrorsAndWarnings;
 
 typedef struct
 {
@@ -59,6 +72,13 @@ typedef struct
 }Wind;
 
 
+
+typedef struct
+{
+	Wind wind;
+
+
+}Anemoi;
 
 
 

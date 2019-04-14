@@ -2,6 +2,21 @@
 #define _ANEMOI_GPIO_H_
 
 
+#define START_QUEUE_LENGTH 1
+#define STOP_QUEUE_LENGTH 30
+
+typedef enum {START_QUEUE, STOP_QUEUE} TypeQueue;
+
+bool getQueueCycles(TypeQueue typeQueue, uint32_t * ptrCycles);
+
+void initStartStop(void);
+
+void enableStartStopInterruptX(void);
+void disableStartStopInterruptX(void);
+void enableStartStopInterruptY(void);
+void disableStartStopInterruptY(void);
+
+
 void initGpio(void);
 
 void sendTrigger(void);
@@ -23,6 +38,7 @@ void enableVddY2(void);
 
 void disableTdc1000(void);
 void disableAllVdd(void);
+
 
 
 
