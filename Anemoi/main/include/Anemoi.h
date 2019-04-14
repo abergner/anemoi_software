@@ -75,16 +75,9 @@ typedef struct
 {
 	double speed;
 	double direction;
-}Wind;
+} Wind;
 
 
-
-typedef struct
-{
-	Wind wind;
-
-
-}Anemoi;
 
 
 

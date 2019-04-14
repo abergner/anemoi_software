@@ -33,7 +33,7 @@ static void initTdc1000Enable(void);
 static void initTrigger(void);
 static void initChannelSelection(void);
 static void initVddEnable(void);
-void initStartStop(void);
+static void initStartStop(void);
 
 void initGpio(void)
 {
@@ -82,7 +82,7 @@ bool getQueueCycles(TypeQueue typeQueue, uint32_t * ptrCycles)
 }
 
 
-void initStartStop(void)
+static void initStartStop(void)
 {
 	startQueue=xQueueCreate( START_QUEUE_LENGTH, sizeof( uint32_t ) );
 	if( startQueue == 0 )
@@ -193,7 +193,7 @@ void sendTrigger(void)
 	gpio_set_level(GPIO_ESP_TRIGG, GPIO_OFF);
 }
 
-void initTdc1000Enable(void)
+static void initTdc1000Enable(void)
 {
     gpio_pad_select_gpio(GPIO_TDC1000_X_EN);
     gpio_set_direction(GPIO_TDC1000_X_EN, GPIO_MODE_OUTPUT);
@@ -227,7 +227,7 @@ void disableTdc1000(void)
 
 
 
-void initChannelSelection(void)
+static void initChannelSelection(void)
 {
     gpio_pad_select_gpio(GPIO_CHSEL);
     gpio_set_direction(GPIO_CHSEL, GPIO_MODE_OUTPUT);
@@ -246,7 +246,7 @@ void selectChannel(Axis axis)
 	}
 }
 
-void initVddEnable(void)
+static void initVddEnable(void)
 {
     gpio_pad_select_gpio(GPIO_VDD_EN_X1);
     gpio_set_direction(GPIO_VDD_EN_X1, GPIO_MODE_OUTPUT);
@@ -286,7 +286,7 @@ void enableVdd(Axis axis, Direction direction)
 		if(direction==POSITIVE_DIRECTION)
 		{
 			gpio_set_level(GPIO_VDD_EN_Y2, GPIO_ON);
-			;//hardware correction, pulse going from Y2 to X2
+			//hardware correction, pulse going from Y2 to X2
 		}
 		else if(direction==NEGATIVE_DIRECTION)
 		{

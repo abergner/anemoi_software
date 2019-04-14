@@ -18,9 +18,17 @@
 
 #define CYCLES_PER_SEC 240000000
 
+#define UPPER_TIME_LIMIT 0.005
+#define LOWER_TIME_LIMIT 0.0001
+
+#define X_POSITIVE_CALIBRATION	0.0001
+#define X_NEGATIVE_CALIBRATION	0.0001
+#define Y_POSITIVE_CALIBRATION	0.0001
+#define Y_NEGATIVE_CALIBRATION	0.0001
+
 ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount);
-ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrNewTimesCount, unsigned int timesCount);
-ErrorsAndWarnings calculateTOF(double * ptrTimeofFlight);
+ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTimesCount);
+double calculateTimeOfFlight(double * ptrTimes, unsigned int timesCount,Axis axis, Direction direction);
 
 void initTimeMeasurementHardware(void)
 {
@@ -30,6 +38,9 @@ void initTimeMeasurementHardware(void)
 ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight)
 {
 	ErrorsAndWarnings errorsAndWarnings=NO_ERRORS_NO_WARNINGS;
+	double timeOfFlight=0;
+	double times[STOP_QUEUE_LENGTH];
+	unsigned int timesCount=0;
 	selectChannel(axis);
 	enableVdd(axis,direction);
 	enableTdc1000(direction);
@@ -40,8 +51,21 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	sendTrigger();
 	//wait for transmission and reception
 	vTaskDelay(100 / portTICK_PERIOD_MS);
-	errorsAndWarnings=calculateTOF(ptrTimeOfFlight);
 
+	errorsAndWarnings=calculateTimes(times,&timesCount);
+	if(errorsAndWarnings == NO_ERRORS_NO_WARNINGS)
+	{
+		errorsAndWarnings=checkMissingStopPulses(times,&timesCount);
+		timeOfFlight=calculateTimeOfFlight(times, timesCount, axis, direction);
+		if( (timeOfFlight > UPPER_TIME_LIMIT)||(timeOfFlight < LOWER_TIME_LIMIT))
+		{
+			errorsAndWarnings=ERROR_TIME_OUT_OF_RANGE;
+		}
+		else
+		{
+			(* ptrTimeOfFlight)=timeOfFlight;
+		}
+	}
 	disableStartStopInterrupt();
 	disableTdc1000();
 	disableVdd();
@@ -49,32 +73,35 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	return errorsAndWarnings;
 }
 
-ErrorsAndWarnings calculateTOF(double * ptrTimeofFlight)
+double calculateTimeOfFlight(double * ptrTimes, unsigned int timesCount,Axis axis, Direction direction)
 {
-	double TOF=0;
-	double times[STOP_QUEUE_LENGTH];
-	unsigned int timesCount=0;
-	unsigned int newTimesCount=0;
-	ErrorsAndWarnings errorAndWarnings=calculateTimes(times,&timesCount);
-	if(errorAndWarnings != NO_ERRORS_NO_WARNINGS)
-	{
-		return errorAndWarnings;
-	}
-	errorAndWarnings=checkMissingStopPulses(times,&newTimesCount,timesCount);
+	double timeOfFlight=0;
 
-	TOF=times[0];
-	*ptrTimeofFlight=TOF;
-
-
-	if((TOF>0.0004)&&(TOF<0.001))
+	timeOfFlight=ptrTimes[timesCount-1];
+	if(axis==X_AXIS)
 	{
-		return true;
+		if(direction==POSITIVE_DIRECTION)
+		{
+			timeOfFlight=timeOfFlight-X_POSITIVE_CALIBRATION;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			timeOfFlight=timeOfFlight-X_NEGATIVE_CALIBRATION;
+		}
 	}
-	else
+	else if(axis==Y_AXIS)
 	{
-		return ERROR_TIME_OUT_OF_RANGE;
+		if(direction==POSITIVE_DIRECTION)
+		{
+			timeOfFlight=timeOfFlight-Y_POSITIVE_CALIBRATION;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			timeOfFlight=timeOfFlight-Y_NEGATIVE_CALIBRATION;
+		}
 	}
-	return NO_ERRORS_NO_WARNINGS;
+
+	return timeOfFlight;
 }
 
 
@@ -117,10 +144,11 @@ ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount
 }
 
 
-ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrNewTimesCount, unsigned int timesCount)
+ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTimesCount)
 {
 	ErrorsAndWarnings errorsAndWarnings = NO_ERRORS_NO_WARNINGS;
 	double newTimes[STOP_QUEUE_LENGTH];
+	unsigned int timesCount=(*ptrTimesCount);
 	unsigned int i,k;
 	double firstTime=ptrTimes[0];
 	double lastTime=ptrTimes[timesCount-1];
@@ -150,6 +178,6 @@ ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrNe
 		}
 		errorsAndWarnings = WARNING_MISSING_STOP_PULSE;
 	}
-	(*ptrNewTimesCount)=newTimesCount;
+	(*ptrTimesCount)=newTimesCount;
 	return errorsAndWarnings;
 }
