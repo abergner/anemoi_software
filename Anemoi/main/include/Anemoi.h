@@ -58,8 +58,8 @@
 #define TRANSDUCER_FREQUENCY_IN_HZ 40000
 
 //Distance between sensors in meters
-#define X_DISTANCE 0.2
-#define Y_DISTANCE 0.2
+#define X_DISTANCE 0.15
+#define Y_DISTANCE 0.15
 //Distance between sensors in meters
 
 ////CUSTOM VARIABLES//////CUSTOM VARIABLES//////CUSTOM VARIABLES///////

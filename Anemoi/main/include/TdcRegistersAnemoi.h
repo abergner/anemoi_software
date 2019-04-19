@@ -11,7 +11,7 @@
 //Define values of the fields of the registers individually
 //config0 values
 #define CONFIG_0_TX_FREQ_DIVv		0x4u //Frequency divider for TX clock and T1: 32
-#define CONFIG_0_NUM_TXv			0x0Cu //Number of TX pulses in a burst: 12 pulses
+#define CONFIG_0_NUM_TXv			0x0Du //Number of TX pulses in a burst: 12 pulses
 
 //config1 values
 #define CONFIG_1_NUM_AVGv			0x0u //Number of expected receive events (0 - do not count events)
@@ -24,7 +24,7 @@
 #define CONFIG_2_CH_SWPv			0x0u //Automatic channel swap in Mode 2 of operation (disabled)
 #define CONFIG_2_EXT_CHSELv 		0x1u //External channel select (enabled)
 #define CONFIG_2_CH_SELv			0x1u //Active TX/RX channel pair (channel 1)
-#define CONFIG_2_TOF_MEAS_MODEv		0x1u //TOF measurement mode: Mode 1
+#define CONFIG_2_TOF_MEAS_MODEv		0x0u //TOF measurement mode: Mode 1
 
 //config3 values
 #define CONFIG_3_TEMP_MODEv			0x0u //Temperature measurement channels - default
@@ -53,7 +53,7 @@
 
 //clock_rate values
 #define CLOCK_RATE_CLOCKIN_DIVv			0x0u //CLKIN divider to generate T0 (default)
-#define CLOCK_RATE_AUTOZERO_PERIODv		0x0u //Receiver auto-zero period (default)
+#define CLOCK_RATE_AUTOZERO_PERIODv		0x1u //Receiver auto-zero period (default)
 
 //Define bitfields to get register values
 /* config0 Bit Fields */
