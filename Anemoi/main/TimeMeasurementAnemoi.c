@@ -11,6 +11,7 @@
 //DRIVERS//
 
 #include <math.h>
+#include <stdlib.h>
 
 #include "include/Anemoi.h"
 #include "include/TimeMeasurementAnemoi.h"
@@ -22,18 +23,18 @@
 #define LOWER_TIME_LIMIT 0.00001
 
 //CALIBRATION
-#define GENERAL_CALIBRATION 	  0.0000150
+#define GENERAL_CALIBRATION 	  0.00001500
 
-#define POSITIVE_CALIBRATION	  0.0000000
-#define NEGATIVE_CALIBRATION	  0.0000000
+#define POSITIVE_CALIBRATION	  0.00000000
+#define NEGATIVE_CALIBRATION	  0.00000000
 
-#define X_CALIBRATION	  		  0.0000034
-#define Y_CALIBRATION	 		  0.0000000
+#define X_CALIBRATION	  		  0.00000340
+#define Y_CALIBRATION	 		  0.00000000
 
-#define X_POSITIVE_CALIBRATION	( 0.0000010 + GENERAL_CALIBRATION + X_CALIBRATION + POSITIVE_CALIBRATION )
-#define X_NEGATIVE_CALIBRATION	( 0.0000000 + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
-#define Y_POSITIVE_CALIBRATION	( 0.0000010 + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
-#define Y_NEGATIVE_CALIBRATION	( 0.0000000 + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
+#define X_POSITIVE_CALIBRATION	(  0.00000240  + GENERAL_CALIBRATION + X_CALIBRATION + POSITIVE_CALIBRATION )
+#define X_NEGATIVE_CALIBRATION	(  0.00000080  + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
+#define Y_POSITIVE_CALIBRATION	(  0.00000100  + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
+#define Y_NEGATIVE_CALIBRATION	( -0.00000040  + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
 
 #define GENERAL_PHASE_SHIFT 7.0/TRANSDUCER_FREQUENCY_IN_HZ
 
@@ -43,12 +44,18 @@
 #define X_PHASE_SHIFT 2.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define Y_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 
-#define X_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
+#define X_POSITIVE_PHASE_SHIFT	( -1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
 #define X_NEGATIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
 #define Y_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
 #define Y_NEGATIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
+
+#define X_POSITIVE_SIGNAL_WIDTH 	9 	//measured in pulses
+#define X_NEGATIVE_SIGNAL_WIDTH		9
+#define Y_POSITIVE_SIGNAL_WIDTH		15
+#define Y_NEGATIVE_SIGNAL_WIDTH		15
 //CALIBRATION
 
+int compareFunction(const void *a, const void *b);
 ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount);
 ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTimesCount);
 double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount,Axis axis, Direction direction);
@@ -58,7 +65,7 @@ void initTimeMeasurementHardware(void)
 	initGpio();
 }
 
-#define N 70
+#define N 50
 
 ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight)
 {
@@ -71,7 +78,7 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	selectChannel(axis);
 	enableVdd(axis,direction);
 	enableTdc1000(direction);
-	vTaskDelay(10 / portTICK_PERIOD_MS);//wait for everything to stabilize (just in case)
+	vTaskDelay(5 / portTICK_PERIOD_MS);//wait for everything to stabilize (just in case)
 	enableStartStopInterrupt(direction);
 	for(i=0;i<N;i++)
 	{
@@ -86,7 +93,10 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 		//wait for transmission and reception
 		vTaskDelay(10 / portTICK_PERIOD_MS);
 		errorsAndWarnings=calculateTimes(&times[i][0], &timesCount[i]);
-		errorsAndWarnings=checkMissingStopPulses(&times[i][0], &timesCount[i]);
+		if(errorsAndWarnings == NO_ERRORS_NO_WARNINGS)//if some error ocurres this batch doesnt count
+		{
+			//errorsAndWarnings=checkMissingStopPulses(&times[i][0], &timesCount[i]);
+		}
 		//printf("i:%d\t time: %f ms\n",i,times[0]*1000);
 		/*if(errorsAndWarnings != NO_ERRORS_NO_WARNINGS)//if some error ocurres this batch doesnt count
 		{
@@ -105,7 +115,6 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	else
 	{
 		(*ptrTimeOfFlight)=timeOfFlight;
-		printf("TOF: %.2f us\n",timeOfFlight*1000000);
 	}
 
 	disableStartStopInterrupt();
@@ -117,18 +126,28 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 
 #define RELATIVE_TIMES_COUNT ( STOP_QUEUE_LENGTH + 10 )
 
+typedef struct
+{
+	double time;
+	double timeAccumulated;
+	int count;
+	int index;
+
+}RelativeTime;
+
 double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Axis axis, Direction direction)
 {
 	double timeOfFlight=0;
-	double relativeTimes[RELATIVE_TIMES_COUNT];
-	double relativeTimesAccumulated[RELATIVE_TIMES_COUNT];
-	int relativeTimesCount[RELATIVE_TIMES_COUNT];
+	RelativeTime relativeTimes[RELATIVE_TIMES_COUNT];
+
 	int k=0,i=0,j=0;
 	for(i=0;i<RELATIVE_TIMES_COUNT;i++)
 	{
-			relativeTimesAccumulated[i]=0;
-			relativeTimesCount[i]=0;
-			relativeTimes[i]=0;
+			relativeTimes[i].count=0;
+			relativeTimes[i].index=i;
+			relativeTimes[i].time=0;
+			relativeTimes[i].timeAccumulated=0;
+
 	}
 	for(j=0;j<N;j++)
 	{
@@ -136,32 +155,34 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 		{
 			for(i=0;i<RELATIVE_TIMES_COUNT;i++)
 			{
-					relativeTimes[i]=ptrTimes[0]+ ((double)(i-10))/TRANSDUCER_FREQUENCY_IN_HZ;
+					relativeTimes[i].time=ptrTimes[0]+ ((double)(i-10))/TRANSDUCER_FREQUENCY_IN_HZ;
 			}
 			break;
 		}
 	}
-
-	/*for(k=0;k<5;k++)
+	if(relativeTimes[0].time==0)
 	{
-		printf("relativeTimes[%d]: %f us\n",k,relativeTimes[k]*1000000);
-	}*/
+		return 0;
+	}
 	for(j=0;j<N;j++)
 	{
 		for(i=0;i<ptrTimesCount[j];i++)
 		{
 			for(k=0;k<RELATIVE_TIMES_COUNT;k++)
 			{
-				if( ((relativeTimes[k] - 0.5/TRANSDUCER_FREQUENCY_IN_HZ) < ptrTimes[j*STOP_QUEUE_LENGTH+i] )&& (ptrTimes[j*STOP_QUEUE_LENGTH+i] < (relativeTimes[k] + 0.5/TRANSDUCER_FREQUENCY_IN_HZ)) )
+				if(ptrTimes[j*STOP_QUEUE_LENGTH+i]!=0)
 				{
-					relativeTimesAccumulated[k]=relativeTimesAccumulated[k]+ptrTimes[j*STOP_QUEUE_LENGTH+i];
-					relativeTimesCount[k]++;
-					break;
+					if( ((relativeTimes[k].time - 0.5/TRANSDUCER_FREQUENCY_IN_HZ) < ptrTimes[j*STOP_QUEUE_LENGTH+i] )&& (ptrTimes[j*STOP_QUEUE_LENGTH+i] < (relativeTimes[k].time + 0.5/TRANSDUCER_FREQUENCY_IN_HZ)) )
+					{
+						relativeTimes[k].timeAccumulated=relativeTimes[k].timeAccumulated+ptrTimes[j*STOP_QUEUE_LENGTH+i];
+						relativeTimes[k].count++;
+						break;
+					}
 				}
 			}
 		}
 	}
-	int maxIndex = 0;
+	/*int maxIndex = 0;
 	int max = relativeTimesCount[maxIndex];
 
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
@@ -173,30 +194,21 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 	        break;
 	    }
 	}
-	/*for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
+	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
 	{
 		if(relativeTimesCount[i]<(int)maxIndex*0.3)
 		{
 			relativeTimesCount[i]=0;
 			relativeTimesAccumulated[i]=0;
 		}
-	}*/
+	}
 	int index=0;
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
 	{
-		if(relativeTimesCount[i]>=(int)N*0.9)
+		if(relativeTimes[i].count>=(int)N*0.4)
 		{
 			index=i;
 			break;
-		}
-	}
-
-	for(k=0;k<RELATIVE_TIMES_COUNT;k++)
-	{
-		if(relativeTimesCount[k]>0)
-		{
-		//	printf("index: %d count: %d \t",k,relativeTimesCount[k]);
-		//	printf("time: %.2f us\n",relativeTimesAccumulated[k]*1000000/(double)relativeTimesCount[k]);
 		}
 	}
 	double indexMassCenter=0;
@@ -209,23 +221,72 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 		massCenter=massCenter+relativeTimesAccumulated[i]*relativeTimesCount[i];
 	}
 	indexMassCenter=indexMassCenter/(double)totalCount;
-	massCenter=massCenter/(double)totalCount;
+	massCenter=massCenter/(double)totalCount;*/
 
 
 	//printf("Index mass center: %f\n",indexMassCenter);
 	//printf("Index mass center: %d\n",(int)round(indexMassCenter));
 	//printf("Index mass center: %.2f\n",relativeTimesAccumulated[(int)round(indexMassCenter)]*1000000/(double)relativeTimesCount[(int)round(indexMassCenter)]);
 
-	//printf("Mass center: %f\n",massCenter*1000000);
+	//printf("Mass center: %f\n",massCenter*1000000);*/
 
-	//if(maxIndex > 13)
-	//{
-	timeOfFlight=relativeTimesAccumulated[index]/(double)relativeTimesCount[index];
-	//}
-	//else
-//	{
-	//	timeOfFlight=relativeTimesAccumulated[(int)round(massCenter)];
-	//}
+	/*for(k=0;k<RELATIVE_TIMES_COUNT;k++)
+	{
+		if(relativeTimes[k].count>0)
+		{
+			printf("index: %d count: %d \t",relativeTimes[k].index,relativeTimes[k].count);
+			printf("time: %.2f us\n",relativeTimes[k].timeAccumulated*1000000/(double)relativeTimes[k].count);
+		}
+	}*/
+
+	qsort(relativeTimes,RELATIVE_TIMES_COUNT, sizeof(RelativeTime), compareFunction);
+
+	/*for(k=0;k<RELATIVE_TIMES_COUNT;k++)
+	{
+		if(relativeTimes[k].count>0)
+		{
+			printf("index: %d count: %d \t",relativeTimes[k].index,relativeTimes[k].count);
+			printf("time: %.2f us\n",relativeTimes[k].timeAccumulated*1000000/(double)relativeTimes[k].count);
+		}
+	}*/
+	//CALIBRATION
+	int signalWidth=0;
+	if(axis==X_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			signalWidth=X_POSITIVE_SIGNAL_WIDTH;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			signalWidth=X_NEGATIVE_SIGNAL_WIDTH;
+		}
+	}
+	else if(axis==Y_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			signalWidth=Y_POSITIVE_SIGNAL_WIDTH;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			signalWidth=Y_NEGATIVE_SIGNAL_WIDTH;
+		}
+	}
+	//CALIBRATION
+	int index=0;
+	double minTime=relativeTimes[0].time;
+	for(k=1;k<signalWidth;k++)
+	{
+		if(relativeTimes[k].time < minTime)
+		{
+			index=k;
+			minTime=relativeTimes[k].time;
+		}
+
+	}
+	//printf("time: %.2f us\n",relativeTimes[index].timeAccumulated*1000000/(double)relativeTimes[index].count);
+	timeOfFlight=relativeTimes[index].timeAccumulated/(double)relativeTimes[index].count;
 
 	//CALIBRATION
 	if(axis==X_AXIS)
@@ -254,6 +315,17 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 	return timeOfFlight;
 }
 
+int compareFunction(const void *a, const void *b)
+{
+    RelativeTime *aPrima = (RelativeTime *) a;
+    RelativeTime *bPrima = (RelativeTime *) b;
+    if ((*aPrima).count > (*bPrima).count)
+        return -1;
+    else if ((*aPrima).count < (*bPrima).count)
+        return 1;
+    else
+        return 0;
+}
 
 ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount)
 {
@@ -299,9 +371,9 @@ ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount
 ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTimesCount)
 {
 	ErrorsAndWarnings errorsAndWarnings = NO_ERRORS_NO_WARNINGS;
-	double newTimes[STOP_QUEUE_LENGTH];
+	//double newTimes[STOP_QUEUE_LENGTH];
 	unsigned int timesCount=(*ptrTimesCount);
-	unsigned int i,k;
+	//unsigned int i,k;
 	double firstTime=ptrTimes[0];
 	double lastTime=ptrTimes[timesCount-1];
     double pulses=round((lastTime-firstTime)*TRANSDUCER_FREQUENCY_IN_HZ);

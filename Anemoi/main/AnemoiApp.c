@@ -40,37 +40,45 @@ void AnemoiApp(void)
 	double yPositiveTimeofFlight=0;
 	double yNegativeTimeofFlight=0;
 
-	ErrorsAndWarnings errorsAndWarnings;
+	ErrorsAndWarnings errorsAndWarningsXpos;
+	ErrorsAndWarnings errorsAndWarningsXneg;
+	ErrorsAndWarnings errorsAndWarningsYpos;
+	ErrorsAndWarnings errorsAndWarningsYneg;
 
 	while(true)
 	{
 //		printf("\nLoop:\n");
 
 		printf("X POS: Y1 => X1 \n");
-		errorsAndWarnings=measureTimeOfFlight(X_AXIS,POSITIVE_DIRECTION,&xPositiveTimeofFlight);
+		errorsAndWarningsXpos=measureTimeOfFlight(X_AXIS,POSITIVE_DIRECTION,&xPositiveTimeofFlight);
 
 
 		printf("Y POS: Y2 => X2 \n");
-		errorsAndWarnings=measureTimeOfFlight(Y_AXIS,POSITIVE_DIRECTION,&yPositiveTimeofFlight);
+		errorsAndWarningsYpos=measureTimeOfFlight(Y_AXIS,POSITIVE_DIRECTION,&yPositiveTimeofFlight);
 
 
 		printf("X NEG: X1 => Y1 \n");
-		errorsAndWarnings=measureTimeOfFlight(X_AXIS,NEGATIVE_DIRECTION,&xNegativeTimeofFlight);
+		errorsAndWarningsXneg=measureTimeOfFlight(X_AXIS,NEGATIVE_DIRECTION,&xNegativeTimeofFlight);
 
 
 		printf("Y NEG: X2 => Y2 \n");
-		errorsAndWarnings=measureTimeOfFlight(Y_AXIS,NEGATIVE_DIRECTION,&yNegativeTimeofFlight);
+		errorsAndWarningsYneg=measureTimeOfFlight(Y_AXIS,NEGATIVE_DIRECTION,&yNegativeTimeofFlight);
 
 
 		//test();
 
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTimeofFlight*1000000,xNegativeTimeofFlight*1000000,yPositiveTimeofFlight*1000000,yNegativeTimeofFlight*1000000);
-		wind=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
-
+		if(errorsAndWarningsXpos!=ERROR_TIME_OUT_OF_RANGE && errorsAndWarningsXneg!=ERROR_TIME_OUT_OF_RANGE )
+		{
+			if(errorsAndWarningsYpos!=ERROR_TIME_OUT_OF_RANGE && errorsAndWarningsYneg!=ERROR_TIME_OUT_OF_RANGE )
+			{
+				wind=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
+			}
+		}
 		printf("\n");
 
 
-		vTaskDelay(100 / portTICK_PERIOD_MS);
+		vTaskDelay(10 / portTICK_PERIOD_MS);
 
 	}
 }
@@ -82,7 +90,7 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	double ySpeed=0;
 
 	xSpeed=X_DISTANCE*(1.0/xPositiveTime-1.0/xNegativeTime)/2.0;
-	printf(GREEN"X speed:\t %.2f m/s\n"RESET,xSpeed );
+	printf(GREEN"X speed:\t %.2f m/s\t"RESET,xSpeed );
 
 	ySpeed=Y_DISTANCE*(1.0/yPositiveTime-1.0/yNegativeTime)/2.0;
 	printf(GREEN"Y speed:\t %.2f m/s\n"RESET,ySpeed );
@@ -90,7 +98,7 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	wind.speed=sqrt(xSpeed*xSpeed+ySpeed*ySpeed);
 	wind.direction=atan(xSpeed/ySpeed)*RADIANS2DEGREES;
 
-	printf(GREEN"Wind speed:\t %f m/s "RESET,wind.speed);
+	printf(GREEN"Wind speed:\t %.2f m/s "RESET,wind.speed);
 	if(wind.speed>1)
 	{
 		printf(GREEN"\t \t Wind Direction:\t %.2f º"RESET,wind.direction);
