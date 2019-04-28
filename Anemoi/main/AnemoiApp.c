@@ -20,8 +20,6 @@
 #include "include/ClockAnemoi.h"
 #include "include/SpiAnemoi.h"
 
-#define RADIANS2DEGREES	180.0 / M_PI
-
 
 void initAnemoi(void);
 Wind calculateWind(double xPositiveTime,double xNegativeTime, double yPositiveTime,double yNegativeTime);
@@ -40,10 +38,10 @@ void AnemoiApp(void)
 	double yPositiveTimeofFlight=0;
 	double yNegativeTimeofFlight=0;
 
-	ErrorsAndWarnings errorsAndWarningsXpos;
-	ErrorsAndWarnings errorsAndWarningsXneg;
-	ErrorsAndWarnings errorsAndWarningsYpos;
-	ErrorsAndWarnings errorsAndWarningsYneg;
+	ErrorsAndWarnings errorsAndWarningsXpos=NO_ERRORS_NO_WARNINGS;
+	ErrorsAndWarnings errorsAndWarningsXneg=NO_ERRORS_NO_WARNINGS;
+	ErrorsAndWarnings errorsAndWarningsYpos=NO_ERRORS_NO_WARNINGS;
+	ErrorsAndWarnings errorsAndWarningsYneg=NO_ERRORS_NO_WARNINGS;
 
 	while(true)
 	{
@@ -90,15 +88,15 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	double ySpeed=0;
 
 	xSpeed=X_DISTANCE*(1.0/xPositiveTime-1.0/xNegativeTime)/2.0;
-	printf(GREEN"X speed:\t %.2f m/s\t"RESET,xSpeed );
+	printf(GREEN"X speed:\t %.2f kn\t"RESET,xSpeed * METERS_PER_SECOND_2_KNOTS);
 
 	ySpeed=Y_DISTANCE*(1.0/yPositiveTime-1.0/yNegativeTime)/2.0;
-	printf(GREEN"Y speed:\t %.2f m/s\n"RESET,ySpeed );
+	printf(GREEN"Y speed:\t %.2f kn\n"RESET,ySpeed * METERS_PER_SECOND_2_KNOTS );
 
 	wind.speed=sqrt(xSpeed*xSpeed+ySpeed*ySpeed);
-	wind.direction=atan(xSpeed/ySpeed)*RADIANS2DEGREES;
+	wind.direction=atan(xSpeed/ySpeed)*RADIANS_2_DEGREES;
 
-	printf(GREEN"Wind speed:\t %.2f m/s "RESET,wind.speed);
+	printf(GREEN"Wind speed:\t %.2f kn "RESET,wind.speed * METERS_PER_SECOND_2_KNOTS);
 	if(wind.speed>1)
 	{
 		printf(GREEN"\t \t Wind Direction:\t %.2f º"RESET,wind.direction);
