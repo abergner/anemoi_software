@@ -25,18 +25,18 @@
 //CALIBRATION
 #define GENERAL_CALIBRATION 	  0.00000000
 
-#define POSITIVE_CALIBRATION	  0.00000000
+#define POSITIVE_CALIBRATION	  0.00000100
 #define NEGATIVE_CALIBRATION	  0.00000000
 
 #define X_CALIBRATION	  		  0.00000000
 #define Y_CALIBRATION	 		  0.00000000
 
-#define X_POSITIVE_CALIBRATION	(  0.00000100  + GENERAL_CALIBRATION + X_CALIBRATION + POSITIVE_CALIBRATION )
-#define X_NEGATIVE_CALIBRATION	(  0.00000080  + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
+#define X_POSITIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + X_CALIBRATION + POSITIVE_CALIBRATION )
+#define X_NEGATIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
 #define Y_POSITIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
-#define Y_NEGATIVE_CALIBRATION	(  0.00000135  + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
+#define Y_NEGATIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
 
-#define GENERAL_PHASE_SHIFT 5.0/TRANSDUCER_FREQUENCY_IN_HZ
+#define GENERAL_PHASE_SHIFT 12.0/TRANSDUCER_FREQUENCY_IN_HZ
 
 #define POSITIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define NEGATIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
@@ -44,10 +44,10 @@
 #define X_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define Y_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 
-#define X_POSITIVE_PHASE_SHIFT	( 2.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
+#define X_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
 #define X_NEGATIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
-#define Y_POSITIVE_PHASE_SHIFT	( 2.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
-#define Y_NEGATIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
+#define Y_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
+#define Y_NEGATIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
 
 #define X_POSITIVE_SIGNAL_WIDTH 	20	//measured in pulses
 #define X_NEGATIVE_SIGNAL_WIDTH		20
@@ -202,16 +202,16 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 			relativeTimesAccumulated[i]=0;
 		}
 	}
-	int index=0;
+	*/int index=0;
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
 	{
-		if(relativeTimes[i].count>=(int)N*0.4)
+		if(relativeTimes[i].count>=(int)N*0.7)
 		{
-			index=i;
+			index=i+5;
 			break;
 		}
 	}
-	double indexMassCenter=0;
+	/*double indexMassCenter=0;
 	double massCenter=0;
 	int totalCount=0;
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
@@ -241,7 +241,7 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 	}
 	printf("count: %d\n",count);
 
-	qsort(relativeTimes,RELATIVE_TIMES_COUNT, sizeof(RelativeTime), compareFunction);
+	//qsort(relativeTimes,RELATIVE_TIMES_COUNT, sizeof(RelativeTime), compareFunction);
 
 	/*for(k=0;k<RELATIVE_TIMES_COUNT;k++)
 	{
@@ -252,7 +252,7 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 		}
 	}*/
 	//CALIBRATION
-	int signalWidth=0;
+	/*int signalWidth=0;
 	if(axis==X_AXIS)
 	{
 		if(direction==POSITIVE_DIRECTION)
@@ -286,7 +286,7 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 			minTime=relativeTimes[k].time;
 		}
 
-	}
+	}*/
 	//printf("time: %.2f us\n",relativeTimes[index].timeAccumulated*1000000/(double)relativeTimes[index].count);
 	timeOfFlight=relativeTimes[index].timeAccumulated/(double)relativeTimes[index].count;
 

@@ -1,5 +1,5 @@
 TimeMeasurementAnemoi.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/TimeMeasurementAnemoi.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/TimeMeasurementAnemoi.c \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -15,7 +15,7 @@ TimeMeasurementAnemoi.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -80,9 +80,9 @@ TimeMeasurementAnemoi.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/limits.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/list.h \
  /home/alex/esp32/esp-idf/components/newlib/include/math.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/TimeMeasurementAnemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/GpioAnemoi.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/TimeMeasurementAnemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/GpioAnemoi.h
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -114,7 +114,7 @@ TimeMeasurementAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -244,9 +244,9 @@ TimeMeasurementAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/math.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/TimeMeasurementAnemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/TimeMeasurementAnemoi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/GpioAnemoi.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/./TimeMeasurementAnemoi.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/GpioAnemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/./TimeMeasurementAnemoi.c:
