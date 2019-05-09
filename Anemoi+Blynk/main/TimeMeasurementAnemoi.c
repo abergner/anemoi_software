@@ -23,7 +23,7 @@
 #define LOWER_TIME_LIMIT 0.00001
 
 //CALIBRATION
-#define GENERAL_CALIBRATION 	  0.00000000
+#define GENERAL_CALIBRATION 	  0.00002500
 
 #define POSITIVE_CALIBRATION	  0.00000100
 #define NEGATIVE_CALIBRATION	  0.00000000
@@ -36,7 +36,7 @@
 #define Y_POSITIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
 #define Y_NEGATIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
 
-#define GENERAL_PHASE_SHIFT 12.0/TRANSDUCER_FREQUENCY_IN_HZ
+#define GENERAL_PHASE_SHIFT 14.0/TRANSDUCER_FREQUENCY_IN_HZ
 
 #define POSITIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define NEGATIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
@@ -91,7 +91,7 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	{
 		sendTrigger();
 		//wait for transmission and reception
-		vTaskDelay(10 / portTICK_PERIOD_MS);
+		vTaskDelay(5 / portTICK_PERIOD_MS);
 		errorsAndWarnings=calculateTimes(&times[i][0], &timesCount[i]);
 		if(errorsAndWarnings == NO_ERRORS_NO_WARNINGS)//if some error ocurres this batch doesnt count
 		{
@@ -205,9 +205,9 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 	*/int index=0;
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
 	{
-		if(relativeTimes[i].count>=(int)N*0.7)
+		if(relativeTimes[i].count>=(int)N*0.4)
 		{
-			index=i+5;
+			index=i+7;
 			break;
 		}
 	}

@@ -107,22 +107,26 @@ extern "C" void app_main()
 		sprintf(message, "X speed: %.2f kn     Y speed: %.2f kn", wind.xSpeed * METERS_PER_SECOND_2_KNOTS, wind.ySpeed * METERS_PER_SECOND_2_KNOTS );
 		Blynk.virtualWrite(V1, message);
 
-		sprintf(message, "Wind speed: %.2f knots",wind.speed * METERS_PER_SECOND_2_KNOTS);
+		sprintf(message, "Wind speed: %.2f m/s",wind.speed);
 		Blynk.virtualWrite(V2, message);
+		sprintf(message, "Wind speed: %.2f knots",wind.speed * METERS_PER_SECOND_2_KNOTS);
+		Blynk.virtualWrite(V3, message);
+		sprintf(message, "Wind speed: %.2f km/h",wind.speed * METERS_PER_SECOND_2_KILOMETERS_PER_HOUR);
+		Blynk.virtualWrite(V4, message);
 		if(wind.speed>1)
 		{
 			printf(GREEN "\t \t Wind Direction:\t %.2f º\n" RESET,wind.direction);
 			sprintf(message, "Wind direction: %.2fº",wind.direction);
-			Blynk.virtualWrite(V3, message);
+			Blynk.virtualWrite(V5, message);
 		}
 		else
 		{
 			sprintf(message, "Wind direction: low speed");
-			Blynk.virtualWrite(V3, message);
+			Blynk.virtualWrite(V5, message);
 		}
 
  		
-		vTaskDelay(10 / portTICK_PERIOD_MS);
+		vTaskDelay(1 / portTICK_PERIOD_MS);
 	}
 
 }
@@ -141,7 +145,12 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	
 
 	wind.speed=sqrt(wind.xSpeed*wind.xSpeed+wind.ySpeed*wind.ySpeed);
-	wind.direction=atan(wind.xSpeed/wind.ySpeed)*RADIANS_2_DEGREES;
+	wind.direction=atan(wind.xSpeed/wind.ySpeed)*RADIANS_2_DEGREES+90.0;
+	if(wind.xSpeed<0)
+	{
+		//to get full 360º instead of only 180º
+		wind.direction=wind.direction+180.0;
+	}
 
 	printf(GREEN "Wind speed:\t %.2f kn " RESET,wind.speed * METERS_PER_SECOND_2_KNOTS);
 	
