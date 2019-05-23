@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -46,7 +46,7 @@ src/secure_boot_signatures.o: \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/sha.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_types.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h:
 

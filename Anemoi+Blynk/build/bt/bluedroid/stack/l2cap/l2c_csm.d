@@ -24,7 +24,7 @@ bluedroid/stack/l2cap/l2c_csm.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -160,7 +160,7 @@ bluedroid/stack/l2cap/l2c_csm.o: \
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h:
 

@@ -1,5 +1,5 @@
 libraries/AzureIoT/src/az_iot/c-utility/src//consolelogger.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src/consolelogger.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src/consolelogger.c \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -21,15 +21,15 @@ libraries/AzureIoT/src/az_iot/c-utility/src//consolelogger.o: \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/time.h \
  /home/alex/esp32/esp-idf/components/newlib/include/time.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/time.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/consolelogger.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/consolelogger.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 
@@ -73,21 +73,21 @@ libraries/AzureIoT/src/az_iot/c-utility/src//consolelogger.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/machine/time.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/consolelogger.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/consolelogger.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src//consolelogger.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src//consolelogger.c:

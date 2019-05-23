@@ -22,7 +22,7 @@ rmt.o: /home/alex/esp32/esp-idf/components/driver/rmt.c \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -139,7 +139,7 @@ rmt.o: /home/alex/esp32/esp-idf/components/driver/rmt.c \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

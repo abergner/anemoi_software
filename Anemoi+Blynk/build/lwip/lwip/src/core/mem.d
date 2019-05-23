@@ -34,7 +34,7 @@ lwip/src/core/mem.o: \
  /home/alex/esp32/esp-idf/components/vfs/include/sys/ioctl.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/sys/select.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_task.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -185,7 +185,7 @@ lwip/src/core/mem.o: \
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_task.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h:
 

@@ -10,7 +10,7 @@ spi_flash_rom_patch.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/spi_flash.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_reg.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h:
 
@@ -32,5 +32,5 @@ spi_flash_rom_patch.o: \
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_reg.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h:
 /home/alex/esp32/esp-idf/components/spi_flash/./spi_flash_rom_patch.c:

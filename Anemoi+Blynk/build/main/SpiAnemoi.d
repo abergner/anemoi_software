@@ -1,5 +1,5 @@
 SpiAnemoi.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/SpiAnemoi.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/SpiAnemoi.c \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -25,7 +25,7 @@ SpiAnemoi.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -89,9 +89,9 @@ SpiAnemoi.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_pins.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_reg.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_struct.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/SpiAnemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/TdcRegistersAnemoi.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/SpiAnemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/TdcRegistersAnemoi.h
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -143,7 +143,7 @@ SpiAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 
@@ -271,9 +271,9 @@ SpiAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_struct.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/SpiAnemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/SpiAnemoi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/TdcRegistersAnemoi.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/./SpiAnemoi.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/TdcRegistersAnemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/./SpiAnemoi.c:

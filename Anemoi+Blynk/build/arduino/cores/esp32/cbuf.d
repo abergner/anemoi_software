@@ -1,6 +1,6 @@
 cores/esp32/cbuf.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.cpp \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/features.h \
@@ -19,7 +19,7 @@ cores/esp32/cbuf.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdint.h:
 
@@ -54,4 +54,4 @@ cores/esp32/cbuf.o: \
 /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.cpp:

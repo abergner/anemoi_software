@@ -1,5 +1,5 @@
 int_wdt.o: /home/alex/esp32/esp-idf/components/esp32/int_wdt.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/features.h \
@@ -90,7 +90,7 @@ int_wdt.o: /home/alex/esp32/esp-idf/components/esp32/int_wdt.c \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_int_wdt.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdint.h:
 

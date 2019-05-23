@@ -20,7 +20,7 @@ bluedroid/stack/btm/btm_ble_addr.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/hcimsgs.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
@@ -168,7 +168,7 @@ bluedroid/stack/btm/btm_ble_addr.o: \
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h:
 

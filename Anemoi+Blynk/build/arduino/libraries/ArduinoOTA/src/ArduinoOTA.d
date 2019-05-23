@@ -1,7 +1,7 @@
 libraries/ArduinoOTA/src//ArduinoOTA.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.cpp \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiUdp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Arduino.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiUdp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Arduino.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
@@ -12,7 +12,7 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/inttypes.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -68,58 +68,58 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/list.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/semphr.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal.h \
  /home/alex/esp32/esp-idf/components/newlib/include/math.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-matrix.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-uart.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-gpio.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-touch.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-dac.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-adc.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-spi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-i2c.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-matrix.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-uart.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-gpio.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-touch.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-dac.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-adc.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-spi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-i2c.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/event_groups.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/timers.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/task.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-ledc.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-sigmadelta.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-timer.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-bt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-psram.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-cpu.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp8266-compat.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/binary.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WCharacter.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WString.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/pgmspace.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Stream.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Print.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Printable.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPAddress.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WString.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Printable.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Client.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Server.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Udp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Stream.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPAddress.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/HardwareSerial.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Esp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/variants/esp32/pins_arduino.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Udp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Print.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPv6Address.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiType.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiSTA.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiGeneric.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-ledc.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-sigmadelta.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-timer.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-bt.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-psram.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-cpu.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp8266-compat.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/binary.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WCharacter.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WString.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/pgmspace.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Stream.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Print.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Printable.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPAddress.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WString.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Printable.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Client.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Server.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Udp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Stream.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPAddress.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/HardwareSerial.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Esp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/variants/esp32/pins_arduino.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Udp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Print.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPv6Address.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiType.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiSTA.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiGeneric.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_event_loop.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_event.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_wifi_types.h \
@@ -151,25 +151,25 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
  /home/alex/esp32/esp-idf/components/lwip/include/apps/dhcpserver/dhcpserver.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiAP.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiScan.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiClient.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Client.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiServer.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Server.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiUdp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/Update/src/Update.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/MD5Builder.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiAP.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiScan.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiClient.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Client.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiServer.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Server.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiUdp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/Update/src/Update.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/MD5Builder.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/md5_hash.h \
  /home/alex/esp32/esp-idf/components/spi_flash/include/esp_partition.h \
  /home/alex/esp32/esp-idf/components/spi_flash/include/esp_spi_flash.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ESPmDNS/src/ESPmDNS.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ESPmDNS/src/ESPmDNS.h \
  /home/alex/esp32/esp-idf/components/mdns/include/mdns.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_event.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiUdp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiUdp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Arduino.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Arduino.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 
@@ -191,7 +191,7 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -303,31 +303,31 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/math.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-matrix.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-matrix.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-uart.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-uart.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-gpio.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-gpio.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-touch.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-touch.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-dac.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-dac.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-adc.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-adc.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-spi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-spi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-i2c.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-i2c.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/event_groups.h:
 
@@ -335,77 +335,77 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/task.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-ledc.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-ledc.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-sigmadelta.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-sigmadelta.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-timer.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-timer.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-bt.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-bt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-psram.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-psram.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-cpu.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-cpu.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp8266-compat.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp8266-compat.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/binary.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/binary.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WCharacter.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WCharacter.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WString.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WString.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/pgmspace.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/pgmspace.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Stream.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Stream.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Print.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Print.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Printable.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Printable.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPAddress.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPAddress.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WString.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WString.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Printable.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Printable.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Client.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Client.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Server.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Server.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Udp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Udp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Stream.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Stream.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPAddress.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPAddress.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/HardwareSerial.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/HardwareSerial.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Esp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Esp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/variants/esp32/pins_arduino.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/variants/esp32/pins_arduino.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Udp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Udp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/cbuf.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/cbuf.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ArduinoOTA/src/ArduinoOTA.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Print.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Print.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/IPv6Address.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/IPv6Address.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiType.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiType.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiSTA.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiSTA.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiGeneric.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiGeneric.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_event_loop.h:
 
@@ -469,23 +469,23 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
 
 /home/alex/esp32/esp-idf/components/lwip/include/apps/dhcpserver/dhcpserver.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiAP.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiAP.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiScan.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiScan.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiClient.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiClient.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Client.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Client.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiServer.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiServer.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/Server.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/Server.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/WiFi/src/WiFiUdp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/WiFi/src/WiFiUdp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/Update/src/Update.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/Update/src/Update.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/MD5Builder.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/MD5Builder.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/md5_hash.h:
 
@@ -493,9 +493,9 @@ libraries/ArduinoOTA/src//ArduinoOTA.o: \
 
 /home/alex/esp32/esp-idf/components/spi_flash/include/esp_spi_flash.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ESPmDNS/src/ESPmDNS.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ESPmDNS/src/ESPmDNS.h:
 
 /home/alex/esp32/esp-idf/components/mdns/include/mdns.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_event.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/ArduinoOTA/src//ArduinoOTA.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/ArduinoOTA/src//ArduinoOTA.cpp:

@@ -1,8 +1,8 @@
 src/flash_encrypt.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/src/flash_encrypt.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -18,7 +18,7 @@ src/flash_encrypt.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -29,7 +29,7 @@ src/flash_encrypt.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -71,11 +71,11 @@ src/flash_encrypt.o: \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/spi_flash.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/spi_reg.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -107,7 +107,7 @@ src/flash_encrypt.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h:
 
 /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h:
 
@@ -129,7 +129,7 @@ src/flash_encrypt.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 

@@ -1,7 +1,7 @@
 libraries/AzureIoT/src/az_iot/c-utility/src//hmacsha256.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src/hmacsha256.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmacsha256.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src/hmacsha256.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmacsha256.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -17,17 +17,17 @@ libraries/AzureIoT/src/az_iot/c-utility/src//hmacsha256.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmac.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/sha.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmac.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/sha.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmacsha256.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmacsha256.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -59,17 +59,17 @@ libraries/AzureIoT/src/az_iot/c-utility/src//hmacsha256.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmac.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/hmac.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/sha.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/sha.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdint.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src//hmacsha256.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/src//hmacsha256.c:

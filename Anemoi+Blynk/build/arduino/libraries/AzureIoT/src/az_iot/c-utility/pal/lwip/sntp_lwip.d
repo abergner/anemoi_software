@@ -1,7 +1,7 @@
 libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_lwip.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_lwip.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/time.h \
  /home/alex/esp32/esp-idf/components/newlib/include/time.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -20,21 +20,21 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/../inc/sntp.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/threadapi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_os.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/apps/sntp/sntp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/../inc/sntp.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/threadapi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_os.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/apps/sntp/sntp.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/apps/sntp.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/apps/sntp_opts.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
@@ -52,7 +52,7 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
  /home/alex/esp32/esp-idf/components/vfs/include/sys/ioctl.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/sys/select.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_task.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -128,9 +128,9 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/def.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/time.h:
 
@@ -168,9 +168,9 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -178,25 +178,25 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/../inc/sntp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/../inc/sntp.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/threadapi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/threadapi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_os.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip/sntp_os.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/apps/sntp/sntp.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/apps/sntp/sntp.h:
 
 /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/apps/sntp.h:
 
@@ -232,7 +232,7 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_task.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_system.h:
 
@@ -381,4 +381,4 @@ libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.o: \
 /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h:
 
 /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/pal/lwip//sntp_lwip.c:

@@ -1,5 +1,5 @@
 cores/esp32/esp32-hal-rmt.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.c \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/reent.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -15,7 +15,7 @@ cores/esp32/esp32-hal-rmt.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -83,30 +83,30 @@ cores/esp32/esp32-hal-rmt.o: \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/list.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/semphr.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal.h \
  /home/alex/esp32/esp-idf/components/newlib/include/inttypes.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/math.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-matrix.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-uart.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-gpio.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-touch.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-dac.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-adc.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-spi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-i2c.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-ledc.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-sigmadelta.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-timer.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-bt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-psram.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-cpu.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp8266-compat.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-matrix.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-uart.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-gpio.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-touch.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-dac.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-adc.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-spi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-i2c.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-ledc.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-sigmadelta.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-timer.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-bt.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-psram.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-cpu.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp8266-compat.h \
  /home/alex/esp32/esp-idf/components/driver/include/driver/periph_ctrl.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/dport_access.h \
@@ -145,7 +145,7 @@ cores/esp32/esp32-hal-rmt.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 
@@ -281,7 +281,7 @@ cores/esp32/esp32-hal-rmt.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/inttypes.h:
 
@@ -291,43 +291,43 @@ cores/esp32/esp32-hal-rmt.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/math.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-matrix.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-matrix.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-uart.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-uart.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-gpio.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-gpio.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-touch.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-touch.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-dac.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-dac.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-adc.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-adc.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-spi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-spi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-i2c.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-i2c.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-ledc.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-ledc.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-sigmadelta.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-sigmadelta.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-timer.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-timer.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-bt.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-bt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-psram.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-psram.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-cpu.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-cpu.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp8266-compat.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp8266-compat.h:
 
 /home/alex/esp32/esp-idf/components/driver/include/driver/periph_ctrl.h:
 
@@ -342,4 +342,4 @@ cores/esp32/esp32-hal-rmt.o: \
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/rmt_struct.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-rmt.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-rmt.c:

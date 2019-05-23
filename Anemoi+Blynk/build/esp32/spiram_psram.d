@@ -1,5 +1,5 @@
 spiram_psram.o: /home/alex/esp32/esp-idf/components/esp32/spiram_psram.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -76,7 +76,7 @@ spiram_psram.o: /home/alex/esp32/esp-idf/components/esp32/spiram_psram.c \
  /home/alex/esp32/esp-idf/components/driver/include/driver/periph_ctrl.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/rtc.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 

@@ -1,7 +1,7 @@
 bluedroid/stack/avdt/avdt_ad.o: \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/avdt/avdt_ad.c \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -57,7 +57,7 @@ bluedroid/stack/avdt/avdt_ad.o: \
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 

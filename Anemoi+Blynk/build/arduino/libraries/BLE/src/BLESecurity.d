@@ -1,7 +1,7 @@
 libraries/BLE/src//BLESecurity.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLESecurity.cpp \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLESecurity.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLESecurity.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLESecurity.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_ble_api.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -31,9 +31,9 @@ libraries/BLE/src//BLESecurity.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_defs.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLESecurity.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLESecurity.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_ble_api.h:
 
@@ -90,4 +90,4 @@ libraries/BLE/src//BLESecurity.o: \
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_defs.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src//BLESecurity.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src//BLESecurity.cpp:

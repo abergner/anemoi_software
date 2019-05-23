@@ -1,5 +1,5 @@
 ClockAnemoi.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/ClockAnemoi.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/ClockAnemoi.c \
  /home/alex/esp32/esp-idf/components/driver/include/driver/ledc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -23,7 +23,7 @@ ClockAnemoi.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
@@ -59,8 +59,8 @@ ClockAnemoi.o: \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime-core-state.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/ClockAnemoi.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/ClockAnemoi.h
 
 /home/alex/esp32/esp-idf/components/driver/include/driver/ledc.h:
 
@@ -108,7 +108,7 @@ ClockAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 
@@ -180,7 +180,7 @@ ClockAnemoi.o: \
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/Anemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/include/ClockAnemoi.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/./ClockAnemoi.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/ClockAnemoi.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/./ClockAnemoi.c:

@@ -19,7 +19,7 @@ bluedroid/stack/btm/btm_devctl.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/types.h \
@@ -167,7 +167,7 @@ bluedroid/stack/btm/btm_devctl.o: \
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 

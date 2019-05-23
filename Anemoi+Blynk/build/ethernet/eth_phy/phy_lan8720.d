@@ -6,7 +6,7 @@ eth_phy/phy_lan8720.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/_default_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/features.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_assert.h \
@@ -50,7 +50,7 @@ eth_phy/phy_lan8720.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h:
 

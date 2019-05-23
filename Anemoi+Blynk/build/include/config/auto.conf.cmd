@@ -23,7 +23,7 @@ deps_config := \
 	/home/alex/esp32/esp-idf/components/tcpip_adapter/Kconfig \
 	/home/alex/esp32/esp-idf/components/vfs/Kconfig \
 	/home/alex/esp32/esp-idf/components/wear_levelling/Kconfig \
-	/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/Kconfig.projbuild \
+	/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/Kconfig.projbuild \
 	/home/alex/esp32/esp-idf/components/bootloader/Kconfig.projbuild \
 	/home/alex/esp32/esp-idf/components/esptool_py/Kconfig.projbuild \
 	/home/alex/esp32/esp-idf/components/partition_table/Kconfig.projbuild \

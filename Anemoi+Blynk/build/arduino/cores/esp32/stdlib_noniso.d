@@ -1,5 +1,5 @@
 cores/esp32/stdlib_noniso.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.c \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.c \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -21,7 +21,7 @@ cores/esp32/stdlib_noniso.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/newlib/include/math.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.h
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h:
 
@@ -65,5 +65,5 @@ cores/esp32/stdlib_noniso.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/math.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/stdlib_noniso.c:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/stdlib_noniso.c:

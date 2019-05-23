@@ -1,5 +1,5 @@
 cores/esp32/WMath.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WMath.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WMath.cpp \
  /home/alex/esp32/esp-idf/components/newlib/include/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
@@ -26,7 +26,7 @@ cores/esp32/WMath.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/stdio.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_sleep.h \
  /home/alex/esp32/esp-idf/components/driver/include/driver/gpio.h \
@@ -111,7 +111,7 @@ cores/esp32/WMath.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 
@@ -174,4 +174,4 @@ cores/esp32/WMath.o: \
 /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core-matmap.h:
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/touch_channel.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/WMath.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/WMath.cpp:

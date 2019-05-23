@@ -1,7 +1,7 @@
 libraries/BLE/src//BLEAdvertisedDevice.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.cpp \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gattc_api.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_defs.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatt_defs.h \
@@ -13,19 +13,19 @@ libraries/BLE/src//BLEAdvertisedDevice.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAddress.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAddress.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_ble_api.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEScan.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEClient.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEScan.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEClient.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEExceptions.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteService.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteCharacteristic.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteDescriptor.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUUID.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEExceptions.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteService.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteCharacteristic.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteDescriptor.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUUID.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatt_defs.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/FreeRTOS.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/xtensa_config.h \
@@ -82,22 +82,22 @@ libraries/BLE/src//BLEAdvertisedDevice.o: \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/ringbuf.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEService.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEService.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatts_api.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLECharacteristic.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEDescriptor.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEValue.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEServer.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAdvertising.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLESecurity.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUtils.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLECharacteristic.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEDescriptor.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEValue.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEServer.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAdvertising.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLESecurity.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUtils.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAdvertisedDevice.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gattc_api.h:
 
@@ -121,31 +121,31 @@ libraries/BLE/src//BLEAdvertisedDevice.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAddress.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAddress.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_ble_api.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEScan.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEScan.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEClient.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEClient.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEExceptions.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEExceptions.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteService.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteService.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteCharacteristic.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteCharacteristic.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLERemoteDescriptor.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLERemoteDescriptor.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUUID.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUUID.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatt_defs.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/FreeRTOS.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/FreeRTOS.h:
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -259,27 +259,27 @@ libraries/BLE/src//BLEAdvertisedDevice.o: \
 
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/queue.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEService.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEService.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatts_api.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLECharacteristic.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLECharacteristic.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEDescriptor.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEDescriptor.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEValue.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEValue.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEServer.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEServer.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEAdvertising.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEAdvertising.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLESecurity.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLESecurity.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUtils.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUtils.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src//BLEAdvertisedDevice.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src//BLEAdvertisedDevice.cpp:

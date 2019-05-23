@@ -31,7 +31,7 @@
 #define CONFIG_3_TEMP_RTD_SELv		0x0u //RTD type
 #define CONFIG_3_TEMP_CLK_DIVv 		0x0u //Clock divider for temperature mode (divide by 8)
 #define CONFIG_3_BLANKINGv			0x0u //Power blanking in standard TOF measurements (disabled)
-#define CONFIG_3_ECHO_QUAL_THLDv	0x00u //Echo qualification DAC threshold level with respect to VCOM (default)
+#define CONFIG_3_ECHO_QUAL_THLDv	0x2u //Echo qualification DAC threshold level with respect to VCOM (default)
 
 //config4 values
 #define CONFIG_4_RECEIVE_MODEv			0x0u //receive single echo

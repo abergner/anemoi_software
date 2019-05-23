@@ -1,5 +1,5 @@
 libraries/Time//DateStrings.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/libraries/Time/DateStrings.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/libraries/Time/DateStrings.cpp \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -15,7 +15,7 @@ libraries/Time//DateStrings.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/libraries/Time/TimeLib.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/libraries/Time/TimeLib.h \
  /home/alex/esp32/esp-idf/components/newlib/include/inttypes.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
@@ -53,7 +53,7 @@ libraries/Time//DateStrings.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/libraries/Time/TimeLib.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/libraries/Time/TimeLib.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/inttypes.h:
 
@@ -66,4 +66,4 @@ libraries/Time//DateStrings.o: \
 /home/alex/esp32/esp-idf/components/newlib/include/machine/types.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/sched.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/main/libraries/Time//DateStrings.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/libraries/Time//DateStrings.cpp:

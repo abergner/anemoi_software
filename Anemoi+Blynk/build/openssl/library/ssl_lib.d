@@ -12,7 +12,7 @@ library/ssl_lib.o: \
  /home/alex/esp32/esp-idf/components/openssl/include/internal/ssl_cert.h \
  /home/alex/esp32/esp-idf/components/openssl/include/internal/ssl_dbg.h \
  /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_opt.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_port.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_types.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
@@ -70,7 +70,7 @@ library/ssl_lib.o: \
 
 /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_opt.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/openssl/include/platform/ssl_port.h:
 

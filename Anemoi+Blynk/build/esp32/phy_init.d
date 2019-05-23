@@ -23,7 +23,7 @@ phy_init.o: /home/alex/esp32/esp-idf/components/esp32/phy_init.c \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_assert.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/rtc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -192,7 +192,7 @@ phy_init.o: /home/alex/esp32/esp-idf/components/esp32/phy_init.c \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

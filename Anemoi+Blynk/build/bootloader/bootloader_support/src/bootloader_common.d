@@ -1,6 +1,6 @@
 src/bootloader_common.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/src/bootloader_common.c \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -28,7 +28,7 @@ src/bootloader_common.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /home/alex/esp32/esp-idf/components/bootloader_support/include_bootloader/bootloader_sha.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h:
 

@@ -2,7 +2,7 @@ src/bootloader_init.o: \
  /home/alex/esp32/esp-idf/components/bootloader_support/src/bootloader_init.c \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_attr.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_assert.h \
@@ -63,7 +63,7 @@ src/bootloader_init.o: \
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/esp32/include/rom/ets_sys.h:
 

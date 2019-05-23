@@ -1,6 +1,6 @@
 libraries/BLE/src//BLEEddystoneURL.o: \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEEddystoneURL.cpp \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEEddystoneURL.cpp \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
  /home/alex/esp32/esp-idf/components/newlib/include/_ansi.h \
  /home/alex/esp32/esp-idf/components/newlib/include/newlib.h \
@@ -16,7 +16,7 @@ libraries/BLE/src//BLEEddystoneURL.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/lock.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log.h \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -29,12 +29,12 @@ libraries/BLE/src//BLEEddystoneURL.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/alloca.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEEddystoneURL.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUUID.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEEddystoneURL.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUUID.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatt_defs.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_defs.h
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -66,7 +66,7 @@ libraries/BLE/src//BLEEddystoneURL.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/cores/esp32/esp32-hal-log.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/cores/esp32/esp32-hal-log.h:
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log.h:
 
@@ -92,11 +92,11 @@ libraries/BLE/src//BLEEddystoneURL.o: \
 
 /home/alex/esp32/esp-idf/components/log/include/esp_log_internal.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEEddystoneURL.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEEddystoneURL.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src/BLEUUID.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src/BLEUUID.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_gatt_defs.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_defs.h:
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/components/arduino/libraries/BLE/src//BLEEddystoneURL.cpp:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/BLE/src//BLEEddystoneURL.cpp:

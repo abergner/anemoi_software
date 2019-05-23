@@ -13,7 +13,7 @@ src/bootloader_random.o: \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_attr.h \
  /home/alex/esp32/esp-idf/components/esp32/include/esp_dport_access.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/xtruntime.h \
  /home/alex/esp32/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -56,7 +56,7 @@ src/bootloader_random.o: \
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_dport_access.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/bootloader/../include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/bootloader/../include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
 

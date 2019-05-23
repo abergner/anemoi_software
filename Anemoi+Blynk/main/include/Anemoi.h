@@ -58,13 +58,20 @@
 #define TRANSDUCER_FREQUENCY_IN_HZ 40000
 
 //Distance between sensors in meters
-#define X_DISTANCE 0.14
-#define Y_DISTANCE 0.14
+#define X_DISTANCE 0.146
+#define Y_DISTANCE 0.146
 //Distance between sensors in meters
 
 #define RADIANS_2_DEGREES	180.0 / M_PI
 #define METERS_PER_SECOND_2_KNOTS 1.94384
 #define METERS_PER_SECOND_2_KILOMETERS_PER_HOUR 3.6
+
+
+#define LOW_SPEED 0.5 // m/s
+
+
+#define ZERO_CELSIUS_SPEED_OF_SOUND 331 // m/s
+#define SPEED_OF_SOUND_TEMPERATURE_COEFFICIENT 0.6     //m/s/C
 
 ////CUSTOM VARIABLES//////CUSTOM VARIABLES//////CUSTOM VARIABLES///////
 
@@ -81,6 +88,8 @@ typedef struct
 	double ySpeed;
 	double speed;
 	double direction;
+	double soundSpeed;
+	double temperature;
 	
 } Wind;
 

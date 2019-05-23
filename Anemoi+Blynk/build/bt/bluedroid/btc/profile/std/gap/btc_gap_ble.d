@@ -23,7 +23,7 @@ bluedroid/btc/profile/std/gap/btc_gap_ble.o: \
  /home/alex/esp32/esp-idf/components/newlib/include/stdint.h \
  /home/alex/esp32/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/alex/esp32/esp-idf/components/heap/include/multi_heap.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_defs.h \
  /home/alex/esp32/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
@@ -170,7 +170,7 @@ bluedroid/btc/profile/std/gap/btc_gap_ble.o: \
 
 /home/alex/esp32/esp-idf/components/heap/include/multi_heap.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h:
 

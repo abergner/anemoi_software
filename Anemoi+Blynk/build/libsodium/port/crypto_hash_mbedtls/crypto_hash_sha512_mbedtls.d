@@ -22,7 +22,7 @@ port/crypto_hash_mbedtls/crypto_hash_sha512_mbedtls.o: \
  /home/alex/esp32/esp-idf/components/libsodium/libsodium/src/libsodium/include/sodium/export.h \
  /home/alex/esp32/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha512.h \
  /home/alex/esp32/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
  /home/alex/esp32/esp-idf/components/newlib/include/limits.h \
  /home/alex/esp32/esp-idf/components/newlib/include/string.h \
@@ -72,7 +72,7 @@ port/crypto_hash_mbedtls/crypto_hash_sha512_mbedtls.o: \
 
 /home/alex/esp32/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h:
 

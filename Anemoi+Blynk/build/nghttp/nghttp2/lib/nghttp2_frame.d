@@ -37,7 +37,7 @@ nghttp2/lib/nghttp2_frame.o: \
  /home/alex/esp32/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
  /home/alex/esp32/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h \
  /home/alex/esp32/esp-idf/components/newlib/include/assert.h \
  /home/alex/esp32/esp-idf/components/newlib/platform_include/errno.h \
  /home/alex/esp32/esp-idf/components/newlib/include/errno.h \
@@ -121,7 +121,7 @@ nghttp2/lib/nghttp2_frame.o: \
 
 /home/alex/esp32/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/Blynk_test/build/include/sdkconfig.h:
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/build/include/sdkconfig.h:
 
 /home/alex/esp32/esp-idf/components/newlib/include/assert.h:
 

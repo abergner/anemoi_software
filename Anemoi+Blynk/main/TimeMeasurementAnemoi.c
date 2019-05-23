@@ -23,31 +23,31 @@
 #define LOWER_TIME_LIMIT 0.00001
 
 //CALIBRATION
-#define GENERAL_CALIBRATION 	  0.00002500
+#define GENERAL_CALIBRATION 	  0.00000000
 
 #define POSITIVE_CALIBRATION	  0.00000100
 #define NEGATIVE_CALIBRATION	  0.00000000
 
 #define X_CALIBRATION	  		  0.00000000
-#define Y_CALIBRATION	 		  0.00000000
+#define Y_CALIBRATION	 		  0.00000200
 
 #define X_POSITIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + X_CALIBRATION + POSITIVE_CALIBRATION )
-#define X_NEGATIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
-#define Y_POSITIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
+#define X_NEGATIVE_CALIBRATION	(  0.00000010  + GENERAL_CALIBRATION + X_CALIBRATION + NEGATIVE_CALIBRATION )
+#define Y_POSITIVE_CALIBRATION	(  0.00000010  + GENERAL_CALIBRATION + Y_CALIBRATION + POSITIVE_CALIBRATION )
 #define Y_NEGATIVE_CALIBRATION	(  0.00000000  + GENERAL_CALIBRATION + Y_CALIBRATION + NEGATIVE_CALIBRATION )
 
-#define GENERAL_PHASE_SHIFT 14.0/TRANSDUCER_FREQUENCY_IN_HZ
+#define GENERAL_PHASE_SHIFT 7.0/TRANSDUCER_FREQUENCY_IN_HZ
 
 #define POSITIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define NEGATIVE_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 
-#define X_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
+#define X_PHASE_SHIFT 1.0/TRANSDUCER_FREQUENCY_IN_HZ
 #define Y_PHASE_SHIFT 0.0/TRANSDUCER_FREQUENCY_IN_HZ
 
-#define X_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
-#define X_NEGATIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
-#define Y_POSITIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
-#define Y_NEGATIVE_PHASE_SHIFT	( 0.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
+#define X_POSITIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
+#define X_NEGATIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + X_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
+#define Y_POSITIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + POSITIVE_PHASE_SHIFT )
+#define Y_NEGATIVE_PHASE_SHIFT	( 1.0/TRANSDUCER_FREQUENCY_IN_HZ + GENERAL_PHASE_SHIFT + Y_PHASE_SHIFT + NEGATIVE_PHASE_SHIFT )
 
 #define X_POSITIVE_SIGNAL_WIDTH 	20	//measured in pulses
 #define X_NEGATIVE_SIGNAL_WIDTH		20
@@ -65,7 +65,7 @@ void initTimeMeasurementHardware(void)
 	initGpio();
 }
 
-#define N 50
+#define N 30
 
 ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight)
 {
@@ -182,53 +182,16 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 			}
 		}
 	}
-	/*int maxIndex = 0;
-	int max = relativeTimesCount[maxIndex];
-
+	int index=0;
 	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
 	{
-	    if (relativeTimesCount[i] > max)
-	    {
-	        maxIndex = i;
-	        max = relativeTimesCount[i];
-	        break;
-	    }
-	}
-	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
-	{
-		if(relativeTimesCount[i]<(int)maxIndex*0.3)
+		if(relativeTimes[i].count>=(int)N*0.9)
 		{
-			relativeTimesCount[i]=0;
-			relativeTimesAccumulated[i]=0;
-		}
-	}
-	*/int index=0;
-	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
-	{
-		if(relativeTimes[i].count>=(int)N*0.4)
-		{
-			index=i+7;
+			index=i;
 			break;
 		}
 	}
-	/*double indexMassCenter=0;
-	double massCenter=0;
-	int totalCount=0;
-	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
-	{
-		indexMassCenter=indexMassCenter+(double)(relativeTimesCount[i]*i);
-		totalCount=totalCount+relativeTimesCount[i];
-		massCenter=massCenter+relativeTimesAccumulated[i]*relativeTimesCount[i];
-	}
-	indexMassCenter=indexMassCenter/(double)totalCount;
-	massCenter=massCenter/(double)totalCount;*/
 
-
-	//printf("Index mass center: %f\n",indexMassCenter);
-	//printf("Index mass center: %d\n",(int)round(indexMassCenter));
-	//printf("Index mass center: %.2f\n",relativeTimesAccumulated[(int)round(indexMassCenter)]*1000000/(double)relativeTimesCount[(int)round(indexMassCenter)]);
-
-	//printf("Mass center: %f\n",massCenter*1000000);*/
 	int count=0;
 	for(k=0;k<RELATIVE_TIMES_COUNT;k++)
 	{
@@ -241,54 +204,28 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 	}
 	printf("count: %d\n",count);
 
-	//qsort(relativeTimes,RELATIVE_TIMES_COUNT, sizeof(RelativeTime), compareFunction);
 
-	/*for(k=0;k<RELATIVE_TIMES_COUNT;k++)
+	for(i=index,k=0; i < RELATIVE_TIMES_COUNT; i++)
 	{
-		if(relativeTimes[k].count>0)
+		if(relativeTimes[i].count>0)
 		{
-			printf("index: %d count: %d \t",relativeTimes[k].index,relativeTimes[k].count);
-			printf("time: %.2f us\n",relativeTimes[k].timeAccumulated*1000000/(double)relativeTimes[k].count);
+			printf("time %d: %.2f us\n",i,1000000*((relativeTimes[i].timeAccumulated / (double) relativeTimes[i].count) - ((double)(i-index))/TRANSDUCER_FREQUENCY_IN_HZ));
 		}
-	}*/
-	//CALIBRATION
-	/*int signalWidth=0;
-	if(axis==X_AXIS)
-	{
-		if(direction==POSITIVE_DIRECTION)
+		if(relativeTimes[i].count == N)
 		{
-			signalWidth=X_POSITIVE_SIGNAL_WIDTH;
-		}
-		else if(direction==NEGATIVE_DIRECTION)
-		{
-			signalWidth=X_NEGATIVE_SIGNAL_WIDTH;
+			timeOfFlight=timeOfFlight + (relativeTimes[i].timeAccumulated / (double) relativeTimes[i].count) - ((double)(i-index))/TRANSDUCER_FREQUENCY_IN_HZ;
+			k++;
+			if(k==5)
+			{
+				//break;
+			}
 		}
 	}
-	else if(axis==Y_AXIS)
-	{
-		if(direction==POSITIVE_DIRECTION)
-		{
-			signalWidth=Y_POSITIVE_SIGNAL_WIDTH;
-		}
-		else if(direction==NEGATIVE_DIRECTION)
-		{
-			signalWidth=Y_NEGATIVE_SIGNAL_WIDTH;
-		}
-	}
-	//CALIBRATION
-	int index=0;
-	double minTime=relativeTimes[0].time;
-	for(k=1;k<signalWidth;k++)
-	{
-		if(relativeTimes[k].time < minTime)
-		{
-			index=k;
-			minTime=relativeTimes[k].time;
-		}
 
-	}*/
-	//printf("time: %.2f us\n",relativeTimes[index].timeAccumulated*1000000/(double)relativeTimes[index].count);
-	timeOfFlight=relativeTimes[index].timeAccumulated/(double)relativeTimes[index].count;
+	timeOfFlight=(relativeTimes[index+4].timeAccumulated / (double) relativeTimes[index+4].count) - ((double)(4.0))/TRANSDUCER_FREQUENCY_IN_HZ;
+	timeOfFlight=timeOfFlight+(relativeTimes[index+5].timeAccumulated / (double) relativeTimes[index+5].count) - ((double)(5.0))/TRANSDUCER_FREQUENCY_IN_HZ;
+	timeOfFlight=timeOfFlight+(relativeTimes[index+6].timeAccumulated / (double) relativeTimes[index+6].count) - ((double)(6.0))/TRANSDUCER_FREQUENCY_IN_HZ;
+	timeOfFlight=timeOfFlight/(double) 3.0;
 
 	//CALIBRATION
 	if(axis==X_AXIS)
@@ -408,3 +345,95 @@ ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTi
 	(*ptrTimesCount)=newTimesCount;
 	return errorsAndWarnings;
 }
+
+/*int maxIndex = 0;
+	int max = relativeTimesCount[maxIndex];
+
+	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
+	{
+	    if (relativeTimesCount[i] > max)
+	    {
+	        maxIndex = i;
+	        max = relativeTimesCount[i];
+	        break;
+	    }
+	}
+	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
+	{
+		if(relativeTimesCount[i]<(int)maxIndex*0.3)
+		{
+			relativeTimesCount[i]=0;
+			relativeTimesAccumulated[i]=0;
+		}
+	}
+	*/
+
+/*double indexMassCenter=0;
+	double massCenter=0;
+	int totalCount=0;
+	for (i = 0; i < RELATIVE_TIMES_COUNT; i++)
+	{
+		indexMassCenter=indexMassCenter+(double)(relativeTimesCount[i]*i);
+		totalCount=totalCount+relativeTimesCount[i];
+		massCenter=massCenter+relativeTimesAccumulated[i]*relativeTimesCount[i];
+	}
+	indexMassCenter=indexMassCenter/(double)totalCount;
+	massCenter=massCenter/(double)totalCount;*/
+
+
+	//printf("Index mass center: %f\n",indexMassCenter);
+	//printf("Index mass center: %d\n",(int)round(indexMassCenter));
+	//printf("Index mass center: %.2f\n",relativeTimesAccumulated[(int)round(indexMassCenter)]*1000000/(double)relativeTimesCount[(int)round(indexMassCenter)]);
+
+	//printf("Mass center: %f\n",massCenter*1000000);*/
+
+
+
+
+//qsort(relativeTimes,RELATIVE_TIMES_COUNT, sizeof(RelativeTime), compareFunction);
+
+	/*for(k=0;k<RELATIVE_TIMES_COUNT;k++)
+	{
+		if(relativeTimes[k].count>0)
+		{
+			printf("index: %d count: %d \t",relativeTimes[k].index,relativeTimes[k].count);
+			printf("time: %.2f us\n",relativeTimes[k].timeAccumulated*1000000/(double)relativeTimes[k].count);
+		}
+	}*/
+	//CALIBRATION
+	/*int signalWidth=0;
+	if(axis==X_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			signalWidth=X_POSITIVE_SIGNAL_WIDTH;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			signalWidth=X_NEGATIVE_SIGNAL_WIDTH;
+		}
+	}
+	else if(axis==Y_AXIS)
+	{
+		if(direction==POSITIVE_DIRECTION)
+		{
+			signalWidth=Y_POSITIVE_SIGNAL_WIDTH;
+		}
+		else if(direction==NEGATIVE_DIRECTION)
+		{
+			signalWidth=Y_NEGATIVE_SIGNAL_WIDTH;
+		}
+	}
+	//CALIBRATION
+	int index=0;
+	double minTime=relativeTimes[0].time;
+	for(k=1;k<signalWidth;k++)
+	{
+		if(relativeTimes[k].time < minTime)
+		{
+			index=k;
+			minTime=relativeTimes[k].time;
+		}
+
+	}*/
+	//printf("time: %.2f us\n",relativeTimes[index].timeAccumulated*1000000/(double)relativeTimes[index].count);
