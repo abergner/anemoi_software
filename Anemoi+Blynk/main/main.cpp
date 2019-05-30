@@ -157,7 +157,7 @@ extern "C" void app_main()
 		{
 			i=0;
 		}
-		vTaskDelay(1 / portTICK_PERIOD_MS);
+		vTaskDelay(10 / portTICK_PERIOD_MS);
 	}
 
 }
@@ -225,12 +225,6 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	}
 	wind.temperature=(wind.soundSpeed-ZERO_CELSIUS_SPEED_OF_SOUND)/SPEED_OF_SOUND_TEMPERATURE_COEFFICIENT;
 	printf("Temperature: %.2f\n",wind.temperature);
-
-
-
-
-
-	
 	
 	
 	return wind;
