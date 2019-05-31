@@ -30,6 +30,7 @@ extern "C"{
 #include "include/TimeMeasurementAnemoi.h"
 #include "include/ClockAnemoi.h"
 #include "include/SpiAnemoi.h"
+#include "include/NmeaAnemoi.h"
 }
 
 // You should get Auth Token in the Blynk App.
@@ -116,7 +117,8 @@ extern "C" void app_main()
 			printf(GREEN "Wind speed: %.2f kn \n " RESET,wind[k].speed * METERS_PER_SECOND_2_KNOTS);
 		}
 
-
+		sendNmeaWindData(wind[i].direction,wind[i].speed* METERS_PER_SECOND_2_KNOTS,'K');
+		//sendNmeaWindData(67.5,4.8,'K');
 
 		Blynk.run();
 		if(wind[i].speed > LOW_SPEED)
@@ -185,6 +187,7 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 		{
 			yNegativeTime=yNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		}
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
 	}
 
 	if(fabs(fabs(xPositiveTime-ZERO_WIND_TIME)-fabs(xNegativeTime-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
@@ -198,6 +201,7 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 		{
 			xNegativeTime=xNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		}
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
 	}
 
 	wind.xSpeed=X_DISTANCE*(1.0/xPositiveTime-1.0/xNegativeTime)/2.0;
@@ -205,7 +209,7 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	
 
 	wind.speed=sqrt(wind.xSpeed*wind.xSpeed+wind.ySpeed*wind.ySpeed);
-	wind.direction=atan(wind.ySpeed/wind.xSpeed)*RADIANS_2_DEGREES;
+	wind.direction=atan(wind.ySpeed/wind.xSpeed)*RADIANS_2_DEGREES+90.0;
 	if(wind.xSpeed<0)
 	{
 		//to get full 360º instead of only 180º
@@ -267,6 +271,8 @@ void initAnemoi(void)
 	readRegistersTdc1000(&xHandleTDC1000);
 	printf("\nTDC1000 Y \n");
 	readRegistersTdc1000(&yHandleTDC1000);
+
+	initNmea();
 
 }
 

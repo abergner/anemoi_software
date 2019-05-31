@@ -124,9 +124,12 @@ void sendNmeaWindData(double angle, double speed, char unit)
 				break;
 
 	}
-	sprintf(aString,"*%02x",checksum((uint8_t)&(nmeaSentence[1]),strlen(nmeaSentence)-1));
+	sprintf(aString,"*%02x",checksum((uint8_t *)&(nmeaSentence[1]),strlen(nmeaSentence)-1));
 	strcat(nmeaSentence,aString);
+
+	printf("\nNMEA sentence: \n\n");
 	printf(nmeaSentence);
+	printf("\n\n");
 
 	uart_write_bytes(UART_NUM, nmeaSentence, strlen(nmeaSentence));
 }
@@ -134,7 +137,7 @@ void sendNmeaWindData(double angle, double speed, char unit)
 void initNmea(void)
 {
 	uart_config_t uart_config = {
-	            .baud_rate = 9600,
+	            .baud_rate = 4800,
 	            .data_bits = UART_DATA_8_BITS,
 	            .parity = UART_PARITY_DISABLE,
 	            .stop_bits = UART_STOP_BITS_1,

@@ -234,7 +234,8 @@ main.o: \
  /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/Anemoi.h \
  /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/TimeMeasurementAnemoi.h \
  /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/ClockAnemoi.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/SpiAnemoi.h
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/SpiAnemoi.h \
+ /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/NmeaAnemoi.h
 
 /home/alex/esp32/esp-idf/components/esp32/include/esp_err.h:
 
@@ -705,4 +706,6 @@ main.o: \
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/ClockAnemoi.h:
 
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/SpiAnemoi.h:
+
+/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/include/NmeaAnemoi.h:
 /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/main/./main.cpp:
