@@ -127,9 +127,11 @@ void sendNmeaWindData(double angle, double speed, char unit)
 	sprintf(aString,"*%02x",checksum((uint8_t *)&(nmeaSentence[1]),strlen(nmeaSentence)-1));
 	strcat(nmeaSentence,aString);
 
+	#ifdef DEBUG_PRINTS
 	printf("\nNMEA sentence: \n\n");
 	printf(nmeaSentence);
 	printf("\n\n");
+	#endif
 
 	uart_write_bytes(UART_NUM, nmeaSentence, strlen(nmeaSentence));
 }

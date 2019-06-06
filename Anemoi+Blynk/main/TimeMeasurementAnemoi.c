@@ -23,7 +23,7 @@
 #define LOWER_TIME_LIMIT 0.00001
 
 //CALIBRATION
-#define GENERAL_CALIBRATION 	  0.00000000
+#define GENERAL_CALIBRATION 	 (-0.0000020)
 
 #define POSITIVE_CALIBRATION	  0.00000100
 #define NEGATIVE_CALIBRATION	  0.00000000
@@ -198,18 +198,23 @@ double calculateTimeOfFlight(double * ptrTimes, unsigned int * ptrTimesCount, Ax
 		if(relativeTimes[k].count>0)
 		{
 			count++;
+			#ifdef DEBUG_PRINTS
 			printf("index: %d count: %d \t",relativeTimes[k].index,relativeTimes[k].count);
 			printf("time: %.2f us\n",relativeTimes[k].timeAccumulated*1000000/(double)relativeTimes[k].count);
+			#endif
 		}
 	}
+	#ifdef DEBUG_PRINTS
 	printf("count: %d\n",count);
-
+	#endif
 
 	for(i=index,k=0; i < RELATIVE_TIMES_COUNT; i++)
 	{
 		if(relativeTimes[i].count>0)
 		{
+			#ifdef DEBUG_PRINTS
 			printf("time %d: %.2f us\n",i,1000000*((relativeTimes[i].timeAccumulated / (double) relativeTimes[i].count) - ((double)(i-index))/TRANSDUCER_FREQUENCY_IN_HZ));
+			#endif
 		}
 		if(relativeTimes[i].count == N)
 		{
@@ -275,7 +280,9 @@ ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount
 
 	if( getQueueCycles(START_QUEUE, &start) != true)
 	{
+		#ifdef DEBUG_PRINTS
 		printf(ERROR"No start received\n"RESET);
+		#endif
 		return ERROR_NO_START_RECEIVED;
 	}
 
@@ -289,7 +296,9 @@ ErrorsAndWarnings calculateTimes(double * ptrTimes, unsigned int * ptrTimesCount
 	(*ptrTimesCount)=arrivedStopPulses;
 	if(arrivedStopPulses==0)
 	{
+		#ifdef DEBUG_PRINTS
 		printf(ERROR"No stop received\n"RESET);
+		#endif
 		return ERROR_NO_STOP_RECEIVED;
 	}
 	for(i=0;i<arrivedStopPulses;i++)
