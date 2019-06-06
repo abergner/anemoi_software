@@ -44,7 +44,7 @@ char message[50];
 
 extern "C" void initAnemoi(void);
 extern "C" Wind calculateWind(double xPositiveTime,double xNegativeTime, double yPositiveTime,double yNegativeTime);
-
+void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime);
 
 
 extern "C" void app_main()
@@ -110,6 +110,7 @@ extern "C" void app_main()
 		{
 			if(errorsAndWarningsYpos!=ERROR_TIME_OUT_OF_RANGE && errorsAndWarningsYneg!=ERROR_TIME_OUT_OF_RANGE )
 			{
+				SoftCalibration(&xPositiveTimeofFlight,&xNegativeTimeofFlight,&yPositiveTimeofFlight,&yNegativeTimeofFlight);
 				wind[i]=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
 			}
 		}
@@ -137,7 +138,8 @@ extern "C" void app_main()
 			#ifdef DEBUG_PRINTS
 			printf(GREEN "\t \t Wind Direction:\t %.2f º\n" RESET,wind[i].direction);
 			#endif
-			printf( "%.2f \n" ,wind[i].direction);
+			printf( "%.2f \t" ,wind[i].direction);
+			printf( "%.2f \n" ,wind[i].speed);
 
 			sprintf(message, "X speed: %.2f kn     Y speed: %.2f kn", wind[i].xSpeed * METERS_PER_SECOND_2_KNOTS, wind[i].ySpeed * METERS_PER_SECOND_2_KNOTS );
 			Blynk.virtualWrite(V1, message);
@@ -191,113 +193,10 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	//printf("fabs pos: %.2f   neg: %.2f\n",1000000*fabs(yPositiveTime-ZERO_WIND_TIME),1000000*fabs(yNegativeTime-ZERO_WIND_TIME));
 	//printf("0.5/freq: %.2f \n",  1000000*(0.5/(double)TRANSDUCER_FREQUENCY_IN_HZ) );
 
-	if(yPositiveTime-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(yNegativeTime-ZERO_WIND_TIME <(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		yPositiveTime=yPositiveTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		yNegativeTime=yNegativeTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 11\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-	if(yPositiveTime-ZERO_WIND_TIME <(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(yNegativeTime-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		yPositiveTime=yPositiveTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		yNegativeTime=yNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 22\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-	if(xPositiveTime-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(xNegativeTime-ZERO_WIND_TIME <(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		xPositiveTime=xPositiveTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		xNegativeTime=xNegativeTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 33\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-	if(xPositiveTime-ZERO_WIND_TIME <(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(xNegativeTime-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		xPositiveTime=xPositiveTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		xNegativeTime=xNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 44\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-
-	if(fabs(fabs(yPositiveTime-ZERO_WIND_TIME)-fabs(yNegativeTime-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
-	{
-		if(fabs(yPositiveTime-ZERO_WIND_TIME)>fabs(yNegativeTime-ZERO_WIND_TIME))
-		{
-			if(yPositiveTime-ZERO_WIND_TIME>0)
-			{
-				yPositiveTime=yPositiveTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				yPositiveTime=yPositiveTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-
-		}
-		else
-		{
-			if(yNegativeTime-ZERO_WIND_TIME>0)
-			{
-				yNegativeTime=yNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				yNegativeTime=yNegativeTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-		}
-		#ifdef DEBUG_PRINTS
-		printf("Correction 01\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-
-	if(fabs(fabs(xPositiveTime-ZERO_WIND_TIME)-fabs(xNegativeTime-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
-	{
-
-		if(fabs(xPositiveTime-ZERO_WIND_TIME)>fabs(xNegativeTime-ZERO_WIND_TIME))
-		{
-			if(xPositiveTime-ZERO_WIND_TIME>0)
-			{
-				xPositiveTime=xPositiveTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				xPositiveTime=xPositiveTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-
-		}
-		else
-		{
-			if(xNegativeTime-ZERO_WIND_TIME>0)
-			{
-				xNegativeTime=xNegativeTime-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				xNegativeTime=xNegativeTime+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-		}
-		#ifdef DEBUG_PRINTS
-		printf("Correction 02\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTime*1000000,xNegativeTime*1000000,yPositiveTime*1000000,yNegativeTime*1000000);
-		#endif
-	}
-
-
-
-
 
 	wind.xSpeed=X_DISTANCE*(1.0/xPositiveTime-1.0/xNegativeTime)/2.0;
 	wind.ySpeed=Y_DISTANCE*(1.0/yPositiveTime-1.0/yNegativeTime)/2.0;
-	
+
 
 	wind.speed=sqrt(wind.xSpeed*wind.xSpeed+wind.ySpeed*wind.ySpeed);
 	wind.direction=atan(wind.ySpeed/wind.xSpeed)*RADIANS_2_DEGREES+90.0;
@@ -375,6 +274,111 @@ void initAnemoi(void)
 	initNmea();
 
 }
+
+
+void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime)
+{
+	if((*ptrYPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME - (*ptrYNegativeTime)>(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	{
+		(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		#ifdef DEBUG_PRINTS
+		printf("Correction 11\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+	if(ZERO_WIND_TIME-(*ptrYPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrYNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	{
+		(*ptrYPositiveTime)=(*ptrYPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		#ifdef DEBUG_PRINTS
+		printf("Correction 22\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+	if((*ptrXPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME-(*ptrXNegativeTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	{
+		(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		#ifdef DEBUG_PRINTS
+		printf("Correction 33\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+	if(ZERO_WIND_TIME-(*ptrXPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrXNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	{
+		(*ptrXPositiveTime)=(*ptrXPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		#ifdef DEBUG_PRINTS
+		printf("Correction 44\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+
+	if(fabs(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)-fabs((*ptrYNegativeTime)-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
+	{
+		if(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrYNegativeTime)-ZERO_WIND_TIME))
+		{
+			if((*ptrYPositiveTime)-ZERO_WIND_TIME>0)
+			{
+				(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+			else
+			{
+				(*ptrYPositiveTime)=(*ptrYPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+
+		}
+		else
+		{
+			if((*ptrYNegativeTime)-ZERO_WIND_TIME>0)
+			{
+				(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+			else
+			{
+				(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+		}
+		#ifdef DEBUG_PRINTS
+		printf("Correction 01\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+
+	if(fabs(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)-fabs((*ptrXNegativeTime)-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
+	{
+
+		if(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrXNegativeTime)-ZERO_WIND_TIME))
+		{
+			if((*ptrXPositiveTime)-ZERO_WIND_TIME>0)
+			{
+				(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+			else
+			{
+				(*ptrXPositiveTime)=(*ptrXPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+
+		}
+		else
+		{
+			if((*ptrXNegativeTime)-ZERO_WIND_TIME>0)
+			{
+				(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+			else
+			{
+				(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+			}
+		}
+		#ifdef DEBUG_PRINTS
+		printf("Correction 02\n");
+		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
+		#endif
+	}
+}
+
 
 
 	

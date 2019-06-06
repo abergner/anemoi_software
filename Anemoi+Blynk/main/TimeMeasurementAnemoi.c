@@ -65,7 +65,7 @@ void initTimeMeasurementHardware(void)
 	initGpio();
 }
 
-#define N 30
+#define N 20
 
 ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight)
 {
@@ -91,7 +91,7 @@ ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * p
 	{
 		sendTrigger();
 		//wait for transmission and reception
-		vTaskDelay(5 / portTICK_PERIOD_MS);
+		vTaskDelay(2 / portTICK_PERIOD_MS);
 		errorsAndWarnings=calculateTimes(&times[i][0], &timesCount[i]);
 		if(errorsAndWarnings == NO_ERRORS_NO_WARNINGS)//if some error ocurres this batch doesnt count
 		{
