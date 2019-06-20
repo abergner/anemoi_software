@@ -268,14 +268,41 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 }
 
 
+static double correctionLut[36]={11.7,11.8,12.2,12.9,13.2,13.2,12.7,11.7,
+		10.5,10.2,10.3,11.4,12.3,13.1,13.2,12.7,12.2,11.7,11.2,11.7,12.0,12.7,
+		13.0,13.0,12.4,11.4,10.4,10.2,10.7,11.4,12.4,13.2,13.2,13.0,12.3,11.8};
+
+double correctionReference=14.0;
+
 double AngleSpeedCorrection(double speed,double direction)
 {
-	double correction=speed;
+	double newSpeed=0;
+	double angleFloor=floor(direction/10.0);
+	double angleCeiling=ceil(direction/10.0);
+	double ceilingPercentage=angleCeiling-direction/10.0;
+	double floorPercentage=direction/10.0-angleFloor;
+	if((int)angleCeiling==36)
+	{
+		angleCeiling=0.0;
+	}
+	double correctionCoefficient=14/(correctionLut[(int)angleFloor]*floorPercentage+correctionLut[(int)angleCeiling]*ceilingPercentage);
 
-	correction=(correction/((sin((4.0*direction-90.0)/RADIANS_2_DEGREES)/9.7) + 1.0))*1.167;
+
+	#ifdef DEBUG_PRINTS
+	printf("Angle: %.2f\n",direction);
+	printf("Angle floor: %.2f\n",angleFloor);
+	printf("Angle ceiling: %.2f\n",angleCeiling);
+	printf("Floor percentage: %.2f\n",floorPercentage);
+	printf("Ceiling percentage: %.2f\n",ceilingPercentage);
+	printf("Correction coefficient: %.2f\n",correctionCoefficient);
+	#endif
+
+	newSpeed=speed*correctionCoefficient;
+
+	//newSpeed=(speed/((sin((4.0*direction-90.0)/RADIANS_2_DEGREES)/9.7) + 1.0))*1.167;
 
 
-	return correction;
+	return newSpeed;
 }
 
 
