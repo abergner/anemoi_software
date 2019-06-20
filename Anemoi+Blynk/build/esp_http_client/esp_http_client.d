@@ -89,8 +89,7 @@ esp_http_client.o: \
  /home/alex/esp32/esp-idf/components/soc/include/soc/soc_memory_layout.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/portbenchmark.h \
  /home/alex/esp32/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
- /home/alex/esp32/esp-idf/components/nghttp/port/include/http_parser.h \
- /home/alex/esp32/esp-idf/components/esp_http_client/lib/include/transport_ssl.h
+ /home/alex/esp32/esp-idf/components/nghttp/port/include/http_parser.h
 
 /home/alex/esp32/esp-idf/components/newlib/include/string.h:
 
@@ -271,6 +270,4 @@ esp_http_client.o: \
 /home/alex/esp32/esp-idf/components/freertos/include/freertos/mpu_wrappers.h:
 
 /home/alex/esp32/esp-idf/components/nghttp/port/include/http_parser.h:
-
-/home/alex/esp32/esp-idf/components/esp_http_client/lib/include/transport_ssl.h:
 /home/alex/esp32/esp-idf/components/esp_http_client/./esp_http_client.c:

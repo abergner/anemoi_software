@@ -140,10 +140,7 @@ libcoap/src/resource.o: \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/bits.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/block.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/encode.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h \
+ /home/alex/esp32/esp-idf/components/newlib/include/strings.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/coap_io.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/coap_time.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/debug.h \
@@ -443,13 +440,7 @@ libcoap/src/resource.o: \
 
 /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/encode.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h:
+/home/alex/esp32/esp-idf/components/newlib/include/strings.h:
 
 /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/coap_io.h:
 

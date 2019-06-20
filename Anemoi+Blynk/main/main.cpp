@@ -44,13 +44,13 @@ char message[50];
 
 extern "C" void initAnemoi(void);
 extern "C" Wind calculateWind(double xPositiveTime,double xNegativeTime, double yPositiveTime,double yNegativeTime);
-void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime);
 
+double AngleSpeedCorrection(double speed,double direction);
 
 extern "C" void app_main()
 {
-	int i=0,k=0;
-   	Wind wind[10];
+	int i=0,k=0,j=0;
+   	Wind wind[10],correctedWind[10];
    	for(i=0; i < 10; i++)
    	{
    		wind[i].speed=0;
@@ -59,8 +59,10 @@ extern "C" void app_main()
    		wind[i].ySpeed=0;
    		wind[i].temperature=0;
    		wind[i].soundSpeed=0;
+   		correctedWind[i]=wind[i];
    	}
-	i=0;
+   	i=0;
+   	double speedAverage=0;
 
 	double xPositiveTimeofFlight=0;
 	double xNegativeTimeofFlight=0;
@@ -102,6 +104,25 @@ extern "C" void app_main()
 		#endif
 		errorsAndWarningsYneg=measureTimeOfFlight(Y_AXIS,NEGATIVE_DIRECTION,&yNegativeTimeofFlight);
 
+		if(errorsAndWarningsYneg==ERROR_NO_STOP_RECEIVED||errorsAndWarningsYpos==ERROR_NO_STOP_RECEIVED)
+		{
+			Blynk.virtualWrite(V7,"BLOCKED PATH!!!");
+			#ifdef DEBUG_PRINTS
+			printf(RED "BLOCKED PATH!!!\n" RESET);
+			#endif
+		}
+		else if(errorsAndWarningsXneg==ERROR_NO_STOP_RECEIVED||errorsAndWarningsXpos==ERROR_NO_STOP_RECEIVED)
+		{
+			Blynk.virtualWrite(V7,"BLOCKED PATH!!!");
+			#ifdef DEBUG_PRINTS
+			printf(RED "BLOCKED PATH!!!\n" RESET);
+			#endif
+		}
+		else
+		{
+			Blynk.virtualWrite(V7," ");
+		}
+
 		#ifdef DEBUG_PRINTS
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",xPositiveTimeofFlight*1000000,xNegativeTimeofFlight*1000000,yPositiveTimeofFlight*1000000,yNegativeTimeofFlight*1000000);
 		#endif
@@ -111,7 +132,43 @@ extern "C" void app_main()
 			if(errorsAndWarningsYpos!=ERROR_TIME_OUT_OF_RANGE && errorsAndWarningsYneg!=ERROR_TIME_OUT_OF_RANGE )
 			{
 				SoftCalibration(&xPositiveTimeofFlight,&xNegativeTimeofFlight,&yPositiveTimeofFlight,&yNegativeTimeofFlight);
+				i++;
+				if(i==10)
+				{
+					i=0;
+				}
 				wind[i]=calculateWind(xPositiveTimeofFlight,xNegativeTimeofFlight,yPositiveTimeofFlight,yNegativeTimeofFlight);
+				printf("Wind Direction:%.2f º\n",wind[i].direction);
+				printf("Speed: %.2f kts \n" ,wind[i].speed * METERS_PER_SECOND_2_KNOTS);
+				//wind[i].speed=AngleSpeedCorrection(wind[i].speed,wind[i].direction);
+				//printf("Speed corrected: %.2f kts \n" ,wind[i].speed * METERS_PER_SECOND_2_KNOTS);
+				for(k=i,j=0,speedAverage=0;j<AVERAGE_COUNT;j++)
+				{
+					speedAverage=speedAverage+wind[k].speed;
+					k--;
+					if(k<0)
+					{
+						k=9;
+					}
+				}
+				speedAverage=speedAverage/(double)AVERAGE_COUNT;
+				printf("Speed average: %.2f kts \n" ,speedAverage * METERS_PER_SECOND_2_KNOTS);
+
+				correctedWind[i]=wind[i];
+				correctedWind[i].speed=AngleSpeedCorrection(correctedWind[i].speed,correctedWind[i].direction);
+				printf("Speed corrected: %.2f kts \n" ,correctedWind[i].speed * METERS_PER_SECOND_2_KNOTS);
+				for(k=i,j=0,speedAverage=0;j<AVERAGE_COUNT;j++)
+				{
+					speedAverage=speedAverage+correctedWind[k].speed;
+					k--;
+					if(k<0)
+					{
+						k=9;
+					}
+				}
+				speedAverage=speedAverage/(double)AVERAGE_COUNT;
+				printf("Speed corrected average: %.2f kts \n" ,speedAverage * METERS_PER_SECOND_2_KNOTS);
+
 			}
 		}
 		#ifdef DEBUG_PRINTS
@@ -129,25 +186,23 @@ extern "C" void app_main()
 			#endif
 		}
 
-		sendNmeaWindData(wind[i].direction,wind[i].speed* METERS_PER_SECOND_2_KNOTS,'K');
-		//sendNmeaWindData(67.5,4.8,'K');
+
+		//sendNmeaWindData(67.5,4.8,'N');
 
 		Blynk.run();
 		if(wind[i].speed > LOW_SPEED)
 		{
-			#ifdef DEBUG_PRINTS
-			printf(GREEN "\t \t Wind Direction:\t %.2f º\n" RESET,wind[i].direction);
-			#endif
-			printf( "%.2f \t" ,wind[i].direction);
-			printf( "%.2f \n" ,wind[i].speed);
+			sendNmeaWindData(wind[i].direction,speedAverage,'M');
+
+			//printf( "%.2f \t" ,wind[i].direction);
 
 			sprintf(message, "X speed: %.2f kn     Y speed: %.2f kn", wind[i].xSpeed * METERS_PER_SECOND_2_KNOTS, wind[i].ySpeed * METERS_PER_SECOND_2_KNOTS );
 			Blynk.virtualWrite(V1, message);
-			sprintf(message, "Wind speed: %.2f m/s",wind[i].speed);
+			sprintf(message, "Wind speed: %.2f m/s",speedAverage);
 			Blynk.virtualWrite(V2, message);
-			sprintf(message, "Wind speed: %.2f knots",wind[i].speed * METERS_PER_SECOND_2_KNOTS);
+			sprintf(message, "Wind speed: %.2f knots",speedAverage * METERS_PER_SECOND_2_KNOTS);
 			Blynk.virtualWrite(V3, message);
-			sprintf(message, "Wind speed: %.2f km/h",wind[i].speed * METERS_PER_SECOND_2_KILOMETERS_PER_HOUR);
+			sprintf(message, "Wind speed: %.2f km/h",speedAverage * METERS_PER_SECOND_2_KILOMETERS_PER_HOUR);
 			Blynk.virtualWrite(V4, message);
 			sprintf(message, "Wind direction: %.2f º",wind[i].direction);
 			Blynk.virtualWrite(V5, message);
@@ -169,21 +224,10 @@ extern "C" void app_main()
 			sprintf(message, "Temperature: %.1f ºC",wind[i].temperature);
 			Blynk.virtualWrite(V6, message);
 		}
-
-		i++;
-		if(i==10)
-		{
-			i=0;
-		}
-		vTaskDelay(10 / portTICK_PERIOD_MS);
+		vTaskDelay(15 / portTICK_PERIOD_MS);
 	}
 
 }
-
-#define NEG_TRESH (0.95/(double)TRANSDUCER_FREQUENCY_IN_HZ)
-#define POS_TRESH (1.05/(double)TRANSDUCER_FREQUENCY_IN_HZ)
-#define ZERO_WIND_TIME 0.000425
-
 
 
 Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTime,double yNegativeTime)
@@ -198,13 +242,13 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 	wind.ySpeed=Y_DISTANCE*(1.0/yPositiveTime-1.0/yNegativeTime)/2.0;
 
 
-	wind.speed=sqrt(wind.xSpeed*wind.xSpeed+wind.ySpeed*wind.ySpeed);
 	wind.direction=atan(wind.ySpeed/wind.xSpeed)*RADIANS_2_DEGREES+90.0;
 	if(wind.xSpeed<0)
 	{
 		//to get full 360º instead of only 180º
 		wind.direction=wind.direction+180.0;
 	}
+	wind.speed=sqrt(wind.xSpeed*wind.xSpeed+wind.ySpeed*wind.ySpeed);
 
 	if(wind.xSpeed > wind.ySpeed)
 	{
@@ -224,6 +268,18 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 }
 
 
+double AngleSpeedCorrection(double speed,double direction)
+{
+	double correction=speed;
+
+	correction=(correction/((sin((4.0*direction-90.0)/RADIANS_2_DEGREES)/9.7) + 1.0))*1.167;
+
+
+	return correction;
+}
+
+
+
 
 void initAnemoi(void)
 {
@@ -232,6 +288,7 @@ void initAnemoi(void)
 	spi_device_handle_t xHandleTDC1000;
 	spi_device_handle_t yHandleTDC1000;
 	spi_device_handle_t handleTDC7200;
+
 
 	//Init clock of ESP32. Frequency set to 1.28MHz
 	initClock();
@@ -276,108 +333,7 @@ void initAnemoi(void)
 }
 
 
-void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime)
-{
-	if((*ptrYPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME - (*ptrYNegativeTime)>(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 11\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
-	if(ZERO_WIND_TIME-(*ptrYPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrYNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		(*ptrYPositiveTime)=(*ptrYPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 22\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
-	if((*ptrXPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME-(*ptrXNegativeTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 33\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
-	if(ZERO_WIND_TIME-(*ptrXPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrXNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
-	{
-		(*ptrXPositiveTime)=(*ptrXPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		#ifdef DEBUG_PRINTS
-		printf("Correction 44\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
 
-	if(fabs(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)-fabs((*ptrYNegativeTime)-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
-	{
-		if(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrYNegativeTime)-ZERO_WIND_TIME))
-		{
-			if((*ptrYPositiveTime)-ZERO_WIND_TIME>0)
-			{
-				(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				(*ptrYPositiveTime)=(*ptrYPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-
-		}
-		else
-		{
-			if((*ptrYNegativeTime)-ZERO_WIND_TIME>0)
-			{
-				(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-		}
-		#ifdef DEBUG_PRINTS
-		printf("Correction 01\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
-
-	if(fabs(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)-fabs((*ptrXNegativeTime)-ZERO_WIND_TIME)) > (0.75/(double)TRANSDUCER_FREQUENCY_IN_HZ))
-	{
-
-		if(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrXNegativeTime)-ZERO_WIND_TIME))
-		{
-			if((*ptrXPositiveTime)-ZERO_WIND_TIME>0)
-			{
-				(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				(*ptrXPositiveTime)=(*ptrXPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-
-		}
-		else
-		{
-			if((*ptrXNegativeTime)-ZERO_WIND_TIME>0)
-			{
-				(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-			else
-			{
-				(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-			}
-		}
-		#ifdef DEBUG_PRINTS
-		printf("Correction 02\n");
-		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
-		#endif
-	}
-}
 
 
 

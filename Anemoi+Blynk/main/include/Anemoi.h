@@ -62,7 +62,7 @@
 #define Y_DISTANCE 0.146
 //Distance between sensors in meters
 
-#define RADIANS_2_DEGREES	180.0 / M_PI
+#define RADIANS_2_DEGREES	(180.0 / M_PI)
 #define METERS_PER_SECOND_2_KNOTS 1.94384
 #define METERS_PER_SECOND_2_KILOMETERS_PER_HOUR 3.6
 
@@ -72,6 +72,10 @@
 
 #define ZERO_CELSIUS_SPEED_OF_SOUND 331.3 // m/s
 #define SPEED_OF_SOUND_TEMPERATURE_COEFFICIENT 0.606     //m/s/C
+
+
+#define AVERAGE_COUNT 3
+
 
 //#define DEBUG_PRINTS
 

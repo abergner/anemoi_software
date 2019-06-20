@@ -10,7 +10,7 @@
 
 ErrorsAndWarnings measureTimeOfFlight(Axis axis, Direction direction, double * ptrTimeOfFlight);
 void initTimeMeasurementHardware(void);
-
+void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime);
 
 
 

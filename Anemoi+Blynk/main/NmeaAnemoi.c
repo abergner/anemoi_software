@@ -71,13 +71,14 @@ but not including, the "$" and "*".
 
 
 	MWV Wind Speed and Angle
-	$--MWV,x.x,a,x.x,a*hh
-	|||||||1|||2|3|||4|5||||
+	$--MWV,x.x,a,x.x,a,A*hh
+	|||||||1|||2|3|||4|5|6||
     1) Wind Angle, 0 to 360 degrees
-	2) Reference, R = Relative, T = True
+	2) Reference: R = Relative, T = True
 	3) Wind Speed
-	4) Wind Speed Units, K/M/N
-	5) Checksum
+	4) Wind Speed Units: K/M/N
+	5) Status: A= data valid, V=data invalid
+	6) Checksum
 
  */
 
@@ -105,7 +106,7 @@ uint8_t checksum(uint8_t * string, int length);
 void sendNmeaWindData(double angle, double speed, char unit)
 {
 
-	char nmeaSentence[30]="$--MWV,";
+	char nmeaSentence[30]="$55MWV,";
 	char aString[20]=" ";
 	sprintf(aString,"%.1f",angle);
 	strcat(nmeaSentence,aString);
@@ -120,18 +121,22 @@ void sendNmeaWindData(double angle, double speed, char unit)
 		case 'M':
 			strcat(nmeaSentence,",M");
 				break;
+		case 'N':
+			strcat(nmeaSentence,",N");
+				break;
 		default:
 				break;
 
 	}
+	strcat(nmeaSentence,",A");
 	sprintf(aString,"*%02x",checksum((uint8_t *)&(nmeaSentence[1]),strlen(nmeaSentence)-1));
 	strcat(nmeaSentence,aString);
 
-	#ifdef DEBUG_PRINTS
-	printf("\nNMEA sentence: \n\n");
+	//#ifdef DEBUG_PRINTS
+	//printf("\nNMEA sentence: \n\n");
 	printf(nmeaSentence);
-	printf("\n\n");
-	#endif
+	printf("\n");
+	//#endif
 
 	uart_write_bytes(UART_NUM, nmeaSentence, strlen(nmeaSentence));
 }

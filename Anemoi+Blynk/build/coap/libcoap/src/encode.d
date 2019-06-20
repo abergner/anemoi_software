@@ -119,12 +119,7 @@ libcoap/src/encode.o: \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
  /home/alex/esp32/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
  /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/encode.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
- /home/alex/esp32/esp-idf/components/newlib/include/string.h \
- /home/alex/esp32/esp-idf/components/newlib/include/sys/string.h \
- /home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h
+ /home/alex/esp32/esp-idf/components/newlib/include/strings.h
 
 /home/alex/esp32/esp-idf/components/newlib/include/stdio.h:
 
@@ -364,15 +359,5 @@ libcoap/src/encode.o: \
 
 /home/alex/esp32/esp-idf/components/coap/libcoap/include/coap/encode.h:
 
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h:
-
-/home/alex/esp32/esp-idf/components/newlib/include/string.h:
-
-/home/alex/esp32/esp-idf/components/newlib/include/sys/string.h:
-
-/home/alex/esp32/esp-idf/examples/my_proyects/anemoi_software/Anemoi+Blynk/components/arduino/libraries/AzureIoT/src/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h:
+/home/alex/esp32/esp-idf/components/newlib/include/strings.h:
 /home/alex/esp32/esp-idf/components/coap/libcoap/src/encode.c:
