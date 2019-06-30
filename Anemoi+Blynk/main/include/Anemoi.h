@@ -60,6 +60,7 @@
 //Distance between sensors in meters
 #define X_DISTANCE 0.146
 #define Y_DISTANCE 0.146
+#define DISTANCE 0.146
 //Distance between sensors in meters
 
 #define RADIANS_2_DEGREES	(180.0 / M_PI)

@@ -54,7 +54,7 @@
 #define Y_POSITIVE_SIGNAL_WIDTH		21
 #define Y_NEGATIVE_SIGNAL_WIDTH		18
 
-#define ZERO_WIND_TIME 0.000425
+
 //CALIBRATION
 
 int compareFunction(const void *a, const void *b);
@@ -362,54 +362,77 @@ ErrorsAndWarnings checkMissingStopPulses(double * ptrTimes, unsigned int * ptrTi
 	return errorsAndWarnings;
 }
 
-
+#define EQUAL_TRESHOLD 0.000002
 
 void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double * ptrYPositiveTime,double * ptrYNegativeTime)
 {
-	while((*ptrYPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME - (*ptrYNegativeTime)>(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	static double zeroWindTime= DISTANCE/(ZERO_CELSIUS_SPEED_OF_SOUND+21*SPEED_OF_SOUND_TEMPERATURE_COEFFICIENT);
+
+	if(fabs((*ptrYPositiveTime)-(*ptrYNegativeTime))<EQUAL_TRESHOLD && fabs((*ptrYPositiveTime)-(*ptrXNegativeTime))<EQUAL_TRESHOLD)
+	{
+		zeroWindTime=(*ptrYPositiveTime);
+	}
+	if(fabs((*ptrYPositiveTime)-(*ptrYNegativeTime))<EQUAL_TRESHOLD && fabs((*ptrXPositiveTime)-(*ptrYNegativeTime))<EQUAL_TRESHOLD)
+	{
+		zeroWindTime=(*ptrYPositiveTime);
+	}
+	if(fabs((*ptrXPositiveTime)-(*ptrXNegativeTime))<EQUAL_TRESHOLD && fabs((*ptrXPositiveTime)-(*ptrYNegativeTime))<EQUAL_TRESHOLD)
+	{
+		zeroWindTime=(*ptrXPositiveTime);
+	}
+	if(fabs((*ptrXPositiveTime)-(*ptrXNegativeTime))<EQUAL_TRESHOLD && fabs((*ptrYPositiveTime)-(*ptrXNegativeTime))<EQUAL_TRESHOLD)
+	{
+		zeroWindTime=(*ptrXPositiveTime);
+	}
+	#ifdef DEBUG_PRINTS
+	printf("Zero wind time: %.2f us\n",zeroWindTime*1000000);
+	#endif
+
+
+	while((*ptrYPositiveTime)-zeroWindTime >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(zeroWindTime - (*ptrYNegativeTime)>(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
 	{
 		(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 11\n");
+		printf("Calibration 11\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
-	while(ZERO_WIND_TIME-(*ptrYPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrYNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	while(zeroWindTime-(*ptrYPositiveTime) >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrYNegativeTime)-zeroWindTime >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
 	{
 		(*ptrYPositiveTime)=(*ptrYPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 22\n");
+		printf("Calibration 22\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
-	while((*ptrXPositiveTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(ZERO_WIND_TIME-(*ptrXNegativeTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	while((*ptrXPositiveTime)-zeroWindTime >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&(zeroWindTime-(*ptrXNegativeTime) >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
 	{
 		(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 33\n");
+		printf("Calibration 33\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
-	while(ZERO_WIND_TIME-(*ptrXPositiveTime) >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrXNegativeTime)-ZERO_WIND_TIME >(0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
+	while(zeroWindTime-(*ptrXPositiveTime) >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)&&((*ptrXNegativeTime)-zeroWindTime >(1.2/(double)TRANSDUCER_FREQUENCY_IN_HZ)))
 	{
 		(*ptrXPositiveTime)=(*ptrXPositiveTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 44\n");
+		printf("Calibration 44\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
 
-	bool conditionOne=fabs(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)+fabs((*ptrYNegativeTime)-ZERO_WIND_TIME)) > (0.85/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-	bool conditionTwo=fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-ZERO_WIND_TIME) > (0.4/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+	bool conditionOne=fabs(fabs((*ptrYPositiveTime)-zeroWindTime)+fabs((*ptrYNegativeTime)-zeroWindTime)) > (0.65/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+	bool conditionTwo=fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-zeroWindTime) > (0.2/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 	while(conditionOne&&conditionTwo)
 	{
-		if(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrYNegativeTime)-ZERO_WIND_TIME))
+		if(fabs((*ptrYPositiveTime)-zeroWindTime)>fabs((*ptrYNegativeTime)-zeroWindTime))
 		{
-			if((*ptrYPositiveTime)-ZERO_WIND_TIME>0)
+			if((*ptrYPositiveTime)-zeroWindTime>0)
 			{
 				(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
@@ -421,7 +444,7 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 		}
 		else
 		{
-			if((*ptrYNegativeTime)-ZERO_WIND_TIME>0)
+			if((*ptrYNegativeTime)-zeroWindTime>0)
 			{
 				(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
@@ -430,22 +453,22 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 				(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
 		}
-		conditionOne=fabs(fabs((*ptrYPositiveTime)-ZERO_WIND_TIME)+fabs((*ptrYNegativeTime)-ZERO_WIND_TIME)) > (0.85/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		conditionTwo=fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-ZERO_WIND_TIME) > (0.4/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		conditionOne=fabs(fabs((*ptrYPositiveTime)-zeroWindTime)+fabs((*ptrYNegativeTime)-zeroWindTime)) > (0.65/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		conditionTwo=fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-zeroWindTime) > (0.2/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 01\n");
+		printf("Calibration 01\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
 
-	conditionOne=fabs(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)+fabs((*ptrXNegativeTime)-ZERO_WIND_TIME)) > (0.85/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-	conditionTwo=fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-ZERO_WIND_TIME) > (0.4/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+	conditionOne=fabs(fabs((*ptrXPositiveTime)-zeroWindTime)+fabs((*ptrXNegativeTime)-zeroWindTime)) > (0.65/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+	conditionTwo=fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-zeroWindTime) > (0.2/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 	while(conditionOne&&conditionTwo)
 	{
 
-		if(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)>fabs((*ptrXNegativeTime)-ZERO_WIND_TIME))
+		if(fabs((*ptrXPositiveTime)-zeroWindTime)>fabs((*ptrXNegativeTime)-zeroWindTime))
 		{
-			if((*ptrXPositiveTime)-ZERO_WIND_TIME>0)
+			if((*ptrXPositiveTime)-zeroWindTime>0)
 			{
 				(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
@@ -457,7 +480,7 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 		}
 		else
 		{
-			if((*ptrXNegativeTime)-ZERO_WIND_TIME>0)
+			if((*ptrXNegativeTime)-zeroWindTime>0)
 			{
 				(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
@@ -466,16 +489,16 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 				(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			}
 		}
-		conditionOne=fabs(fabs((*ptrXPositiveTime)-ZERO_WIND_TIME)+fabs((*ptrXNegativeTime)-ZERO_WIND_TIME)) > (0.85/(double)TRANSDUCER_FREQUENCY_IN_HZ);
-		conditionTwo=fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-ZERO_WIND_TIME) > (0.4/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		conditionOne=fabs(fabs((*ptrXPositiveTime)-zeroWindTime)+fabs((*ptrXNegativeTime)-zeroWindTime)) > (0.65/(double)TRANSDUCER_FREQUENCY_IN_HZ);
+		conditionTwo=fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-zeroWindTime) > (0.2/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		#ifdef DEBUG_PRINTS
-		printf("Correction 02\n");
+		printf("Calibration 02\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
-	/*while(fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-ZERO_WIND_TIME) > (0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ))
+	/*while(fabs(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-zeroWindTime) > (0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ))
 	{
-		if(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-ZERO_WIND_TIME > 0)
+		if(((*ptrYPositiveTime)+(*ptrYNegativeTime))/2.0-zeroWindTime > 0)
 		{
 			(*ptrYPositiveTime)=(*ptrYPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			(*ptrYNegativeTime)=(*ptrYNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
@@ -486,14 +509,14 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 			(*ptrYNegativeTime)=(*ptrYNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		}
 		#ifdef DEBUG_PRINTS
-		printf("Correction s\n");
+		printf("Calibration s\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}
 
-	while(fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-ZERO_WIND_TIME) > (0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ))
+	while(fabs(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-zeroWindTime) > (0.8/(double)TRANSDUCER_FREQUENCY_IN_HZ))
 	{
-		if(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-ZERO_WIND_TIME > 0)
+		if(((*ptrXPositiveTime)+(*ptrXNegativeTime))/2.0-zeroWindTime > 0)
 		{
 			(*ptrXPositiveTime)=(*ptrXPositiveTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 			(*ptrXNegativeTime)=(*ptrXNegativeTime)-(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
@@ -504,7 +527,7 @@ void SoftCalibration(double *ptrXPositiveTime,double * ptrXNegativeTime,double *
 			(*ptrXNegativeTime)=(*ptrXNegativeTime)+(1.0/(double)TRANSDUCER_FREQUENCY_IN_HZ);
 		}
 		#ifdef DEBUG_PRINTS
-		printf("Correction s\n");
+		printf("Calibration s\n");
 		printf("X pos time: %.2f us\t X neg time: %.2f us\tY pos time: %.2f us\tY neg time: %.2f us\n",(*ptrXPositiveTime)*1000000,(*ptrXNegativeTime)*1000000,(*ptrYPositiveTime)*1000000,(*ptrYNegativeTime)*1000000);
 		#endif
 	}*/

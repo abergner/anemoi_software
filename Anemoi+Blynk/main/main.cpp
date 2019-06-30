@@ -49,6 +49,8 @@ double AngleSpeedCorrection(double speed,double direction);
 
 extern "C" void app_main()
 {
+
+
 	int i=0,k=0,j=0;
    	Wind wind[10],correctedWind[10];
    	for(i=0; i < 10; i++)
@@ -63,6 +65,7 @@ extern "C" void app_main()
    	}
    	i=0;
    	double speedAverage=0;
+   	double temperatureAverage=0;
 
 	double xPositiveTimeofFlight=0;
 	double xNegativeTimeofFlight=0;
@@ -177,17 +180,16 @@ extern "C" void app_main()
 		printf(GREEN "Current Y speed: %.2f kn\t" RESET,wind[i].ySpeed * METERS_PER_SECOND_2_KNOTS );
 		printf(GREEN "Current Wind speed: %.2f kn \n " RESET,wind[i].speed * METERS_PER_SECOND_2_KNOTS);
 		#endif
-		for(k=0;k<10;k++)
+		for(k=0,temperatureAverage=0;k<10;k++)
 		{
 			#ifdef DEBUG_PRINTS
 			printf(GREEN "X speed: %.2f kn\t" RESET,wind[k].xSpeed * METERS_PER_SECOND_2_KNOTS);
 			printf(GREEN "Y speed: %.2f kn\t" RESET,wind[k].ySpeed * METERS_PER_SECOND_2_KNOTS );
 			printf(GREEN "Wind speed: %.2f kn \n " RESET,wind[k].speed * METERS_PER_SECOND_2_KNOTS);
 			#endif
+			temperatureAverage=temperatureAverage+wind[i].temperature;
 		}
-
-
-		//sendNmeaWindData(67.5,4.8,'N');
+		temperatureAverage=temperatureAverage/10.0;
 
 		Blynk.run();
 		if(wind[i].speed > LOW_SPEED)
@@ -206,11 +208,12 @@ extern "C" void app_main()
 			Blynk.virtualWrite(V4, message);
 			sprintf(message, "Wind direction: %.2f º",wind[i].direction);
 			Blynk.virtualWrite(V5, message);
-			sprintf(message, "Temperature: %.1f ºC",wind[i].temperature);
+			sprintf(message, "Temperature: %.1f ºC",temperatureAverage);
 			Blynk.virtualWrite(V6, message);
 		}
 		else
 		{
+			sendNmeaWindData(0,0,'M');
 			sprintf(message, "Low speed  " );
 			Blynk.virtualWrite(V1, message);
 			sprintf(message, "Wind speed: < 0.5 m/s");
@@ -221,7 +224,7 @@ extern "C" void app_main()
 			Blynk.virtualWrite(V4, message);
 			sprintf(message, "Wind direction: low speed");
 			Blynk.virtualWrite(V5, message);
-			sprintf(message, "Temperature: %.1f ºC",wind[i].temperature);
+			sprintf(message, "Temperature: %.1f ºC",temperatureAverage);
 			Blynk.virtualWrite(V6, message);
 		}
 		vTaskDelay(15 / portTICK_PERIOD_MS);
@@ -268,9 +271,11 @@ Wind calculateWind(double xPositiveTime,double xNegativeTime,double yPositiveTim
 }
 
 
-static double correctionLut[36]={11.7,11.8,12.2,12.9,13.2,13.2,12.7,11.7,
-		10.5,10.2,10.3,11.4,12.3,13.1,13.2,12.7,12.2,11.7,11.2,11.7,12.0,12.7,
-		13.0,13.0,12.4,11.4,10.4,10.2,10.7,11.4,12.4,13.2,13.2,13.0,12.3,11.8};
+static double correctionLut[36]={11.7,11.8,12.2,12.6,13.2,13.0,12.7,
+								11.7,11.1,10.8,10.7,11.4,12.3,13.1,
+								13.2,12.7,12.2,11.7,11.3,11.7,12.0,
+								12.5,13.0,13.0,12.4,11.4,10.9,10.2,
+								11.1,11.4,12.4,13.2,13.2,13.0,12.3,11.8};
 
 double correctionReference=14.0;
 
@@ -279,8 +284,8 @@ double AngleSpeedCorrection(double speed,double direction)
 	double newSpeed=0;
 	double angleFloor=floor(direction/10.0);
 	double angleCeiling=ceil(direction/10.0);
-	double ceilingPercentage=angleCeiling-direction/10.0;
-	double floorPercentage=direction/10.0-angleFloor;
+	double ceilingPercentage=1-(angleCeiling-direction/10.0);
+	double floorPercentage=1-(direction/10.0-angleFloor);
 	if((int)angleCeiling==36)
 	{
 		angleCeiling=0.0;
@@ -293,7 +298,11 @@ double AngleSpeedCorrection(double speed,double direction)
 	printf("Angle floor: %.2f\n",angleFloor);
 	printf("Angle ceiling: %.2f\n",angleCeiling);
 	printf("Floor percentage: %.2f\n",floorPercentage);
+	printf("Floor correction coefficient: %.2f\n",correctionLut[(int)angleFloor]);
+	printf("Floor correction : %.2f\n",correctionLut[(int)angleFloor]*floorPercentage);
 	printf("Ceiling percentage: %.2f\n",ceilingPercentage);
+	printf("Ceiling correction coefficient: %.2f\n",correctionLut[(int)angleCeiling]);
+	printf("Ceiling correction : %.2f\n",correctionLut[(int)angleCeiling]*ceilingPercentage);
 	printf("Correction coefficient: %.2f\n",correctionCoefficient);
 	#endif
 
